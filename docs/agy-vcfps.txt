@@ -1,0 +1,15 @@
+# ViceNano (reVC GTA Vice City on iPod nano 7G) FPS Estimation & Budget Analysis
+1. Baseline Ports: PSP re3 (333MHz MIPS, 64MB) hits 25-30 FPS (dips to ~20 in rain/dense traffic); 2012 Android (1GHz A8, 512MB) hit 18-25 FPS; Switch hits locked 60 FPS.
+2. Compute Budget (iPod vs PSP):
+   - CPU: Cortex-A5 342MHz (537 DMIPS) / 684MHz (1074 DMIPS) vs PSP 333MHz (~420 DMIPS). At 684MHz, A5 has 2.5x PSP integer power + NEON SIMD.
+   - GPU: MBX Lite 133-266MHz (133-266 Mpix/s fill) vs PSP GE 166MHz (166 Mpix/s). Nano screen (240x432=103k px) has 21% fewer px than PSP (480x272=130k px).
+   - Architecture: MBX TBDR eliminates opaque overdraw on narrow mDDR bus, but lacks HW T&L; vertex transform and skinning must run entirely on ARM.
+3. Honest FPS Estimates (90m draw distance, 128x128 16bpp/PAL8 textures, 1-retry simple physics):
+   - Stock Clocks (CPU 342MHz / MBX 133MHz): 14-22 FPS (walking/quiet: 20-22 FPS; high-speed driving/downtown: 12-16 FPS; heavy action/crashes: ~10 FPS). CPU-bound.
+   - Unlocked Clocks (CPU 684MHz / MBX 171-266MHz): 24-30 FPS (indoors/suburbs: 30 FPS cap; dense downtown driving/chases: 22-26 FPS). Fully playable.
+4. Biggest FPS Risks & Concrete Mitigations:
+   - Risk 1: Draw Call Overhead (GLES1 driver CPU cost per batch). Mitigation: Batch static geometry by material/texture into pre-baked VBOs; cap at <=120 draws/frame.
+   - Risk 2: Software Vertex Skinning (no GPU vertex shaders/HW T&L). Mitigation: NEON SIMD 4-lane vectorized skinning; drop to rigid/single-bone LODs past 15m.
+   - Risk 3: NAND Streaming Stalls (fast driving across zones). Mitigation: 4MB async ring buffer at 30MB/s NAND read (5MB zone in 170ms); 2.5s velocity lookahead.
+   - Risk 4: Physics & Collision Retries (reVC multi-pass solver spikes). Mitigation: Clamp NPC collision passes from 4 to 1-2; tick background cars at 15Hz.
+5. Verdict: Stock 342MHz is marginally playable (~16 FPS avg); unlocked 684MHz + NEON skinning + aggressive batching achieves solid 25-30 FPS.

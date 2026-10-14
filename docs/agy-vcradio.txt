@@ -1,0 +1,17 @@
+VICE CITY RADIO & MUSIC STRATEGY (iPod nano 7G: Cortex-A5, 64MB RAM, 16GB NAND)
+1. INVENTORY (9 stations, .adf = MP3 XOR 0x22, 646 min total, 528.87 MB / 504.37 MiB):
+   - Music (44.1kHz/128kbps stereo): VROCK 70.9MB, WILD 62.7MB, WAVE 60.5MB, FEVER 57.9MB, ESPANT 56.4MB, EMOTION 54.1MB, FLASH 54.8MB
+   - Talk (16kHz/64kbps stereo): KCHAT 47.6MB, VCPR 39.6MB
+2. STORAGE ANALYSIS (16GB NAND, ~14.7 GB usable after OS/Whimory ~192MB):
+   - Total Audio: 1,067.8 MB (Radio 528.9MB, sfx.RAW 340.2MB, Cutscene/Amb MP3 160.3MB, WAV 38.2MB)
+   - Total Game: 1,540.2 MB (Audio 1,067.8MB + Assets 472.4MB) = only 10.5% of 14.7GB NAND (>13 GB free; storage is NOT constrained)
+3. AUDIO BUDGET (Keep all 9 stations vs cut):
+   - Retain ALL 9 stations. Cutting stations ruins Vice City atmosphere and is unnecessary given 13GB+ free flash.
+   - Re-encode budget: 7 music stations @ 64 kbps joint-stereo (44.1kHz) + 2 talk @ 32 kbps mono = 253 MB total (52% cut, saves 276 MB).
+   - Quality: 64 kbps joint-stereo is clean on EarPods/headphones, transparent on nano speaker; halves NAND read bandwidth & battery drain.
+4. DECODE COST ON CORTEX-A5 (Single-core ARMv7-A @ 342-684 MHz):
+   - ADSP Hardware Decoder (0x38500000, VIC IRQ 18): Offloads MP3 frame decode via IRAM mailbox (~20 µs/frame) -> <0.1% CPU load!
+   - Software Fallback (minimp3): ~10-12 MHz decode load on Cortex-A5 -> only ~1.6% CPU @ 684 MHz (3.2% @ 342 MHz), 15KB L1 cache.
+   - RAM stream buffer: 8 ring buffers x 4KB = 32KB (<0.05% of 64MB RAM).
+5. RECOMMENDATION: Keep all 9 stations re-encoded to 64k stereo / 32k mono (253 MB radio, 1.26 GB total game).
+   Stream via ADSP co-processor (or minimp3 for bare-metal), un-XOR in DMA chunk buffer, output 44.1kHz s16 stereo to I2S0.

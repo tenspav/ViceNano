@@ -1,0 +1,18 @@
+# ViceNano Cutscene & Video Strategy (iPod nano 7G: Cortex-A5 @ 400MHz, 64MB RAM)
+1. MOVIE ASSET PROBE (ffprobe):
+   - Logo.mpg: MPEG-1 video (640x480, 25 fps, 4:3, 1275 kbps), MP2 audio (48kHz stereo, 192 kbps), duration 39.5s, size 7.24 MB.
+   - GTAtitles.mpg: MPEG-1 video (640x480, 25 fps, 4:3, 2174 kbps), MP2 audio (48kHz stereo, 192 kbps), duration 82.1s, size 24.27 MB. Total: 31.51 MB.
+2. APPLE M2 DECODER COMPATIBILITY & PLAYBACK OPTIONS:
+   - M2 HW Decoder: Hardware block at 0x38f00000 (IRQ 35) is H.264 AVC Baseline only; secondary 0x39600000 is MPEG-4/H.263. Zero HW MPEG-1 support.
+   - Options: (A) Skip movies entirely (-DNO_MOVIES, zero CPU/RAM, saves 31.5MB NAND); (B) Transcode to 432x240 H.264 baseline MP4 (~4MB total, HW decoded, <2% CPU); (C) Software MPEG-1 decode via NEON.
+3. CORTEX-A5 NEON SOFTWARE MPEG-1 COST:
+   - Feasibility: 240p MPEG-1 software decode is easily plausible. MPEG-1 has no deblocking, no CABAC, simple 8x8 IDCT and half-pel MC.
+   - CPU Cost: At 240p (432x240/320x240 @ 25fps = 7.5k MB/s), NEON-accelerated libmpeg2/pl_mpeg requires ~12-18 MHz (<5% CPU of 400MHz A5). Native 640x480 consumes ~20% CPU. Storing 31.5MB raw MPEG-1 is the real bottleneck.
+4. CUTSCENE ANIMATIONS (anim/cuts.img & cuts.dir):
+   - Nature: Not FMV! cuts.img (115.1 MB, 148 entries) holds real-time in-engine 3D cutscene skeletal animations (.ifp) and camera splines (.dat).
+   - Engine Streaming: reVC CCutsceneMgr::LoadCutsceneData() already streams on-demand: reads only ONE cutscene at a time from cuts.img, flushes world streaming memory, and frees it immediately on completion.
+   - RAM Budget: Largest IFP is law_1b.ifp (6.38 MB), average is 1.44 MB, min 0.18 MB. Easily fits within 64MB DRAM headroom during cutscene mode.
+   - Trimming/Compression: Compress cuts.img with per-entry LZ4 (reduces 115MB NAND footprint to ~38MB, decompressing single ~1.5MB IFP in <35ms); prune non-story side-mission IFPs if NAND is constrained.
+5. FINAL RECOMMENDATIONS PER ASSET:
+   - Logo.mpg & GTAtitles.mpg: Default to SKIP (-DNO_MOVIES) for instant startup and 31.5MB flash savings. If desired, transcode offline to 432x240 H.264 Baseline MP4 (4MB total) decoded via M2 HW.
+   - anim/cuts.img & cuts.dir: Keep in-engine 3D execution. Retain reVC single-cutscene streaming (1.44MB avg in DRAM); compress archive with LZ4 on NAND to reclaim ~75MB flash.

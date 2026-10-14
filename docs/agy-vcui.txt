@@ -1,0 +1,18 @@
+# ViceNano Touch UI & HUD Design (iPod nano 7G: 240x432 / 432x240 Landscape)
+1. COMPLETE UI/HUD ELEMENT CATALOG:
+   - HUD: Minimap/Radar, Health/Armor bars, Cash, Clock, Wanted stars, Weapon/Ammo, Zone/Car popups.
+   - Mission & Feedback: Mission title, Help text, Subtitles/Dialogue, Timers, Wasted/Busted banners.
+   - Radio & Menus: Radio wheel overlay; Title Menu, Pause Menu (Resume/Map/Stats/Audio/Display), Interactive Map.
+2. ORIENTATION & ADAPTATION (PRIMARY: LANDSCAPE 432x240):
+   - Recommendation: Landscape 432x240 (16:9). Matches native 3D camera FOV for driving/combat; two-thumb grip leaves central 240x240 view clear; hardware Vol/Sleep sit on top edge. (Portrait 240x432 is alternate DS-style: top 240x240 view, bottom 240x192 HUD/deck).
+   - HUD Layout: Minimap bottom-left (56x56); Health/Armor stacked bars top-right (60x8); Weapon/Ammo top-right; Stars under weapon; Subtitles bottom-center.
+3. TOUCH ZONES & ASCII LAYOUT (Landscape 432x240):
+  +------------------- 432 px --------------------+
+  |[Pause] [Radio]       [Subtitles/Help]    [Wpn][HP/Arm]| 240
+  | (Stick/LookL)     CENTRAL ACTION VIEW       [Enter]   | px
+  | (Analog Stick)                           [Fire] [Jump]|
+  | (Stick/LookR)  [Minimap]                 [Brake][Gas] |
+  +-----------------------------------------------+
+   - Left thumb (0-120px): Floating analog stick (r=40px); margin tabs for Look L/R. Driving: Accel tilt steer replaces stick. Right thumb (312-432px): Diamond cluster (Gas/Sprint, Brake/Reverse, Fire, Jump/Handbrake, Enter/Exit). Weapon tap to cycle.
+4. MENU NAVIGATION: Direct touch (absolute coords via reVC CMouseControllerState). Large >=36px row hitboxes; swipe/flick scrolling; top-left Back button (32x32px); seamless gamepad-focus cursor when BT HID pad connects. Map: Single-touch pan, double-tap zoom.
+5. TEXT READABILITY & FONT METRICS: 202 PPI screen requires scaling reVC fonts 1.6x-2.0x with 1px black outline. Subtitles/Help = 12-14px clean condensed bitmap (max 32 chars/line, 2 lines); HUD numbers = 14px bold; Menu items = 16px bold on 36px touch rows.

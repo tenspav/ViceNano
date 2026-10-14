@@ -1,0 +1,24 @@
+1. WORLD PARTITIONING & ENGINE STREAMING ARCHITECTURE:
+   - Map Zones (30 IPLs / 9,114 instances): 20 exterior zones (8,354 inst), 10 interiors (760 inst). Wash N/S (830/684), Ocean N/S (772/468), NBeach/BT/W (424/729/411), Downtown N/S (570/268), Haiti N/S (258/382), Little Havana (666), Airport N/S (222/383), Docks (292), Starfish (380), Prawn (265), Golf (186), Bridges (51), IslandSF (113). Interiors: Mall (262), Mansion (171), Hotel (93), Stadium (75), Club (61), Bank (53), Concert (20), Lawyers (14), Strip (11), Yacht (0).
+   - Spatial Grid & Memory: 80x80 sectors (50x50m cells, 4x4km world). All IPL instances parsed into sector lists at boot (~2.0 MB entity pool in DRAM; DFF/TXD unlinked).
+   - Runtime Paging Mechanism: Camera queries 7x7 sectors (STREAM_DIST 80m + LOD) requesting DFF/TXD via 2 async channels; navig.zon/info.zon stream peds/cars; LRU evicts unreferenced assets.
+2. PER-ZONE ASSET SIZES (gta3.img MEASURED & CONVERTED):
+   - Full Archive (gta3.img 312.3MB, 6,032 files): Avg exterior zone is 11.01 MB PC (DFF 3.84 MB + TXD 7.17 MB); avg interior is 3.22 MB PC.
+   - Converted Footprint: Opt A (16bpp max 128x128, 1.55x TXD); Opt B (8bpp PAL8, 0.84x TXD, avg 9.87 MB/zone); Opt C (PVRTC 4bpp, 0.225x TXD, avg 5.39 MB/zone).
+   - Top Exterior Clusters (Deduplicated Disk PC -> Opt B 8bpp PAL8 -> Opt C PVRTC 4bpp):
+     * Downtown North (worst zone): 570 inst, 242 models, 64 TXD -> 22.38 MB PC (6.92M DFF / 15.46M TXD) -> 19.94 MB Opt B -> 10.40 MB Opt C.
+     * Downtown N+S Cluster: 838 inst, 366 models, 94 TXD -> 34.44 MB PC (10.52M DFF / 23.92M TXD) -> 30.66 MB Opt B -> 15.90 MB Opt C.
+     * Little Haiti N+S Cluster: 640 inst, 295 models, 99 TXD -> 33.96 MB PC (7.35M DFF / 26.60M TXD) -> 29.75 MB Opt B -> 13.34 MB Opt C.
+     * Washington Beach N+S: 1,514 inst, 570 models, 95 TXD -> 29.48 MB PC (9.17M DFF / 20.31M TXD) -> 26.27 MB Opt B -> 13.74 MB Opt C.
+     * Ocean Beach N+S: 1,240 inst, 472 models, 72 TXD -> 20.59 MB PC (8.31M DFF / 12.28M TXD) -> 18.65 MB Opt B -> 11.07 MB Opt C.
+   - Light Zones: Bridges (51 inst, 2.00 MB PC / 1.88 MB Opt C), Golf (186 inst, 3.62 MB PC / 2.06 MB Opt C), Starfish (380 inst, 6.51 MB PC / 3.65 MB Opt C).
+3. 64MB STREAMING BUDGET & ASYNC PREFETCH DESIGN:
+   - DRAM Budget (~40MB App Ceiling): Streaming Asset Pool = 18.0 MB (Textures 11.0 MB, DFF VBOs 7.0 MB); Static Core = 12.0 MB (Engine/Code 5.0 MB, Collision/IPL pools 3.0 MB, Audio/FB 4.0 MB); Ring Buffer = 4.0 MB; Margin = 6.0 MB.
+   - Rolling Window: N = 2 to 3 zones (1 Current + 1-2 Lookahead along velocity vector). Opt C 3-zone window = 16.17 MB (fits in 18 MB pool). Opt B N = 2 zones (19.74 MB).
+   - Async NAND Prefetch: Double-buffered DRAM ring buffer of 2x 2MB (4MB). At measured 30 MB/s NAND read, loading a full 5.4 MB zone takes 180 ms (11 frames @ 60fps).
+   - Lookahead & Worst-Case Fit: P_lead = P + V * 2.5s (125m at 50 m/s top speed); prefetch triggers 2+ s ahead. Worst-case Downtown N+S (15.90 MB Opt C) fits inside 18.0 MB pool.
+4. WORST SPOTS & MITIGATION STRATEGY:
+   - Downtown Skyscraper Cluster (15.90 MB Opt C): Split Downtown N into East/West; clamp high-detail draw dist from 250m to 90m; enforce occlu.ipl box culling.
+   - Little Haiti / Havana Density (13.34 MB Opt C): Deduplicate shared shack textures; downscale residential walls to 64x64; evict interior props outside 50m.
+   - Bridges & Fast Crossings: Roosevelt Bridge (650m, 13s @ 50m/s) acts as streaming airlock; pin Island LODs (698 KB DFF) permanently; prefetch destination island at midpoint.
+   - Memory Failsafe: Hard 18MB pool limit; evict non-visible peds/vehicles first (frees ~4MB); drop to 1/4-res texture mipmaps if NAND read queue latency exceeds 150ms.
