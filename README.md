@@ -34,11 +34,12 @@
 | 🖥️ Emulator | ![93%](https://img.shields.io/badge/93%25-brightgreen) | boots real OS, live window, audio landing |
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
 | 🎮 GPU access | ![30%](https://img.shields.io/badge/30%25-yellow) | mapped, draft QEMU model written |
-| 🏝️ Engine port | ![0%](https://img.shields.io/badge/0%25-red) | reVC → OpenGL ES 1.1 backend |
+| 🏝️ Engine port | ![15%](https://img.shields.io/badge/15%25-orange) | reVC → GLES1; proven path: [nano7-untethered](https://github.com/olievans123/nano7-untethered) runs Mario Kart 64 natively at 30 fps with a working GLES renderer |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
 ## The stages
 
+0. ✅ **3D on real hardware is proven** — [nano7-untethered](https://github.com/olievans123/nano7-untethered) ships native Mario Kart 64 (30 fps) and Super Mario 64 ports with an OpenGL ES renderer + tilt steering on this exact device
 1. ✅ **Map the hardware** — done in NanoEmu, every chip documented
 2. ✅ **Emulator as testbed** — NanoEmu boots the real RetailOS with a live window
 3. 🔜 **Emulated GPU renders real 3D** — MBX model drafted, needs real rendering
