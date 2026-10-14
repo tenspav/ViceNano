@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo-256.png" width="192" alt="ViceNano logo">
+  <img src="assets/logo-256.png" width="192" alt="ViceNano logo">
 </p>
 
 <h1 align="center">ViceNano</h1>
