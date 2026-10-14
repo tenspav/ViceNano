@@ -30,6 +30,10 @@
 
 ## Development progress
 
+> **Now executing:** M0-M1 (toolchain + first GL triangle in the emulator) is underway in [`m0/`](m0/).
+
+
+
 | Stage | Progress | Status |
 |---|---|---|
 | 🔬 Research | ![100%](https://img.shields.io/badge/100%25-brightgreen) | every chip documented |
