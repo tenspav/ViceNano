@@ -34,7 +34,7 @@
 | 🖥️ Emulator | ![97%](https://img.shields.io/badge/97%25-brightgreen) | boots real OS, window, audio, **renders 3D games** |
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
 | 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
-| 🏝️ Engine port | ![25%](https://img.shields.io/badge/25%25-orange) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
+| 🏝️ Engine port | ![28%](https://img.shields.io/badge/28%25-orange) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
 ## The stages
@@ -49,6 +49,8 @@
 7. ⬜ **ViceNano boots in the emulator** — full RAM, unlocked clocks, world streams from NAND
 8. ⬜ **ViceNano on real hardware** — dualboot: hold buttons at boot, original OS untouched
 9. ⬜ **Mini handheld** — 3D-printed case + Bluetooth gamepad + battery
+
+Asset math is closed: the whole game fits via PVRTC 4bpp textures (39 MB) or 8bpp palettes (147 MB), with 1,000-3,000 concurrent textures in the streaming window ([`docs/texture-budget.md`](docs/texture-budget.md)).
 
 ## Research feeding this project
 
