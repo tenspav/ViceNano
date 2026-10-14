@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tenspav/NanoEmu/main/docs/images/icon-256.png" width="128" alt="ViceNano">
-</p>
-
-<p align="center">
   <img src="docs/logo-256.png" width="192" alt="ViceNano logo">
 </p>
 
