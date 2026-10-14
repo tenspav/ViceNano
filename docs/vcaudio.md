@@ -1,0 +1,24 @@
+** `sampman_oal.cpp` + `oal/channel.cpp` submit samples to OpenAL; the actual resampling/mixing happens inside the linked OpenAL implementation.
+- **Backends:** `sampman_oal.cpp` (`AUDIO_OAL`), Windows `sampman_miles.cpp` (`AUDIO_MSS`), and silent `sampman_null.cpp`.
+- **Bundled libraries:** `vendor/openal-soft/` and `vendor/mpg123/` contain headers and Windows/Android binaries, **no implementation source**; nano needs source builds.
+- **Miles:** a real SDK adapter using `AIL_*`, not stubs; `vendor/milessdk/` supplies `mss.h` and `mss32.lib`. `src/CMakeLists.txt` selects OpenAL or Miles.
+- **Voices:** current `src/core/config.h` enables `PS2_AUDIO_CHANNELS`: 42 generic + 1 police = **43 SFX channels**; `sampman.h` allows **3 streams**, each using two OpenAL sources: **49 sources total**.
+- Without `PS2_AUDIO_CHANNELS`, capacity is 27 generic + police = 28 SFX; actual availability also depends on the provider.
+- **Formats:** `sampman.h` specifies 32 kHz/16-bit/stereo; OAL requests 32 kHz, while SFX are mono signed-16 PCM at per-sample rates from `SFX.SDT`.
+- `oal/channel.cpp` implements pitch through source/base frequency ratio, loop points and looping; forced-2D channels expand mono into stereo.
+- **Radio/music:** `MusicManager.cpp` manages stations, playback offsets, fades, ambience and cutscenes → `sampman_oal.cpp` stream operations → `oal/stream.cpp`.
+- `sampman.h` maps PC stations to `AUDIO/*.ADF`: `CADFFile` XORs bytes with `0x22`, then mpg123 decodes the MP3; ordinary `.MP3` uses `CMP3File`.
+- Current config tries PS2 `.VB` paths first, decoded by `CVbFile` at 32 kHz or 16 kHz for designated tracks, then falls back to PC paths.
+- Streams retain their native rate; decoded 16-bit stereo is split into two mono OpenAL sources, with eight buffers per stream (four stereo pairs, nominally 250 ms each).
+- `MULTITHREADED_AUDIO` enables the stream worker; `SampleManager::Service()` calls `CStream::Update()` to maintain playback.
+- **SFX:** `sampman_oal.cpp` loads metadata/loops/rates from `audio/sfx.SDT`, PCM banks from `audio/sfx.RAW`, and caches seven ped-comment blocks; `PolRadio.cpp` handles police/mission speech.
+- **Nano backend:** add `src/audio/sampman_nano.cpp` implementing `cSampleManager` from `sampman.h`: banks, channel state, gain/pan, position/distance, pitch, loops, completion, and stream seek/pause/time.
+- Mix with fixed-point phase + linear interpolation, stereo gains and 32-bit accumulation; saturate to **44,100 Hz interleaved s16 stereo** (176,400 bytes/s).
+- Feed cache-cleaned DMA buffers to I2S0 FIFO `0x3ca00010`, DMA request 12; use divisor `0x110` and codec rate code `0x0a` from `docs/research/audio-path.md`.
+- Start with 512-frame buffers (2,048 bytes, 11.6 ms), double/triple buffering; DMA IRQ signals refill, while decoding/mixing runs outside the ISR.
+- **CPU estimate, not measured:** assume 10–30 cycles per mono voice/output frame including interpolation and stereo accumulation; NEON helps gain/accumulation, while variable-rate fetches limit vectorization.
+- At 43 voices: 1.90M voice-frames/s → **19–57M cycles/s**, roughly **6–17% at 342 MHz / 3–8% at 684 MHz**, excluding MP3 decoding, I/O and scheduling.
+- At 16 voices: **7–21M cycles/s**, roughly **2–6% / 1–3%**; benchmark decoder and cache behavior separately before choosing the voice budget.
+- **Cuts:** disable `AUDIO_REVERB` and `AUDIO_REFLECTIONS` in `config.h`; omit EAX/EFX sends/filters from `oal/oal_utils.cpp`, plus HRTF and expensive resamplers if retaining OpenAL.
+- **Recommendation:** use a tiny mixer behind `cSampleManager`, initially 16 generic voices + police + streams; preserve pitch, panning, attenuation and loops, and reuse/refactor the stream decoders.
+- OpenAL remains a useful compatibility option, but its source and runtime dependencies must be ported; upstream [loopback rendering](https://github.com/kcat/openal-soft/blob/master/examples/alloopback.c) can supply s16 stereo to DMA without writing a device backend.
