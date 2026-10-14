@@ -31,10 +31,10 @@
 | Stage | Progress | Status |
 |---|---|---|
 | 🔬 Research | ![100%](https://img.shields.io/badge/100%25-brightgreen) | every chip documented |
-| 🖥️ Emulator | ![93%](https://img.shields.io/badge/93%25-brightgreen) | boots real OS, live window, audio landing |
+| 🖥️ Emulator | ![97%](https://img.shields.io/badge/97%25-brightgreen) | boots real OS, window, audio, **renders 3D games** |
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
-| 🎮 GPU access | ![30%](https://img.shields.io/badge/30%25-yellow) | mapped, draft QEMU model written |
-| 🏝️ Engine port | ![15%](https://img.shields.io/badge/15%25-orange) | reVC → GLES1; proven path: [nano7-untethered](https://github.com/olievans123/nano7-untethered) runs Mario Kart 64 natively at 30 fps with a working GLES renderer |
+| 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
+| 🏝️ Engine port | ![20%](https://img.shields.io/badge/20%25-orange) | reVC → GLES1; proven path: [nano7-untethered](https://github.com/olievans123/nano7-untethered) runs Mario Kart 64 natively at 30 fps with a working GLES renderer |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
 ## The stages
