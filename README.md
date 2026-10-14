@@ -34,7 +34,7 @@
 | 🖥️ Emulator | ![97%](https://img.shields.io/badge/97%25-brightgreen) | boots real OS, window, audio, **renders 3D games** |
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
 | 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
-| 🏝️ Engine port | ![20%](https://img.shields.io/badge/20%25-orange) | reVC → GLES1; proven path: [nano7-untethered](https://github.com/olievans123/nano7-untethered) runs Mario Kart 64 natively at 30 fps with a working GLES renderer |
+| 🏝️ Engine port | ![25%](https://img.shields.io/badge/25%25-orange) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
 ## The stages
