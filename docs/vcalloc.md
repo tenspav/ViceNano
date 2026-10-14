@@ -1,0 +1,22 @@
+ collision models.
+- `src/core/Pools.cpp`, `src/control/Replay.cpp`, and entity operators use `new(handle)` for specific pool slots; `src/extras/debugmenu.cpp` uses true placement construction.
+- **RW coverage:** `src/fakerw/fake.cpp` forwards engine allocations through supplied callbacks; `src/skel/sdl2/sdl2.cpp` supplies them only with the custom-allocator flag. Raw audio/platform malloc calls bypass these.
+- **Streaming input:** [Streaming.cpp](/home/pavliukov/ipodwork/NanoRework/games/reVC/src/core/Streaming.cpp:209) allocates one contiguous buffer sized to the largest IMG entry, split into two halves; `ONE_THREAD_PER_CHANNEL` doubles total storage.
+- **Resident assets:** `Streaming.cpp::ConvertBufferToObject` loads DFF geometry/clumps, TXDs, collision and animation alongside input data; decoding and instancing create peak overlap.
+- Streaming defaults to **at least 65 MiB** on PC; ordinary `ms_memoryUsed` counts archive sectors, not decoded residency. Custom-heap mode instead sums tagged allocations.
+- **World:** `src/core/FileLoader.cpp` loads persistent IPL entities and separately allocates collision spheres/boxes/vertices/triangles; `src/collision/ColModel.cpp` adds triangle-plane caches.
+- **Paths/models:** `src/control/PathFind.cpp` creates large temporary node arrays; permanent path tables reside in `ThePaths`. `src/modelinfo/ModelInfo.cpp` holds static model stores.
+- **Textures:** `src/rw/TxdStore.cpp` pools 1,385 dictionary descriptors, not texture pixels; `src/rw/TexturePools.cpp` is D3D-only and excluded under LIBRW.
+- **Scripts:** `src/control/Script.h/.cpp` statically reserve 260,512 script bytes on non-PS2 plus 128 script instances and other tables; budget these as BSS.
+- **Audio:** `src/audio/sampman_oal.cpp` mallocs the entire base SFX bank, 553,000 bytes of ped comments, and player speech; `audio/oal/stream.cpp` adds decoder/PCM buffers and OpenAL copies.
+- **Long-session risk:** repeated model/TXD/animation eviction interleaves variable allocations with persistent objects; realloc and CPU/backend copies increase peaks. Free bytes alone cannot guarantee a large contiguous allocation.
+- **Static sizing:** reserve entity/node/ColModel/TXD pools at startup; preserve world counts until full-map occupancy is measured. Trial dynamic caps: 48 peds, 32 vehicles, 192 objects, with mission headroom.
+- Keep texture pixels and streamed geometry in separate bounded arenas; use size-class slabs for small RW/animation allocations and a resettable loading arena for path/decode scratch.
+- **64 MiB proposal:** reserve **24 MiB** for firmware/system; divide the remaining **40 MiB** as follows, counting each allocation once.
+- Code/rodata **6**; permanent BSS, scripts, world/path data and object pools **7**; streaming input window **2**; resident geometry/collision/animation **8**.
+- Texture pixels/mips **8**; general heap/loading scratch **4**; audio **2**; framebuffer/depth/render scratch **1**; stacks **1**; emergency headroom **1**. Total: **40 MiB**.
+- The 2 MiB input cap requires checking the largest IMG entry and adapting oversized-entry loading; texture/audio caps require reduced assets and bounded SFX caching.
+- For a 240×432 renderer, two RGB565 buffers plus 16-bit depth consume 622,080 bytes (~0.593 MiB), leaving ~0.407 MiB within the render allowance.
+- **Early tracking:** instrument `MemoryMgr.cpp`, global new/delete, RW callbacks and raw audio mallocs with requested/actual/live/peak bytes, allocation counts, failures and MEMID/site tags; use fixed tracking storage.
+- Add pool occupancy/peak/failure counters in `templates.h`; heap largest-free-block/free-total/size-class metrics in `MemoryHeap.cpp`; per-asset resident/decoding peaks in `Streaming.cpp`.
+- `pMemoryTop` is only an address maximum, not live usage; calloc tracking also uses `size` rather than `num × size`. Add linker section sizes, stack watermarks, and backend texture/audio bytes; log mission, cutscene and long-drive peaks before finalizing caps.
