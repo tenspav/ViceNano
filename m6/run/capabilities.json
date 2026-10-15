@@ -1,0 +1,652 @@
+{
+  "pass": true,
+  "summary": {
+    "audio_bytes": 24399872,
+    "audio_seconds": 138.32126984126984,
+    "peak": 32768,
+    "exact_mixed_block_offset": 2805760,
+    "radio_seconds_matched_in_order": 60,
+    "radio_alignment_offsets": [
+      701440
+    ],
+    "simultaneous_voices": 6,
+    "radio_eof_count": 1,
+    "cycles": 28,
+    "audio_live_bytes": 131184,
+    "audio_peak_bytes": 131184,
+    "world_unloaded_heap_low": 6349592,
+    "world_unloaded_heap_high": 6349692,
+    "world_unloaded_heap_range": 100,
+    "mean_mix_us_per_8192_frames": 4641.015625,
+    "max_mix_us_per_8192_frames": 18900,
+    "emulated_mean_mix_percent": 2.4983983039855957,
+    "emulated_max_mix_percent": 10.1744384765625,
+    "app_sha256": "789eb9408b200112041441827018d2bff4f8e477b64d1661a30cb8ca97c7ccc7",
+    "capture_sha256": "1b099c204cdff7a1850c9b83b12b97b68d792b740f8476332d4f57270b462b98"
+  },
+  "frames": [
+    {
+      "file": "vcaudio-0.png",
+      "blocks": 556,
+      "frames": 4554752,
+      "mix_us": 2646939,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 15,
+      "stops": 14,
+      "radio_reads": 2738,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 14,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1122,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-1.png",
+      "blocks": 571,
+      "frames": 4677632,
+      "mix_us": 2689843,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 16,
+      "stops": 15,
+      "radio_reads": 2803,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 15,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1146,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-2.png",
+      "blocks": 585,
+      "frames": 4792320,
+      "mix_us": 2754659,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 17,
+      "stops": 16,
+      "radio_reads": 2862,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 16,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1170,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-3.png",
+      "blocks": 600,
+      "frames": 4915200,
+      "mix_us": 2834977,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 18,
+      "stops": 17,
+      "radio_reads": 2927,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 17,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1196,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-4.png",
+      "blocks": 614,
+      "frames": 5029888,
+      "mix_us": 2898581,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 19,
+      "stops": 18,
+      "radio_reads": 2987,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 18,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1218,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-5.png",
+      "blocks": 628,
+      "frames": 5144576,
+      "mix_us": 2940793,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 20,
+      "stops": 19,
+      "radio_reads": 3045,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 19,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1242,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-6.png",
+      "blocks": 643,
+      "frames": 5267456,
+      "mix_us": 2993936,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 21,
+      "stops": 20,
+      "radio_reads": 3110,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 20,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1268,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-7.png",
+      "blocks": 658,
+      "frames": 5390336,
+      "mix_us": 3068830,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 22,
+      "stops": 21,
+      "radio_reads": 3175,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 21,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1290,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-8.png",
+      "blocks": 667,
+      "frames": 5464064,
+      "mix_us": 3117336,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 22,
+      "stops": 21,
+      "radio_reads": 3228,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 21,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1314,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-9.png",
+      "blocks": 682,
+      "frames": 5586944,
+      "mix_us": 3190701,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 23,
+      "stops": 22,
+      "radio_reads": 3293,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 22,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1338,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-10.png",
+      "blocks": 696,
+      "frames": 5701632,
+      "mix_us": 3253117,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 24,
+      "stops": 23,
+      "radio_reads": 3352,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 23,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1362,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-11.png",
+      "blocks": 710,
+      "frames": 5816320,
+      "mix_us": 3287378,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 25,
+      "stops": 24,
+      "radio_reads": 3411,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 24,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1386,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-12.png",
+      "blocks": 725,
+      "frames": 5939200,
+      "mix_us": 3372449,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 26,
+      "stops": 25,
+      "radio_reads": 3476,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 25,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1410,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-13.png",
+      "blocks": 739,
+      "frames": 6053888,
+      "mix_us": 3445699,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 27,
+      "stops": 26,
+      "radio_reads": 3536,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 26,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1432,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-14.png",
+      "blocks": 754,
+      "frames": 6176768,
+      "mix_us": 3507914,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 28,
+      "stops": 27,
+      "radio_reads": 3601,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 27,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1458,
+      "render_ok": true
+    },
+    {
+      "file": "vcaudio-15.png",
+      "blocks": 768,
+      "frames": 6291456,
+      "mix_us": 3564300,
+      "max_mix_us": 18900,
+      "voices_peak": 6,
+      "starts": 29,
+      "stops": 28,
+      "radio_reads": 3660,
+      "radio_ends": 1,
+      "failures": 0,
+      "live": 131184,
+      "peak": 131184,
+      "cycles": 28,
+      "heap_low": 6349592,
+      "heap_high": 6349692,
+      "frame": 1482,
+      "render_ok": true
+    }
+  ],
+  "radio_fingerprints": [
+    {
+      "second": 0,
+      "source_frame": 17640,
+      "capture_frame": 719080
+    },
+    {
+      "second": 1,
+      "source_frame": 44100,
+      "capture_frame": 745540
+    },
+    {
+      "second": 2,
+      "source_frame": 88200,
+      "capture_frame": 789640
+    },
+    {
+      "second": 3,
+      "source_frame": 132300,
+      "capture_frame": 833740
+    },
+    {
+      "second": 4,
+      "source_frame": 176400,
+      "capture_frame": 877840
+    },
+    {
+      "second": 5,
+      "source_frame": 220500,
+      "capture_frame": 921940
+    },
+    {
+      "second": 6,
+      "source_frame": 264600,
+      "capture_frame": 966040
+    },
+    {
+      "second": 7,
+      "source_frame": 308700,
+      "capture_frame": 1010140
+    },
+    {
+      "second": 8,
+      "source_frame": 352800,
+      "capture_frame": 1054240
+    },
+    {
+      "second": 9,
+      "source_frame": 396900,
+      "capture_frame": 1098340
+    },
+    {
+      "second": 10,
+      "source_frame": 441000,
+      "capture_frame": 1142440
+    },
+    {
+      "second": 11,
+      "source_frame": 485100,
+      "capture_frame": 1186540
+    },
+    {
+      "second": 12,
+      "source_frame": 529200,
+      "capture_frame": 1230640
+    },
+    {
+      "second": 13,
+      "source_frame": 595350,
+      "capture_frame": 1296790
+    },
+    {
+      "second": 14,
+      "source_frame": 617400,
+      "capture_frame": 1318840
+    },
+    {
+      "second": 15,
+      "source_frame": 661500,
+      "capture_frame": 1362940
+    },
+    {
+      "second": 16,
+      "source_frame": 705600,
+      "capture_frame": 1407040
+    },
+    {
+      "second": 17,
+      "source_frame": 749700,
+      "capture_frame": 1451140
+    },
+    {
+      "second": 18,
+      "source_frame": 793800,
+      "capture_frame": 1495240
+    },
+    {
+      "second": 19,
+      "source_frame": 837900,
+      "capture_frame": 1539340
+    },
+    {
+      "second": 20,
+      "source_frame": 882000,
+      "capture_frame": 1583440
+    },
+    {
+      "second": 21,
+      "source_frame": 926100,
+      "capture_frame": 1627540
+    },
+    {
+      "second": 22,
+      "source_frame": 970200,
+      "capture_frame": 1671640
+    },
+    {
+      "second": 23,
+      "source_frame": 1014300,
+      "capture_frame": 1715740
+    },
+    {
+      "second": 24,
+      "source_frame": 1058400,
+      "capture_frame": 1759840
+    },
+    {
+      "second": 25,
+      "source_frame": 1102500,
+      "capture_frame": 1803940
+    },
+    {
+      "second": 26,
+      "source_frame": 1146600,
+      "capture_frame": 1848040
+    },
+    {
+      "second": 27,
+      "source_frame": 1190700,
+      "capture_frame": 1892140
+    },
+    {
+      "second": 28,
+      "source_frame": 1234800,
+      "capture_frame": 1936240
+    },
+    {
+      "second": 29,
+      "source_frame": 1278900,
+      "capture_frame": 1980340
+    },
+    {
+      "second": 30,
+      "source_frame": 1323000,
+      "capture_frame": 2024440
+    },
+    {
+      "second": 31,
+      "source_frame": 1367100,
+      "capture_frame": 2068540
+    },
+    {
+      "second": 32,
+      "source_frame": 1411200,
+      "capture_frame": 2112640
+    },
+    {
+      "second": 33,
+      "source_frame": 1455300,
+      "capture_frame": 2156740
+    },
+    {
+      "second": 34,
+      "source_frame": 1499400,
+      "capture_frame": 2200840
+    },
+    {
+      "second": 35,
+      "source_frame": 1543500,
+      "capture_frame": 2244940
+    },
+    {
+      "second": 36,
+      "source_frame": 1587600,
+      "capture_frame": 2289040
+    },
+    {
+      "second": 37,
+      "source_frame": 1631700,
+      "capture_frame": 2333140
+    },
+    {
+      "second": 38,
+      "source_frame": 1675800,
+      "capture_frame": 2377240
+    },
+    {
+      "second": 39,
+      "source_frame": 1719900,
+      "capture_frame": 2421340
+    },
+    {
+      "second": 40,
+      "source_frame": 1764000,
+      "capture_frame": 2465440
+    },
+    {
+      "second": 41,
+      "source_frame": 1808100,
+      "capture_frame": 2509540
+    },
+    {
+      "second": 42,
+      "source_frame": 1852200,
+      "capture_frame": 2553640
+    },
+    {
+      "second": 43,
+      "source_frame": 1896300,
+      "capture_frame": 2597740
+    },
+    {
+      "second": 44,
+      "source_frame": 1940400,
+      "capture_frame": 2641840
+    },
+    {
+      "second": 45,
+      "source_frame": 1984500,
+      "capture_frame": 2685940
+    },
+    {
+      "second": 46,
+      "source_frame": 2028600,
+      "capture_frame": 2730040
+    },
+    {
+      "second": 47,
+      "source_frame": 2072700,
+      "capture_frame": 2774140
+    },
+    {
+      "second": 48,
+      "source_frame": 2116800,
+      "capture_frame": 2818240
+    },
+    {
+      "second": 49,
+      "source_frame": 2160900,
+      "capture_frame": 2862340
+    },
+    {
+      "second": 50,
+      "source_frame": 2205000,
+      "capture_frame": 2906440
+    },
+    {
+      "second": 51,
+      "source_frame": 2249100,
+      "capture_frame": 2950540
+    },
+    {
+      "second": 52,
+      "source_frame": 2293200,
+      "capture_frame": 2994640
+    },
+    {
+      "second": 53,
+      "source_frame": 2337300,
+      "capture_frame": 3038740
+    },
+    {
+      "second": 54,
+      "source_frame": 2381400,
+      "capture_frame": 3082840
+    },
+    {
+      "second": 55,
+      "source_frame": 2425500,
+      "capture_frame": 3126940
+    },
+    {
+      "second": 56,
+      "source_frame": 2469600,
+      "capture_frame": 3171040
+    },
+    {
+      "second": 57,
+      "source_frame": 2513700,
+      "capture_frame": 3215140
+    },
+    {
+      "second": 58,
+      "source_frame": 2557800,
+      "capture_frame": 3259240
+    },
+    {
+      "second": 59,
+      "source_frame": 2601900,
+      "capture_frame": 3303340
+    }
+  ],
+  "disk_unchanged": true
+}

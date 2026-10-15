@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "summary": {
+    "audio_bytes": 24399872,
+    "audio_seconds": 138.32126984126984,
+    "peak": 32768,
+    "exact_mixed_block_offset": 2805760,
+    "radio_seconds_matched_in_order": 60,
+    "radio_alignment_offsets": [
+      701440
+    ],
+    "simultaneous_voices": 6,
+    "radio_eof_count": 1,
+    "cycles": 28,
+    "audio_live_bytes": 131184,
+    "audio_peak_bytes": 131184,
+    "world_unloaded_heap_low": 6349592,
+    "world_unloaded_heap_high": 6349692,
+    "world_unloaded_heap_range": 100,
+    "mean_mix_us_per_8192_frames": 4641.015625,
+    "max_mix_us_per_8192_frames": 18900,
+    "emulated_mean_mix_percent": 2.4983983039855957,
+    "emulated_max_mix_percent": 10.1744384765625,
+    "app_sha256": "789eb9408b200112041441827018d2bff4f8e477b64d1661a30cb8ca97c7ccc7",
+    "capture_sha256": "1b099c204cdff7a1850c9b83b12b97b68d792b740f8476332d4f57270b462b98"
+  }
+}

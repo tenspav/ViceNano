@@ -1,0 +1,27 @@
+{
+  "assets": [
+    {
+      "source": "AirHornL.wav",
+      "source_sha256": "9650d431c733a9d8fabc68cf2d2e042954e4c0810b6e4d44d912ef9463d80603",
+      "samples": 3200
+    },
+    {
+      "source": "BikeRev.wav",
+      "source_sha256": "3d758c42002350aa580ea7df7bb7901577a15f73cf50562aceff8ee91debb67e",
+      "samples": 3200
+    },
+    {
+      "source": "CameraL.wav",
+      "source_sha256": "55184a54a27cf58ac3e6cf647326c9d1d5a8b23b0dbd242c36ed02369edd188c",
+      "samples": 3200
+    },
+    {
+      "source": "FEVER.adf",
+      "source_sha256": "a229897120badbcf20d46df8f3225fe42425d8d9d5ae58e1c3f847e2b84ab16e",
+      "samples": 480000
+    }
+  ],
+  "radio_bytes": 247500,
+  "rate": 8000,
+  "format": "independent 256-sample IMA blocks (4-byte header + 128 bytes)"
+}

@@ -1,0 +1,82 @@
+{
+  "pass": true,
+  "reference_header_sha256": "0d0dee159e5d087c00d2cb71e89e6b595591431420f591f2e896b9b946a8f6d7",
+  "eAudioType_verbatim": true,
+  "retained_signatures": {
+    "Initialise": [
+      "void",
+      []
+    ],
+    "Terminate": [
+      "void",
+      []
+    ],
+    "Service": [
+      "void",
+      []
+    ],
+    "CreateEntity": [
+      "int32",
+      [
+        "eAudioType",
+        "void*"
+      ]
+    ],
+    "DestroyEntity": [
+      "void",
+      [
+        "int32"
+      ]
+    ],
+    "PlayOneShot": [
+      "void",
+      [
+        "int32",
+        "uint16",
+        "float"
+      ]
+    ],
+    "PlayFrontEndSound": [
+      "void",
+      [
+        "uint16",
+        "uint32"
+      ]
+    ],
+    "PlayFrontEndTrack": [
+      "void",
+      [
+        "uint32",
+        "uint8"
+      ]
+    ],
+    "StopFrontEndTrack": [
+      "void",
+      []
+    ],
+    "SetRadioChannel": [
+      "void",
+      [
+        "uint32",
+        "int32"
+      ]
+    ],
+    "SetEffectsMasterVolume": [
+      "void",
+      [
+        "uint8"
+      ]
+    ],
+    "SetMusicMasterVolume": [
+      "void",
+      [
+        "uint8"
+      ]
+    ],
+    "IsAudioInitialised": [
+      "uint8",
+      []
+    ]
+  },
+  "scope": "Reduced contract only; omitted full AudioManager methods are not linked."
+}

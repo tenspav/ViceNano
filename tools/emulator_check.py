@@ -27,6 +27,7 @@ ap.add_argument('--page', type=int, default=3)
 ap.add_argument('--tap-x', type=int, default=176)
 ap.add_argument('--debug', action='store_true')
 ap.add_argument('--dump-memory', action='store_true')
+ap.add_argument('--audio-out', action='store_true', help='Capture the existing I2S sink to output/audio.wav')
 a = ap.parse_args()
 root = a.nanorework.resolve()
 emu = root / 'emulator'
@@ -65,6 +66,7 @@ machine = ','.join([
     'nand-rsrc=' + str(emu / 'rsrc/rsrc-1.1.2.img1'),
     'buttons=8:home:150', 'state-dir=' + str(run / 'state'), 'screens-dir=' + str(run / 'screens'),
 ])
+if a.audio_out: machine += ',audio-out=' + str(run / 'audio.wav')
 cmd = [str(emu / 'build/qemu-system-arm'), '-M', machine, '-display', 'none',
        '-serial', 'none', '-monitor', 'none', '-qmp', 'stdio']
 if a.vnc: cmd += ['-vnc', a.vnc]

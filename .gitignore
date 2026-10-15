@@ -23,3 +23,8 @@ m4/generated/
 m5/generated/
 m5/converter
 m5/asset-check
+m6/generated/
+m6/host-check
+m6/capture-reference
+m6/*.pcm
+m6/run/audio.wav
