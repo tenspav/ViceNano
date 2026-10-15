@@ -1,0 +1,691 @@
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/iram.bin' (262144 bytes) at 0x22000000
+[nano7-fmc] nand-disk /home/pavliukov/ipodwork/NanoRework/dumps/ipod-disk.dd: image sector 0 = FTL LBA 49216
+[nano7-fmc] nand-patch /home/pavliukov/ipodwork/ViceNano/m7/run/app.patch: 272 blocks
+[nano7-fmc] nand-rsrc /home/pavliukov/ipodwork/NanoRework/emulator/rsrc/rsrc-1.1.2.img1: FTL LBA 0x3f2..0xaef3
+qemu-system-arm: info: nano7: ctx '/home/pavliukov/ipodwork/NanoRework/emulator/fixups/snap6-ctx.bin': r0=0x00000000 sp=0x0b402d48 lr=0x093d3f33 pc=0x093d31c7 (DRAM fmt, cpsr from ctx)
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/ram-full.bin' (67108864 bytes) at 0x08000000
+qemu-system-arm: info: nano7: overlay '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/overlay.bin' v2: 68 blocks of 64 KB at T0 (window 96670 us, retries 0x8, wanted 69, dropped 1)
+qemu-system-arm: info: nano7: torn-map '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/torn-map.bin': 2/1024 blocks of 64 KB watched (38 torn blocks covered by the overlay)
+qemu-system-arm: info: nano7: os-poke 0x0895c55c = 0x00000000 (was 0x00000001)
+qemu-system-arm: info: nano7: os-poke 0x0890b970 = 0x08a8d368 (was 0x098d1bb0)
+qemu-system-arm: info: nano7: os-poke 0x08a8d368 = 0x098d1bb0 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x08a8d36c = 0x0890b970 (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb0 = 0x08a786b4 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb4 = 0x08a8d368 (was 0x0890b970)
+qemu-system-arm: info: nano7: os-poke 0x08a786b4 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a786b8 = 0x098d1bb0 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab4 = 0x0b443bfc (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab8 = 0x08a786b4 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b443bfc = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x0b443c00 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec4 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec8 = 0x0b443bfc (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c84 = 0x08a82ef4 (was 0x08a82ef4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c88 = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef4 = 0x00000000 (was 0x00000000)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef8 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08817218 = 0x0b3bd724 (was 0x0b3c77e8)
+qemu-system-arm: info: nano7: os-poke 0x0899c0fc = 0xffffffff (was 0x00000000)
+[nano7-vic] pc=0x00000000 bank0 enable |= 0xa4630f8c -> 0xa4630f8c
+[nano7-vic] pc=0x00000000 bank1 enable |= 0x00700023 -> 0x00700023
+[nano7-dma] t=0.000 s engine 1 ch 2 start ctrl 0x8b01 cfg 0x84249000 0x22001638 -> 0x3ca00010 count 2048 next 0x8b3539c0
+[nano7-tmr] pc=0x00000000 ch1 CON = 0x00001140
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000002 (data0=6000 pre=0)
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000001 (data0=6000 pre=0)
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00004 value=0x00000001
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00000 value=0x00001703
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00010 value=0x00000000
+qemu-system-arm: info: nano7: resume-hw: VIC enables + 500 Hz tick restored
+qemu-system-arm: info: nano7: reset, PC=0x20000000
+[nano7-ui] save state 'boot' -> /home/pavliukov/ipodwork/ViceNano/m7/run/state/boot: ok (37 ms)
+[nano7-tmr] pc=0x00000000 ch1 first expiry (con=0x00001140 data0=6000 pre=0, 2000000 ns)
+[nano7-vic] pc=0x00000000 first assertion of IRQ 8 (enabled=1)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-vic] pc=0x00000000 first assertion of IRQ 32 (enabled=1)
+[nano7-lcd] t=0.018 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x0)
+[nano7-dma] t=0.024 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-vic] pc=0x00000000 first assertion of IRQ 16 (enabled=1)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.047 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.071 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-clkcon] pc=0x22000458 R32 addr=0x3c50004c
+[nano7-clkcon] pc=0x22000462 W32 addr=0x3c50004c value=0xffffffbf
+[nano7-clkcon] pc=0x22000488 R32 addr=0x3c50006c
+[nano7-clkcon] pc=0x22000492 W32 addr=0x3c50006c value=0xffffefff
+[nano7-vic] pc=0x00000000 first assertion of IRQ 22 (enabled=1)
+[nano7-dma] t=0.094 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-torn] STALE read pc=0x08007180 addr=0x099a1564 size=4 val=0x0b40344c (block 0x099a0000 P)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.118 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32) (further edges not logged)
+[nano7-dma] t=0.142 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.165 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.189 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.213 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.237 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.261 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.285 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-pmu] R reg 0x10 -> 0x00
+[nano7-clkcon] pc=0x0800ad5e R32 addr=0x3c500044
+[nano7-clkcon] pc=0x2200036e R32 addr=0x3c50001c
+[nano7-clkcon] pc=0x2200037c W32 addr=0x3c50001c value=0xbfffffff
+[nano7-clkcon] pc=0x22000388 R32 addr=0x3c50001c
+[nano7-vic] pc=0x08426f60 R32 addr=0x39700014
+[nano7-b3cf] pc=0x0842a5be R32 addr=0x3cf00034
+[nano7-b3cf] pc=0x0842a5c2 W32 addr=0x3cf00034 value=0xffffffff
+[nano7-b3cf] pc=0x0842a5cc W32 addr=0x3cf001e0 value=0x0001000f
+[nano7-fmc] pc=0x0840b1fe CMD 0xef ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=2 80 01 00 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x080d3598 GO 0x000002e0 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0810d3f4 GO 0x000100e4 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xe7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0xef ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=2 80 01 00 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x080d3598 GO 0x000002e0 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0810d3f4 GO 0x000100e4 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xe7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-dma] t=0.309 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.333 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #1 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/4
+[nano7-vic] pc=0x080d0cdc first assertion of IRQ 54 (enabled=1)
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #2 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/16388
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-dma] t=0.356 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #3 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/16448
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #4 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/262208
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #5 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/262212
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #6 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/278596
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #7 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/278656
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #8 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/524416
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #9 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/524420
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #10 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/540804
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #11 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/540864
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #12 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/786624
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #13 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/786628
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #14 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/803012
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #15 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/803072
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #16 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1048832
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #17 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1048836
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #18 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1065220
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #19 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1065280
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #20 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1311040
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #21 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1311044
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #22 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1327428
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #23 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1327468
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #24 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=4840 dma in/out 0/1491308
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #25 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1491312
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #26 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1507696
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x0840b1fe CMD 0x67 ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 00 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x67 ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 00 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x6a ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 08 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x6a ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 08 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #27 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1507716
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #28 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=2475 dma in/out 0/1589636
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #29 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1589640
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #30 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1606024
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #31 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1606084
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #32 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1851844
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #33 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1851848
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #34 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1868232
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] log limit reached, going quiet
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0000 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0008 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0010 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0018 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0000 size=8 val=0x9567b4409567874 (block 0x099a0000 P)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0008 size=8 val=0x09567844 (block 0x099a0000 P)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0010 size=8 val=0x40a00000024 (block 0x099a0000 P)

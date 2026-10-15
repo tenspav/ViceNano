@@ -54,7 +54,7 @@
 | M4 reVC core | ![done](https://img.shields.io/badge/done-brightgreen) | reduced reVC viewer renders a VC building ([m4](m4/REPORT.md)) |
 |  M5 world stream| ![done](https://img.shields.io/badge/done-brightgreen) | three building cells stream below 18 MiB; LRU and 64 evictions verified ([m5](m5/REPORT.md)) |
 | M6 audio | ![done](https://img.shields.io/badge/done-brightgreen) | SFX + 60-second radio through DMA/I2S; capture, timing and 28 cycles verified ([m6](m6/REPORT.md)) |
-| M7 controls | ![planned](https://img.shields.io/badge/planned-lightgrey) | touch + BT gamepad drive the game |
+| M7 controls | ![wip](https://img.shields.io/badge/building-orange) | touch + BT gamepad drive the game ([map](docs/m7-controls-map.md)) |
 | M8 performance | ![planned](https://img.shields.io/badge/planned-lightgrey) | 24+ fps sustained with unlocked clocks |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
 
@@ -71,7 +71,7 @@
 6. ⬜ **Chainloader** — homebrew app hands the device to a bare-metal game OS with all 64 MB
 7. ⬜ **ViceNano boots in the emulator** — full RAM, unlocked clocks, world streams from NAND
 8. ⬜ **ViceNano on real hardware** — dualboot: hold buttons at boot, original OS untouched
-9. ⬜ **Mini handheld** — 3D-printed case + Bluetooth gamepad + battery
+9. ⬜ **Mini handheld** — 3D-printed cradle + 8BitDo Lite 2 gamepad (BT HID pairing already works in NanoEmu) + battery
 
 Asset math is closed: the whole game fits via PVRTC 4bpp textures (39 MB) or 8bpp palettes (147 MB), with 1,000-3,000 concurrent textures in the streaming window ([`docs/texture-budget.md`](docs/texture-budget.md)).
 
