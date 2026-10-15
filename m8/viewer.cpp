@@ -22,28 +22,27 @@ using namespace rw;
 static unsigned errors, loadedHeap, heapLow = ~0u;
 static bool ready, balanced = true;
 
-// Preallocated overlay buffer for non-blocking glDrawArrays primitive rendering
-static gles1::Im2DVertex overlay[128 * 6];
+// Preallocated overlay buffer for non-blocking single-draw 2D orthographic rendering
+struct OverlayVertex {
+ float x, y;
+ uint8_t r, g, b, a;
+};
+static OverlayVertex overlay[2048 * 6];
 static unsigned quads;
 
+static void flushOverlay2D();
+
 static void tile(int x, int y, int w, int h, unsigned r, unsigned g, unsigned b) {
- if (quads >= 128) {
-  im2d::RenderPrimitive(PRIMTYPETRILIST, overlay, quads * 6);
-  quads = 0;
- }
- gles1::Im2DVertex *v = overlay + quads * 6;
- gles1::Im2DVertex p[4];
- memset(p, 0, sizeof(p));
- p[0].x = x;     p[0].y = y;
- p[1].x = x + w; p[1].y = y;
- p[2].x = x + w; p[2].y = y + h;
- p[3].x = x;     p[3].y = y + h;
- for (int i = 0; i < 4; i++) {
-  p[i].w = 1.0f;
-  p[i].setColor(r, g, b, 255);
- }
- v[0] = p[0]; v[1] = p[1]; v[2] = p[2];
- v[3] = p[0]; v[4] = p[2]; v[5] = p[3];
+ if (quads >= 2048) flushOverlay2D();
+ OverlayVertex *v = overlay + quads * 6;
+ float fx = (float)x, fy = (float)y, fw = (float)w, fh = (float)h;
+ uint8_t ur = (uint8_t)r, ug = (uint8_t)g, ub = (uint8_t)b;
+ v[0] = {fx,      fy,      ur, ug, ub, 255};
+ v[1] = {fx + fw, fy,      ur, ug, ub, 255};
+ v[2] = {fx + fw, fy + fh, ur, ug, ub, 255};
+ v[3] = {fx,      fy,      ur, ug, ub, 255};
+ v[4] = {fx + fw, fy + fh, ur, ug, ub, 255};
+ v[5] = {fx,      fy + fh, ur, ug, ub, 255};
  quads++;
 }
 
@@ -51,11 +50,45 @@ static void label(int x, int y, const char *text) {
  for (; *text; text++, x += 6) {
   const uint8_t *glyph = hb_font8x8_glyph(*text);
   if (!glyph) continue;
-  for (int row = 0; row < 8; row++)
-   for (int col = 0; col < 6; col++)
-    if (glyph[row] & (0x80 >> col))
-     tile(y + row, x + col, 1, 1, 220, 230, 240);
+  for (int row = 0; row < 8; row++) {
+   uint8_t bits = glyph[row];
+   if (!bits) continue;
+   int col = 0;
+   while (col < 6) {
+    if (bits & (0x80 >> col)) {
+     int start = col;
+     while (col < 6 && (bits & (0x80 >> col))) col++;
+     tile(y + row, x + start, 1, col - start, 220, 230, 240);
+    } else {
+     col++;
+    }
+   }
+  }
  }
+}
+
+static void flushOverlay2D() {
+ if (quads == 0) return;
+ glMatrixMode(GL_PROJECTION);
+ glLoadIdentity();
+ glOrthof(0, 240.0f, 432.0f, 0, -1.0f, 1.0f);
+ glMatrixMode(GL_MODELVIEW);
+ glLoadIdentity();
+ glDisable(GL_DEPTH_TEST);
+ glDepthMask(GL_FALSE);
+ glDisable(GL_CULL_FACE);
+ glDisable(GL_BLEND);
+ glDisable(GL_TEXTURE_2D);
+ glBindBuffer(GL_ARRAY_BUFFER, 0);
+ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+ glEnableClientState(GL_VERTEX_ARRAY);
+ glVertexPointer(2, GL_FLOAT, sizeof(OverlayVertex), &overlay[0].x);
+ glEnableClientState(GL_COLOR_ARRAY);
+ glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(OverlayVertex), &overlay[0].r);
+ glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+ glDisableClientState(GL_NORMAL_ARRAY);
+ glDrawArrays(GL_TRIANGLES, 0, quads * 6);
+ quads = 0;
 }
 
 // Profiling metrics
@@ -139,11 +172,6 @@ extern "C" void gl_app_frame(int w, int h, uint32_t frame) {
 
  // 4. 2D Overlay, FPS Counter & Profiling
  uint32_t tOverlay0 = hb_time_uptime_us();
- SetRenderStatePtr(TEXTURERASTER, nil);
- SetRenderState(ZTESTENABLE, 0);
- SetRenderState(ZWRITEENABLE, 0);
- SetRenderState(CULLMODE, CULLNONE);
- SetRenderState(VERTEXALPHA, 0);
  quads = 0;
 
  // Compute FPS
@@ -204,17 +232,19 @@ extern "C" void gl_app_frame(int w, int h, uint32_t frame) {
   lastInputUs
  };
 
+ // Single solid background plate covering all 21 bit rows
+ tile(8, 148, 32 * 7, 21 * 4, 0, 0, 0);
+
  for (unsigned row = 0; row < 21; row++) {
   for (unsigned i = 0; i < 32; i++) {
    unsigned b = (values[row] >> i) & 1;
-   tile(8 + i * 7, 148 + row * 4, 5, 3, b * 255, b * 255, b * 255);
+   if (b) {
+    tile(8 + i * 7, 148 + row * 4, 5, 3, 255, 255, 255);
+   }
   }
  }
 
- if (quads > 0) {
-  im2d::RenderPrimitive(PRIMTYPETRILIST, overlay, quads * 6);
-  quads = 0;
- }
+ flushOverlay2D();
  lastOverlayUs = hb_time_uptime_us() - tOverlay0;
 
  uint32_t totalFrameUs = hb_time_uptime_us() - frameStart;

@@ -10,6 +10,7 @@ using namespace rw;
 
 extern "C" {
 #include "hb_sdk.h"
+#include "gl.h"
 }
 
 float playerX,playerZ,cameraYaw,cameraPitch;
@@ -79,14 +80,24 @@ bool NanoFrame(unsigned tick){
  uint32_t t_d0 = hb_time_uptime_us();
  RGBA bg={13,20,64,255};RwCameraClear(camera,&bg,Camera::CLEARIMAGE|Camera::CLEARZ);RwCameraBeginUpdate(camera);
  RwRenderStateSet(rwRENDERSTATEZTESTENABLE,(void*)1);RwRenderStateSet(rwRENDERSTATEZWRITEENABLE,(void*)1);RwRenderStateSet(rwRENDERSTATECULLMODE,(void*)CULLBACK);
- SetRenderState(ALPHATESTFUNC,ALPHAALWAYS);StreamRender();
+ SetRenderState(ALPHATESTFUNC,ALPHAALWAYS);
+ gles1::applyStates();
+ glBindBuffer(GL_ARRAY_BUFFER,0);glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+ glEnableClientState(GL_VERTEX_ARRAY);glEnableClientState(GL_COLOR_ARRAY);glEnableClientState(GL_TEXTURE_COORD_ARRAY);glDisableClientState(GL_NORMAL_ARRAY);
+ m8ResetRenderState();
+ StreamRender();
  // A world-space yellow diamond is the reduced player marker (no ped/physics).
  static gles1::Im3DVertex marker[6];
  const float dx[6]={-4,0,4,-4,4,0},dy[6]={0,12,0,0,0,-4};
  for(int i=0;i<6;i++){marker[i].position={playerX+dx[i],worldPacks[0].y+dy[i],playerZ};marker[i].setColor(255,220,0,255);}
- SetRenderStatePtr(TEXTURERASTER,nil);SetRenderState(CULLMODE,CULLNONE);
- im3d::Transform(marker,6,nil,im3d::VERTEXXYZ|im3d::VERTEXRGBA|im3d::ALLOPAQUE);
- im3d::RenderPrimitive(PRIMTYPETRILIST);im3d::End();
+ glDisable(GL_TEXTURE_2D);
+ glDisable(GL_BLEND);
+ glDisable(GL_CULL_FACE);
+ glVertexPointer(3, GL_FLOAT, sizeof(gles1::Im3DVertex), &marker[0].position);
+ glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(gles1::Im3DVertex), (uint8*)marker + offsetof(gles1::Im3DVertex, r));
+ glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+ glDrawArrays(GL_TRIANGLES, 0, 6);
+ glEnableClientState(GL_TEXTURE_COORD_ARRAY);
  RwCameraEndUpdate(camera);
  nanoDrawUs = hb_time_uptime_us() - t_d0;
  return true;

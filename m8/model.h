@@ -8,3 +8,4 @@ struct NanPack { const NanTexture *textures; const NanPart *parts; unsigned numT
 void unloadBlock(unsigned slot);
 bool loadBlock(unsigned slot,const NanPack &pack);
 void renderBlock(unsigned slot);
+void m8ResetRenderState();

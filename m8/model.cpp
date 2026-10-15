@@ -76,47 +76,65 @@ static void m8Uninstance(ObjPipeline*, Atomic *a) {
  gles1::freeInstanceData(a->geometry);
 }
 
+static GLuint sCurrentTex = 0xFFFFFFFF;
+static int sCurrentBlend = -1;
+
+void m8ResetRenderState() {
+ sCurrentTex = 0xFFFFFFFF;
+ sCurrentBlend = -1;
+ glDisable(GL_BLEND);
+ glDepthMask(GL_TRUE);
+}
+
 static void m8Render(ObjPipeline *p, Atomic *a) {
+ if (engine->currentCamera) {
+  Sphere *s = a->getWorldBoundingSphere();
+  Sphere testSphere = *s;
+  testSphere.radius *= 1.05f;
+  if (engine->currentCamera->frustumTestSphere(&testSphere) == Camera::SPHEREOUTSIDE)
+   return;
+ }
  m8Instance(p, a);
  Geometry *g = a->geometry;
  if (!g->instData) return;
  gles1::Header *h = (gles1::Header*)g->instData;
  Mesh *meshes = g->meshHeader->getMeshes();
- gles1::restore3D();
- gles1::loadWorld(a->getFrame()->getLTM());
- uintptr savedTex = (uintptr)GetRenderStatePtr(TEXTURERASTER);
- uint32 savedAlpha = GetRenderState(VERTEXALPHA);
- glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
  for (unsigned j = 0; j < h->count; j++) {
   Mesh *mesh = &meshes[j];
+  if (mesh->numIndices == 0) continue;
   Texture *t = mesh->material->texture;
   Raster *r = t ? t->raster : nil;
-  SetRenderStatePtr(TEXTURERASTER, r);
-  SetRenderState(VERTEXALPHA, h->meshes[j].alpha || (r && r->format == Raster::C4444));
-  if (t) {
-   SetRenderState(TEXTUREFILTER, t->getFilter());
-   SetRenderState(TEXTUREADDRESSU, t->getAddressU());
-   SetRenderState(TEXTUREADDRESSV, t->getAddressV());
+  GLuint tex = r ? gles1::nativeRaster(r)->texture : 0;
+  if (tex != sCurrentTex) {
+   if (tex) {
+    if (sCurrentTex == 0 || sCurrentTex == 0xFFFFFFFF) glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, tex);
+   } else {
+    glDisable(GL_TEXTURE_2D);
+   }
+   sCurrentTex = tex;
   }
-  gles1::applyStates();
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  int blend = (h->meshes[j].alpha || (r && r->format == Raster::C4444)) ? 1 : 0;
+  if (blend != sCurrentBlend) {
+   if (blend) {
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glDepthMask(GL_FALSE);
+   } else {
+    glDisable(GL_BLEND);
+    glDepthMask(GL_TRUE);
+   }
+   sCurrentBlend = blend;
+  }
   gles1::Im3DVertex *v = h->meshes[j].vertices;
-  glEnableClientState(GL_VERTEX_ARRAY);
   glVertexPointer(3, GL_FLOAT, sizeof(gles1::Im3DVertex), v);
-  glEnableClientState(GL_COLOR_ARRAY);
   glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(gles1::Im3DVertex), (uint8*)v + offsetof(gles1::Im3DVertex, r));
-  glDisableClientState(GL_NORMAL_ARRAY);
-  if (r) {
-   glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+  if (tex) {
    glTexCoordPointer(2, GL_FLOAT, sizeof(gles1::Im3DVertex), (uint8*)v + offsetof(gles1::Im3DVertex, u));
-  } else {
-   glDisableClientState(GL_TEXTURE_COORD_ARRAY);
   }
   glDrawArrays(GL_TRIANGLES, 0, mesh->numIndices);
  }
- glBindBuffer(GL_ARRAY_BUFFER, 0);
- SetRenderStatePtr(TEXTURERASTER, (void*)savedTex);
- SetRenderState(VERTEXALPHA, savedAlpha);
 }
 
 static ObjPipeline *m8Pipe = nil;
@@ -136,6 +154,7 @@ struct ModelSlot {
  Frame *frame;
  RpClump *clump;
  RwTexDictionary *dictionary;
+ Sphere sphere;
 };
 static ModelSlot slots[2];
 static ModelSlot *current;
@@ -150,6 +169,8 @@ void unloadBlock(unsigned slot){
 
 bool loadBlock(unsigned slot,const NanPack &pack){
  current=&slots[slot];
+ current->sphere.center = { pack.x, pack.y, pack.z };
+ current->sphere.radius = 95.0f;
  const NanTexture *modelTextures=pack.textures;
  const NanPart *modelParts=pack.parts;
  if(current->frame || pack.numTextures>64)return false;

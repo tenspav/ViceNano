@@ -38,7 +38,7 @@
 |---|---|---|
 | 🔬 Research | ![100%](https://img.shields.io/badge/100%25-brightgreen) | every chip documented |
 | 🖥️ Emulator | ![98%](https://img.shields.io/badge/98%25-brightgreen) | boots real OS, window, audio, 3D games, save states, HUD, clock profiles |
-| 🔀 Dualboot | ![50%](https://img.shields.io/badge/50%25-yellow) | chainloader plan validated; pieces 1-2 of 4 built |
+| 🔀 Dualboot | ![75%](https://img.shields.io/badge/75%25-yellowgreen) | chainloader round trip works in NanoEmu (OS -> bare metal -> OS) |
 | 🎮 GPU access | ![90%](https://img.shields.io/badge/90%25-brightgreen) | full NanoGL renderer with VGP interpreter; PVRTC pending |
 | 🏝️ Engine port | ![80%](https://img.shields.io/badge/80%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![100%](https://img.shields.io/badge/100%25-brightgreen) | touch + BT classic HID host verified |
