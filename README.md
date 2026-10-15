@@ -51,7 +51,7 @@
 | M1 cube | ![done](https://img.shields.io/badge/done-brightgreen) | textured 3D, native indexed draws |
 | M2 librw | ![done](https://img.shields.io/badge/done-brightgreen) | reVC's graphics library runs on NanoEmu |
 | M3 VC model | ![done](https://img.shields.io/badge/done-brightgreen) | real Vice City asset renders ([cone](m3/REPORT.md)) |
-| M4 reVC core | ![wip](https://img.shields.io/badge/building-orange) | reduced reVC viewer renders a VC building ([m4](m4/REPORT.md)) |
+| M4 reVC core | ![done](https://img.shields.io/badge/done-brightgreen) | reduced reVC viewer renders a VC building ([m4](m4/REPORT.md)) |
 |  M5 world stream| ![done](https://img.shields.io/badge/done-brightgreen) | three building cells stream below 18 MiB; LRU and 64 evictions verified ([m5](m5/REPORT.md)) |
 | M6 audio | ![planned](https://img.shields.io/badge/planned-lightgrey) | SFX + radio through our audio path |
 | M7 controls | ![planned](https://img.shields.io/badge/planned-lightgrey) | touch + BT gamepad drive the game |
