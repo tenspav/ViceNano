@@ -28,6 +28,7 @@ ap.add_argument('--tap-x', type=int, default=176)
 ap.add_argument('--debug', action='store_true')
 ap.add_argument('--dump-memory', action='store_true')
 ap.add_argument('--audio-out', action='store_true', help='Capture the existing I2S sink to output/audio.wav')
+ap.add_argument('--clock-profile', default=os.environ.get('NANO7_CLOCK_PROFILE', 'MAX'), help='Clock profile: STOCK, SAFE, or MAX')
 a = ap.parse_args()
 root = a.nanorework.resolve()
 emu = root / 'emulator'
@@ -81,7 +82,7 @@ if a.debug: cmd += ['-d', 'int', '-D', str(run / 'cpu-debug.log')]
 with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlog:
     proc = subprocess.Popen(cmd, cwd=run, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                             stderr=log, text=True, bufsize=1,
-                            env={**os.environ, 'NANO7_MBXR_STATS': '1'})
+                            env={**os.environ, 'NANO7_MBXR_STATS': '1', 'NANO7_CLOCK_PROFILE': a.clock_profile})
     def receive():
         while True:
             line = proc.stdout.readline()

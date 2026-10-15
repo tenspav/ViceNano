@@ -37,9 +37,9 @@
 | Stage | Progress | Status |
 |---|---|---|
 | 🔬 Research | ![100%](https://img.shields.io/badge/100%25-brightgreen) | every chip documented |
-| 🖥️ Emulator | ![97%](https://img.shields.io/badge/97%25-brightgreen) | boots real OS, window, audio, **renders 3D games** |
-| 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
-| 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
+| 🖥️ Emulator | ![98%](https://img.shields.io/badge/98%25-brightgreen) | boots real OS, window, audio, 3D games, save states, HUD, clock profiles |
+| 🔀 Dualboot | ![50%](https://img.shields.io/badge/50%25-yellow) | chainloader plan validated; pieces 1-2 of 4 built |
+| 🎮 GPU access | ![90%](https://img.shields.io/badge/90%25-brightgreen) | full NanoGL renderer with VGP interpreter; PVRTC pending |
 | 🏝️ Engine port | ![80%](https://img.shields.io/badge/80%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![100%](https://img.shields.io/badge/100%25-brightgreen) | touch + BT classic HID host verified |
 
@@ -58,17 +58,17 @@
 | M8 performance | ![wip](https://img.shields.io/badge/building-orange) | 24+ fps sustained with unlocked clocks |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
 
-**Overall: research 100% + emulator 97% + engine 50% = the game itself is the remaining work.**
+**Overall: research 100% + emulator 98% + engine 80% = only performance tuning and the device jump remain.**
 
 ## The stages
 
 0. ✅ **3D on real hardware is proven** — [nano7-untethered](https://github.com/olievans123/nano7-untethered) ships native Mario Kart 64 (30 fps) and Super Mario 64 ports with an OpenGL ES renderer + tilt steering on this exact device
 1. ✅ **Map the hardware** — done in NanoEmu, every chip documented
 2. ✅ **Emulator as testbed** — NanoEmu boots the real RetailOS with a live window
-3. 🔜 **Emulated GPU renders real 3D** — MBX model drafted, needs real rendering
-4. ⬜ **reVC builds for ARM Linux** — first proof on a PC, no iPod involved
-5. ⬜ **GLES1 backend for librw** — the GPU speaks OpenGL ES 1.1 fixed pipeline
-6. ⬜ **Chainloader** — homebrew app hands the device to a bare-metal game OS with all 64 MB
+3. ✅ **Emulated GPU renders real 3D** — full NanoGL renderer with VGP interpreter
+4. ✅ **reVC builds for ARM** — reduced reVC viewer runs in NanoEmu (M4)
+5. ✅ **GLES1 backend for librw** — verified through M2-M5
+6. 🔜 **Chainloader** — plan validated, payload + hardware shutdown pieces built
 7. ⬜ **ViceNano boots in the emulator** — full RAM, unlocked clocks, world streams from NAND
 8. ⬜ **ViceNano on real hardware** — dualboot: hold buttons at boot, original OS untouched
 9. ⬜ **Mini handheld** — 3D-printed cradle + 8BitDo Lite 2 gamepad (BT HID pairing already works in NanoEmu) + battery
