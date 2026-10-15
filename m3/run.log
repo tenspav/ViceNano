@@ -1,0 +1,54 @@
+make: Entering directory '/home/pavliukov/ipodwork/ViceNano/m3'
+make: Nothing to be done for 'all'.
+make: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m3'
+/Apps/Executables/Mario Kart.hbapp: 1111628 bytes from /home/pavliukov/ipodwork/ViceNano/m3/vcmodel.hbapp over 272 blocks (FTL LBA 0x1c85b..)
+wrote /home/pavliukov/ipodwork/ViceNano/m3/run/app.patch (272 blocks)
+Renderer replaces Mario Kart only inside the NAND overlay; source opened read-only
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 87293,
+      "colored_pixels": 10279
+    },
+    {
+      "background_pixels": 87404,
+      "colored_pixels": 10053
+    },
+    {
+      "background_pixels": 87249,
+      "colored_pixels": 10017
+    },
+    {
+      "background_pixels": 88560,
+      "colored_pixels": 8981
+    },
+    {
+      "background_pixels": 89532,
+      "colored_pixels": 8491
+    },
+    {
+      "background_pixels": 88401,
+      "colored_pixels": 9150
+    },
+    {
+      "background_pixels": 87952,
+      "colored_pixels": 9455
+    },
+    {
+      "background_pixels": 88494,
+      "colored_pixels": 9318
+    }
+  ],
+  "changed_pixels": [
+    11923,
+    13305,
+    13627,
+    14024,
+    15523,
+    16085,
+    15883
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "93a741914261fbe387d7c390ccd8fc8f57c3ecb0aa3d18e01524fc66ac7ea2a8"
+}

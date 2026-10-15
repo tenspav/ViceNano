@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "file": "rwcube-0.png",
+      "white": 19614,
+      "red": 19613,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-1.png",
+      "white": 19964,
+      "red": 20584,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-2.png",
+      "white": 17206,
+      "red": 17939,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-3.png",
+      "white": 17810,
+      "red": 18453,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-4.png",
+      "white": 19825,
+      "red": 20388,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-5.png",
+      "white": 19135,
+      "red": 18874,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-6.png",
+      "white": 20034,
+      "red": 19211,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    },
+    {
+      "file": "rwcube-7.png",
+      "white": 18326,
+      "red": 17628,
+      "heap": 6488344,
+      "baseline": 6488344,
+      "no_errors": true,
+      "supported": true,
+      "overlay": [
+        5,
+        121,
+        141
+      ],
+      "overlay_blend": true
+    }
+  ]
+}

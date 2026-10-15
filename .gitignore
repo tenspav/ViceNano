@@ -1,0 +1,17 @@
+**/build/
+**/arm-build/
+**/host-build/
+**/__pycache__/
+**/*.hbapp
+**/*.elf
+**/*.bin
+**/*.dd
+**/*.ppm
+**/*.patch
+**/state/
+**/cpu-debug.log
+m2/host-check
+m3/converter
+m3/asset-check
+m3/generated/
+core

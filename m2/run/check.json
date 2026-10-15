@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 59208,
+      "colored_pixels": 23151
+    },
+    {
+      "background_pixels": 56993,
+      "colored_pixels": 24411
+    },
+    {
+      "background_pixels": 62582,
+      "colored_pixels": 21635
+    },
+    {
+      "background_pixels": 61160,
+      "colored_pixels": 22361
+    },
+    {
+      "background_pixels": 57251,
+      "colored_pixels": 24250
+    },
+    {
+      "background_pixels": 60218,
+      "colored_pixels": 22562
+    },
+    {
+      "background_pixels": 57739,
+      "colored_pixels": 23706
+    },
+    {
+      "background_pixels": 61750,
+      "colored_pixels": 21787
+    }
+  ],
+  "changed_pixels": [
+    27364,
+    26618,
+    26634,
+    31024,
+    26581,
+    25912,
+    26976
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "16132c7423c8e9e40ca76eee1a06c71e818e0202024a2c56009744800733521d"
+}

@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "file": "vcmodel-0.png",
+      "red_pixels": 9364,
+      "white_pixels": 2533,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 2,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488648,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-1.png",
+      "red_pixels": 9136,
+      "white_pixels": 2649,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 2,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488648,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-2.png",
+      "red_pixels": 9098,
+      "white_pixels": 2837,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 2,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488648,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-3.png",
+      "red_pixels": 8063,
+      "white_pixels": 2565,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 2,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488648,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-4.png",
+      "red_pixels": 7571,
+      "white_pixels": 2107,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 2,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488648,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-5.png",
+      "red_pixels": 8231,
+      "white_pixels": 2559,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488640,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-6.png",
+      "red_pixels": 8528,
+      "white_pixels": 2701,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488640,
+      "rw_live": 13144,
+      "heap": 6477068
+    },
+    {
+      "file": "vcmodel-7.png",
+      "red_pixels": 8392,
+      "white_pixels": 2301,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6488640,
+      "rw_live": 13144,
+      "heap": 6477068
+    }
+  ],
+  "changed_pixels": [
+    11923,
+    13305,
+    13627,
+    14024,
+    15523,
+    16085,
+    15883
+  ],
+  "heap_range": 0
+}

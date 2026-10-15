@@ -1,0 +1,106 @@
+{
+  "note": "Experimental explicit zero-size VBO storage release before deletion. Rejected by M3 no-error gate; default atomic pipeline now uses CPU arrays. Earlier ordinary VBO deletion lost about 1000 bytes per reload.",
+  "experimental_capture": {
+    "passed": false,
+    "frames": [
+      {
+        "file": "vcmodel-0.png",
+        "red_pixels": 7491,
+        "white_pixels": 2105,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 2,
+        "rw_live": 12244,
+        "heap": 6477024
+      },
+      {
+        "file": "vcmodel-1.png",
+        "red_pixels": 8329,
+        "white_pixels": 2637,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 3,
+        "rw_live": 12244,
+        "heap": 6476956
+      },
+      {
+        "file": "vcmodel-2.png",
+        "red_pixels": 8490,
+        "white_pixels": 2510,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 3,
+        "rw_live": 12244,
+        "heap": 6476956
+      },
+      {
+        "file": "vcmodel-3.png",
+        "red_pixels": 9102,
+        "white_pixels": 2592,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 3,
+        "rw_live": 12244,
+        "heap": 6476956
+      },
+      {
+        "file": "vcmodel-4.png",
+        "red_pixels": 10011,
+        "white_pixels": 3054,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 3,
+        "rw_live": 12244,
+        "heap": 6476956
+      },
+      {
+        "file": "vcmodel-5.png",
+        "red_pixels": 9346,
+        "white_pixels": 2420,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 4,
+        "rw_live": 12244,
+        "heap": 6476884
+      },
+      {
+        "file": "vcmodel-6.png",
+        "red_pixels": 10565,
+        "white_pixels": 3202,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 4,
+        "rw_live": 12244,
+        "heap": 6476884
+      },
+      {
+        "file": "vcmodel-7.png",
+        "red_pixels": 9364,
+        "white_pixels": 2533,
+        "no_errors": false,
+        "balanced_unloads": true,
+        "supported": true,
+        "cycles": 4,
+        "rw_live": 12244,
+        "heap": 6476884
+      }
+    ],
+    "changed_pixels": [
+      11581,
+      12434,
+      13178,
+      13726,
+      13708,
+      15070,
+      14146
+    ],
+    "heap_range": 140
+  }
+}

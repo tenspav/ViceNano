@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "file": "cube-0.png",
+      "white": 19320,
+      "red": 18776,
+      "counter": 106,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-1.png",
+      "white": 18626,
+      "red": 18976,
+      "counter": 212,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-2.png",
+      "white": 17779,
+      "red": 18208,
+      "counter": 70,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-3.png",
+      "white": 16878,
+      "red": 17429,
+      "counter": 82,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-4.png",
+      "white": 18670,
+      "red": 19308,
+      "counter": 204,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-5.png",
+      "white": 19713,
+      "red": 18870,
+      "counter": 200,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-6.png",
+      "white": 17164,
+      "red": 16387,
+      "counter": 152,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    },
+    {
+      "file": "cube-7.png",
+      "white": 19060,
+      "red": 18639,
+      "counter": 70,
+      "base_heap": 7277564,
+      "heap": 7277564,
+      "alpha_reject": true,
+      "alpha_accept": true,
+      "blend": true,
+      "no_gl_errors": true,
+      "heap_within_4096": true
+    }
+  ]
+}

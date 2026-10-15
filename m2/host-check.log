@@ -1,0 +1,10 @@
+-- LIBRW_PLATFORM = GLES1 (choices=NULL;GL3;GLES1)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pavliukov/ipodwork/ViceNano/m2/host-build
+Consolidate compiler generated dependencies of target librw
+[100%] Built target librw
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/engine.cpp:258: Engine could not be opened
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/engine.cpp:194: Engine could not be initialized
+live after term: 0 state 0
+PASS: lifecycle, deferred GL, camera handedness/projection, state round trips, Im2D->Im3D restoration, raster resource release, zero RW allocation balance

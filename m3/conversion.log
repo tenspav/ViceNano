@@ -1,0 +1,2 @@
+parts=1 textures=1 vertices_bytes=600 index_bytes=120 texture_bytes=8192
+redwhite_stripe 64x64 RGB565

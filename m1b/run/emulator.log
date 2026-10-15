@@ -1,0 +1,1561 @@
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/iram.bin' (262144 bytes) at 0x22000000
+[nano7-fmc] nand-disk /home/pavliukov/ipodwork/ViceNano/m1b/run/disk-copy.dd: image sector 0 = FTL LBA 49216
+[nano7-fmc] nand-rsrc /home/pavliukov/ipodwork/NanoRework/emulator/rsrc/rsrc-1.1.2.img1: FTL LBA 0x3f2..0xaef3
+qemu-system-arm: info: nano7: ctx '/home/pavliukov/ipodwork/NanoRework/emulator/fixups/snap6-ctx.bin': r0=0x00000000 sp=0x0b402d48 lr=0x093d3f33 pc=0x093d31c7 (DRAM fmt, cpsr from ctx)
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/ram-full.bin' (67108864 bytes) at 0x08000000
+qemu-system-arm: info: nano7: overlay '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/overlay.bin' v2: 68 blocks of 64 KB at T0 (window 96670 us, retries 0x8, wanted 69, dropped 1)
+qemu-system-arm: info: nano7: torn-map '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/torn-map.bin': 2/1024 blocks of 64 KB watched (38 torn blocks covered by the overlay)
+qemu-system-arm: info: nano7: os-poke 0x0895c55c = 0x00000000 (was 0x00000001)
+qemu-system-arm: info: nano7: os-poke 0x0890b970 = 0x08a8d368 (was 0x098d1bb0)
+qemu-system-arm: info: nano7: os-poke 0x08a8d368 = 0x098d1bb0 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x08a8d36c = 0x0890b970 (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb0 = 0x08a786b4 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb4 = 0x08a8d368 (was 0x0890b970)
+qemu-system-arm: info: nano7: os-poke 0x08a786b4 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a786b8 = 0x098d1bb0 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab4 = 0x0b443bfc (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab8 = 0x08a786b4 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b443bfc = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x0b443c00 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec4 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec8 = 0x0b443bfc (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c84 = 0x08a82ef4 (was 0x08a82ef4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c88 = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef4 = 0x00000000 (was 0x00000000)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef8 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08817218 = 0x0b3bd724 (was 0x0b3c77e8)
+qemu-system-arm: info: nano7: os-poke 0x0899c0fc = 0xffffffff (was 0x00000000)
+[nano7-vic] pc=0x00000000 bank0 enable |= 0xa4630f8c -> 0xa4630f8c
+[nano7-vic] pc=0x00000000 bank1 enable |= 0x00700023 -> 0x00700023
+[nano7-dma] t=0.000 s engine 1 ch 2 start ctrl 0x8b01 cfg 0x84249000 0x22001638 -> 0x3ca00010 count 2048 next 0x8b3539c0
+[nano7-tmr] pc=0x00000000 ch1 CON = 0x00001140
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000002 (data0=6000 pre=0)
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000001 (data0=6000 pre=0)
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00004 value=0x00000001
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00000 value=0x00001703
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00010 value=0x00000000
+qemu-system-arm: info: nano7: resume-hw: VIC enables + 500 Hz tick restored
+qemu-system-arm: info: nano7: reset, PC=0x20000000
+[nano7-ui] save state 'boot' -> /home/pavliukov/ipodwork/ViceNano/m1b/run/state/boot: ok (204 ms)
+[nano7-tmr] pc=0x00000000 ch1 first expiry (con=0x00001140 data0=6000 pre=0, 2000000 ns)
+[nano7-vic] pc=0x00000000 first assertion of IRQ 8 (enabled=1)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-vic] pc=0x00000000 first assertion of IRQ 32 (enabled=1)
+[nano7-lcd] t=0.018 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x0)
+[nano7-dma] t=0.024 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-vic] pc=0x00000000 first assertion of IRQ 16 (enabled=1)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.047 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.071 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-clkcon] pc=0x22000458 R32 addr=0x3c50004c
+[nano7-clkcon] pc=0x22000462 W32 addr=0x3c50004c value=0xffffffbf
+[nano7-clkcon] pc=0x22000488 R32 addr=0x3c50006c
+[nano7-clkcon] pc=0x22000492 W32 addr=0x3c50006c value=0xffffefff
+[nano7-vic] pc=0x00000000 first assertion of IRQ 22 (enabled=1)
+[nano7-torn] STALE read pc=0x08007180 addr=0x099a1564 size=4 val=0x0b40344c (block 0x099a0000 P)
+[nano7-dma] t=0.095 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32)
+[nano7-dma] t=0.118 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-gpio] GPIO 0xe falling edge -> group 1 bit 6 pending (mask 0x40000040, IRQ 32) (further edges not logged)
+[nano7-dma] t=0.142 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.165 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.189 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.212 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.236 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.259 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-dma] t=0.283 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-pmu] R reg 0x10 -> 0x00
+[nano7-clkcon] pc=0x0800ad5e R32 addr=0x3c500044
+[nano7-clkcon] pc=0x2200036e R32 addr=0x3c50001c
+[nano7-clkcon] pc=0x2200037c W32 addr=0x3c50001c value=0xbfffffff
+[nano7-clkcon] pc=0x22000388 R32 addr=0x3c50001c
+[nano7-vic] pc=0x08426f60 R32 addr=0x39700014
+[nano7-b3cf] pc=0x0842a5be R32 addr=0x3cf00034
+[nano7-b3cf] pc=0x0842a5c2 W32 addr=0x3cf00034 value=0xffffffff
+[nano7-b3cf] pc=0x0842a5cc W32 addr=0x3cf001e0 value=0x0001000f
+[nano7-fmc] pc=0x0840b1fe CMD 0xef ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=2 80 01 00 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x080d3598 GO 0x000002e0 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0810d3f4 GO 0x000100e4 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xe7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0xef ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=2 80 01 00 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x080d3598 GO 0x000002e0 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0810d3f4 GO 0x000100e4 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xe7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-dma] t=0.306 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #1 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/4
+[nano7-vic] pc=0x080d0cdc first assertion of IRQ 54 (enabled=1)
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #2 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/16388
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #3 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/16448
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #4 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/262208
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-dma] t=0.330 s engine 1 ch 2 pass done: 0x22002638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #5 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/262212
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #6 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/278596
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #7 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/278656
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #8 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/524416
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #9 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/524420
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #10 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/540804
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #11 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/540864
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #12 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/786624
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #13 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/786628
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #14 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/803012
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #15 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/803072
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #16 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1048832
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #17 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1048836
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #18 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1065220
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #19 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1065280
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #20 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1311040
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #21 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1311044
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #22 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1327428
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #23 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1327468
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #24 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=4840 dma in/out 0/1491308
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #25 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1491312
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #26 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1507696
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-dma] t=0.354 s engine 1 ch 2 pass done: 0x22001638 -> 0x3ca00010, 4096 bytes, next 0x8b3539c0
+[nano7-fmc] pc=0x0840b1fe CMD 0x67 ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 00 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x67 ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 00 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x6a ce=0
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 08 00 00 (cmd 0xef ce=0)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x6a ce=1
+[nano7-fmc] pc=0x084094a2 ADDR n=4 80 fe 08 00 00 (cmd 0xef ce=1)
+[nano7-fmc] pc=0x0840b1fe CMD 0xd7 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x7d ce=1
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=0
+[nano7-fmc] pc=0x0840b1fe CMD 0x77 ce=1
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #27 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1507716
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #28 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=2475 dma in/out 0/1589636
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #29 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1589640
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #30 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1606024
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000002
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #31 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000002 -> d00=0x0 steps=110 dma in/out 0/1606084
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #32 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=7205 dma in/out 0/1851844
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] pc=0x084cdb54 W +0xd04 = 0x08cd7b00
+[nano7-fmc] pc=0x084cdb60 W +0xd08 = 0x00010000
+[nano7-fmc] pc=0x084cdb64 W +0xd0c = 0x08cd9b20
+[nano7-fmc] pc=0x084cdb6a W +0xd10 = 0x00000001
+[nano7-fmc] pc=0x084cdb84 W +0xc04 = 0x0896e920
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #33 seq 0x0896e920 args 08cd7b00 00010000 08cd9b20 00000001 -> d00=0x0 steps=61 dma in/out 0/1851848
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdc74 W +0xd04 = 0x00010000
+[nano7-fmc] pc=0x084cdc7c W +0xd08 = 0x00001000
+[nano7-fmc] pc=0x084cdc82 W +0xd0c = 0x08cd9d60
+[nano7-fmc] pc=0x084cdc8e W +0xd10 = 0x00000004
+[nano7-fmc] pc=0x084cdc98 W +0xd1c = 0x00000003
+[nano7-fmc] pc=0x084cdca0 W +0xd2c = 0x08cd7b00
+[nano7-fmc] pc=0x084cdcb6 W +0xc04 = 0x0896f620
+[nano7-fmc] pc=0x080d0cba W +0xc6c = 0x00000000
+[nano7-fmc] pc=0x080d0cc2 W +0xc60 = 0x00000001
+[nano7-fmc] pc=0x080d0cc6 R +0xc64 -> 0xffffffff
+[nano7-fmc] pc=0x080d0ccc W +0xc60 = 0x00000000
+[nano7-fmc] pc=0x080d0cdc W +0xc00 = 0x0000fff5
+[nano7-fmc] pc=0x080d0cdc FMSS run #34 seq 0x0896f620 args 00010000 00001000 08cd9d60 00000004 -> d00=0x0 steps=563 dma in/out 0/1868232
+[nano7-fmc] pc=0x08161e9a W +0xc10 = 0x00000000
+[nano7-fmc] pc=0x080d0d14 R +0xc0c -> 0x00000001
+[nano7-fmc] pc=0x08156012 W +0xc0c = 0x0000000d
+[nano7-fmc] pc=0x08156060 R +0xc0c -> 0x00000000
+[nano7-fmc] pc=0x084cdcc4 R +0xd00 -> 0x00000000
+[nano7-fmc] log limit reached, going quiet
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0000 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0008 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0010 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x093e0018 size=8 val=0x00000000 (block 0x093e0000 PD)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0000 size=8 val=0x9567b4409567874 (block 0x099a0000 P)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0008 size=8 val=0x09567844 (block 0x099a0000 P)
+[nano7-torn] STALE read pc=0x080d0cdc addr=0x099a0010 size=8 val=0x40a00000024 (block 0x099a0000 P)
+[nano7-pc] pc=0x08429f04 cpsr=0x00000012 sp=0x2202f000 lr=0x08429f04
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 000092b1 00000240 000093c8 00000000 00000020 00000020 00000000 00000000 00000000 00000000 0000b7c0 00000240 00000000 0000000b 00000000 00000000 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000 
+[nano7-nand] miss ce0 page 0x89adc s3 -> oracle lba 0xc0d3 (sftl slot 0, data 0x0b40a440 = 01d00000.., #1)
+[nano7-nand] miss ce0 page 0x3c9f5 s0 -> oracle lba 0xc0d5 (sftl slot 2, data 0x0b40c440 = 00000000.., #2)
+[nano7-nand] miss ce0 page 0x3c9f5 s1 -> oracle lba 0xc0d6 (sftl slot 3, data 0x0b40d440 = 00000000.., #3)
+[nano7-nand] miss ce0 page 0x3c9f5 s2 -> oracle lba 0xc0d7 (sftl slot 4, data 0x0b40e440 = 00000000.., #4)
+[nano7-nand] miss ce0 page 0x3c9f5 s3 -> oracle lba 0xc0d8 (sftl slot 5, data 0x0b40f440 = 00000000.., #5)
+[nano7-nand] miss ce0 page 0xbc9f5 s0 -> oracle lba 0xc0d9 (sftl slot 6, data 0x0b410440 = 00000000.., #6)
+[nano7-nand] miss ce0 page 0xbc9f5 s1 -> oracle lba 0xc0da (sftl slot 7, data 0x0b411440 = 00000000.., #7)
+[nano7-nand] miss ce1 page 0xbc9f4 s3 -> oracle lba 0xc0d4 (sftl slot 1, data 0x0b40b440 = 00000000.., #8)
+[nano7-nand] miss ce1 page 0x89adf s0 -> oracle lba 0xc080 (sftl slot 0, data 0x0b40a440 = 52526141.., #9)
+[nano7-nand] miss ce1 page 0x8b801 s0 -> oracle lba 0xc081 (sftl slot 1, data 0x0b40b440 = fa660fb6.., #10)
+[nano7-nand] miss ce1 page 0x8b801 s1 -> oracle lba 0xc082 (sftl slot 2, data 0x0b40c440 = 00000000.., #11)
+[nano7-nand] miss ce1 page 0x8b801 s2 -> oracle lba 0xc083 (sftl slot 3, data 0x0b40d440 = 00000000.., #12)
+[nano7-nand] miss ce1 page 0x8b801 s3 -> oracle lba 0xc084 (sftl slot 4, data 0x0b40e440 = 00000000.., #13)
+[nano7-nand] miss ce1 page 0xb802 s0 -> oracle lba 0xc085 (sftl slot 5, data 0x0b40f440 = eb3c902a.., #14)
+[nano7-nand] miss ce1 page 0xb802 s1 -> oracle lba 0xc086 (sftl slot 6, data 0x0b410440 = 52526141.., #15)
+[nano7-nand] miss ce1 page 0xb802 s2 -> oracle lba 0xc087 (sftl slot 7, data 0x0b411440 = fa660fb6.., #16)
+[nano7-nand] miss ce0 page 0x89adc s3 -> oracle lba 0xc0d3 (sftl slot 0, data 0x0b40a440 = 01d00000.., #17)
+[nano7-nand] miss ce0 page 0x3c9f5 s0 -> oracle lba 0xc0d5 (sftl slot 2, data 0x0b40c440 = 00000000.., #18)
+[nano7-nand] miss ce0 page 0x3c9f5 s1 -> oracle lba 0xc0d6 (sftl slot 3, data 0x0b40d440 = 00000000.., #19)
+[nano7-nand] miss ce0 page 0x3c9f5 s2 -> oracle lba 0xc0d7 (sftl slot 4, data 0x0b40e440 = 00000000.., #20)
+[nano7-nand] miss ce0 page 0x3c9f5 s3 -> oracle lba 0xc0d8 (sftl slot 5, data 0x0b40f440 = 00000000.., #21)
+[nano7-nand] miss ce0 page 0xbc9f5 s0 -> oracle lba 0xc0d9 (sftl slot 6, data 0x0b410440 = 00000000.., #22)
+[nano7-nand] miss ce0 page 0xbc9f5 s1 -> oracle lba 0xc0da (sftl slot 7, data 0x0b411440 = 00000000.., #23)
+[nano7-nand] miss ce1 page 0xbc9f4 s3 -> oracle lba 0xc0d4 (sftl slot 1, data 0x0b40b440 = 00000000.., #24)
+[nano7-nand] miss ce0 page 0x3c9f5 s0 -> oracle lba 0xc0d5 (sftl slot 2, data 0x0b40c440 = 00000000.., #25)
+[nano7-nand] miss ce0 page 0x3c9f5 s1 -> oracle lba 0xc0d6 (sftl slot 3, data 0x0b40d440 = 00000000.., #26)
+[nano7-nand] miss ce0 page 0x3c9f5 s2 -> oracle lba 0xc0d7 (sftl slot 4, data 0x0b40e440 = 00000000.., #27)
+[nano7-nand] miss ce0 page 0x3c9f5 s3 -> oracle lba 0xc0d8 (sftl slot 5, data 0x0b40f440 = 00000000.., #28)
+[nano7-nand] miss ce0 page 0xbc9f5 s0 -> oracle lba 0xc0d9 (sftl slot 6, data 0x0b410440 = 00000000.., #29)
+[nano7-nand] miss ce0 page 0xbc9f5 s1 -> oracle lba 0xc0da (sftl slot 7, data 0x0b411440 = 00000000.., #30)
+[nano7-nand] miss ce1 page 0xbc9f4 s3 -> oracle lba 0xc0d4 (sftl slot 1, data 0x0b40b440 = 00000000.., #31)
+[nano7-nand] miss ce0 page 0x3c9f0 s0 -> oracle lba 0xc485 (sftl slot 4, data 0x0b40e440 = 00000000.., #32)
+[nano7-pmu] RTC: snapshot time 2026-10-13 07:06:33 -> unix 1791875193
+[nano7-pmu] R reg 0x40 -> 0x52
+[nano7-pmu] R reg 0x41 -> 0xcf
+[nano7-pmu] R reg 0x42 -> 0xc4
+[nano7-pmu] R reg 0x43 -> 0x00
+[nano7-nand] miss ce0 page 0x3c9f0 s0 -> oracle lba 0xc485 (sftl slot 3, data 0x0b40d440 = 00000000.., #1024)
+[nano7-pc] pc=0x084d87e0 cpsr=0x00000010 sp=0x0b408c08 lr=0x084d87e1
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 08817200 0862daf8 00000000 00000000 0b407cec 083c9737 60000010 0b408c18 00000000 0840aa8b 00000000 085504cb 0855048d 0000dcb3 0000dcb3 8b40a440 5da35da3 084d87f7 00001000 00000000 8b40a440 0000dcb3 00000008 0b40a3c4 
+[nano7-nand] miss ce0 page 0x3c9f0 s2 -> oracle lba 0xc487 (sftl slot 5, data 0x0b40f440 = 00000000.., #2048)
+[nano7-nand] miss ce1 page 0x8b80a s1 -> oracle lba 0xdcb7 (sftl slot 4, data 0x0b40e440 = 0f000000.., #3072)
+[nano7-disp] t=2.358 s kick #1 layout: |010: 6 936d66c 0 f0 0 f001b0 0 0 6 b82ac00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 0 0 0 0 0 0 0 0 0 |280: 20000000 ff 30000000 100000ff
+[nano7-disp] t=2.360 s pc=0x081bad1e kick #1 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-vic] pc=0x00000000 first assertion of IRQ 37 (enabled=1)
+[nano7-disp] t=2.374 s kick #2 layout: |010: 6 bf29380 0 f0 0 100010 0 0 6 bf29380 0 f0 f001b0 0 0 0 10000 10000 0 |220: 0 0 0 0 0 0 0 0 0 |280: 20000000 0 20000000 0
+[nano7-disp] t=2.374 s pc=0x081bad1e kick #2 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.375 s kick #3 layout: |010: 6 b82ac00 0 f0 0 f001b0 0 0 6 bf29380 0 f0 f001b0 0 0 0 10000 10000 0 |220: 0 0 0 0 0 0 0 0 0 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=2.382 s pc=0x081bad1e kick #3 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-clkcon] pc=0x22000478 R32 addr=0x3c500068
+[nano7-clkcon] pc=0x22000482 W32 addr=0x3c500068 value=0xffffffff
+[nano7-lcd] t=2.389 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-unimpl] pc=0x080a06e6 R32 addr=0x3830008c -> 0x0
+[nano7-unimpl] pc=0x080a0708 W32 addr=0x38300080 value=0x00000001
+[nano7-lcd] t=2.390 s DSI packet type 0x29 len 5 cmd 0x2a
+[nano7-lcd] t=2.390 s DSI packet type 0x29 len 5 cmd 0x2b
+[nano7-lcd] t=2.390 s DSI packet type 0x05 len 44 cmd 0x00
+[nano7-unimpl] pc=0x080a072e W32 addr=0x38300080 value=0x00000000
+[nano7-disp] t=2.411 s kick #4 layout: |010: 6 b82ac00 0 f0 0 100010 0 0 6 b82ac00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 0 0 0 0 0 0 0 0 0 |280: 20000000 0 30000000 10000000
+[nano7-disp] t=2.411 s pc=0x081bad1e kick #4 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.414 s kick #5 layout: |010: 6 936d66c 0 f0 0 f001b0 0 0 6 b82ac00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 ff 30000000 100000ff
+[nano7-disp] t=2.416 s pc=0x081bad1e kick #5 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-vic] pc=0x08426d50 R32 addr=0x39700014
+[nano7-vic] pc=0x08426d62 W32 addr=0x39700018 value=0x00650000
+[nano7-vic] pc=0x08426d64 W32 addr=0x39700010 value=0x00000040
+[nano7-vic] pc=0x08426d66 R32 addr=0x39700014
+[nano7-vic] pc=0x08426d68 R32 addr=0x39700008
+[nano7-vic] pc=0x08426d78 R32 addr=0x39700014
+[nano7-disp] t=2.422 s pc=0x081bad1e kick #6 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.424 s kick #7 layout: |010: 6 bec3f00 0 f0 0 100010 0 0 6 bec3f00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=2.424 s pc=0x081bad1e kick #7 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.425 s kick #8 layout: |010: 6 b82ac00 0 f0 0 f001b0 0 0 6 bec3f00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=2.429 s pc=0x081bad1e kick #8 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.439 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-lcd] t=2.439 s DSI packet type 0x29 len 5 cmd 0x2a
+[nano7-lcd] t=2.439 s DSI packet type 0x29 len 5 cmd 0x2b
+[nano7-lcd] t=2.439 s DSI packet type 0x05 len 44 cmd 0x00
+[nano7-disp] t=2.474 s kick #9 layout: |010: 6 b82ac00 0 f0 0 100010 0 0 6 b82ac00 0 f0 f001b0 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-disp] t=2.474 s pc=0x081bad1e kick #9 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.479 s pc=0x081bad1e kick #10 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.482 s pc=0x081bad1e kick #11 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.484 s pc=0x081bad1e kick #12 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.490 s pc=0x081bad1e kick #13 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.507 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-lcd] t=2.507 s DSI packet type 0x29 len 5 cmd 0x2a
+[nano7-lcd] t=2.507 s DSI packet type 0x29 len 5 cmd 0x2b
+[nano7-disp] t=2.539 s pc=0x081bad1e kick #14 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.542 s pc=0x081bad1e kick #15 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.546 s pc=0x081bad1e kick #16 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.547 s pc=0x081bad1e kick #17 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.551 s pc=0x081bad1e kick #18 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.562 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.605 s pc=0x081bad1e kick #19 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.608 s pc=0x081bad1e kick #20 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.610 s pc=0x081bad1e kick #21 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.611 s pc=0x081bad1e kick #22 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.616 s pc=0x081bad1e kick #23 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.632 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.669 s pc=0x081bad1e kick #24 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.672 s pc=0x081bad1e kick #25 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.675 s pc=0x081bad1e kick #26 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.676 s pc=0x081bad1e kick #27 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.681 s pc=0x081bad1e kick #28 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.682 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.733 s pc=0x081bad1e kick #29 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.736 s pc=0x081bad1e kick #30 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.738 s pc=0x081bad1e kick #31 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.739 s pc=0x081bad1e kick #32 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.743 s pc=0x081bad1e kick #33 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.749 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=2.798 s pc=0x081bad1e kick #34 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.802 s pc=0x081bad1e kick #35 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.807 s pc=0x081bad1e kick #36 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.809 s pc=0x081bad1e kick #37 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.816 s pc=0x081bad1e kick #38 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.819 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.868 s pc=0x081bad1e kick #39 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.870 s pc=0x081bad1e kick #40 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.873 s pc=0x081bad1e kick #41 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.875 s pc=0x081bad1e kick #42 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.880 s pc=0x081bad1e kick #43 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.890 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.933 s pc=0x081bad1e kick #44 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.937 s pc=0x081bad1e kick #45 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.940 s pc=0x081bad1e kick #46 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.942 s pc=0x081bad1e kick #47 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.946 s pc=0x081bad1e kick #48 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=2.957 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=2.981 s pc=0x081bad1e kick #49 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.984 s pc=0x081bad1e kick #50 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.986 s pc=0x081bad1e kick #51 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.987 s pc=0x081bad1e kick #52 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=2.992 s pc=0x081bad1e kick #53 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=3.009 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=3.045 s pc=0x081bad1e kick #54 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.048 s pc=0x081bad1e kick #55 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.050 s pc=0x081bad1e kick #56 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.051 s pc=0x081bad1e kick #57 mode 0x11000000 L0 0x0bec3f00 00100010 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.056 s pc=0x081bad1e kick #58 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=3.059 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=3.111 s pc=0x081bad1e kick #59 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.113 s pc=0x081bad1e kick #60 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.116 s pc=0x081bad1e kick #61 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.117 s pc=0x081bad1e kick #62 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-disp] t=3.122 s pc=0x081bad1e kick #63 mode 0x22000000 L0 0x0b82ac00 00f001b0 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=3.126 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-disp] t=3.173 s pc=0x081bad1e kick #64 mode 0x11000000 L0 0x0b82ac00 00100010 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-lcd] t=3.196 s pc=0x08080bb8 window 0 base -> 0x0bec3f00 (ctl 0x002107ff, en 0x1)
+[nano7-lcd] t=3.262 s pc=0x08080bb8 window 0 base -> 0x0bf29380 (ctl 0x002107ff, en 0x1)
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=5.603 s pc=0x081bad1e kick #256 mode 0x00000000 L0 0x0936d66c 00f001b0 -> L1 0x0b82ac00 size 00f001b0 at 00000000, irq en 1
+[nano7-clkcon] pc=0x220008a8 R32 addr=0x3c500044
+[nano7-clkcon] pc=0x220008b8 R32 addr=0x3c500024
+[nano7-clkcon] pc=0x220008be W32 addr=0x3c500024 value=0xfffffff9
+[nano7-clkcon] pc=0x220008c4 R32 addr=0x3c500024
+[nano7-clkcon] pc=0x2200098a R32 addr=0x3c500000
+[nano7-clkcon] pc=0x2200099a W32 addr=0x3c500000 value=0x00000001
+[nano7-clkcon] pc=0x220009a0 R32 addr=0x3c500000
+[nano7-clkcon] pc=0x220009d0 W32 addr=0x3c500000 value=0x00002001
+[nano7-clkcon] pc=0x220009d6 R32 addr=0x3c500000
+[nano7-clkcon] pc=0x22000d9a R32 addr=0x3c500004
+[nano7-clkcon] pc=0x22000dde W32 addr=0x3c500004 value=0xffc1c3c1
+[nano7-clkcon] pc=0x22000de4 R32 addr=0x3c500004
+[nano7-clkcon] pc=0x22000df2 R32 addr=0x3c500004
+[nano7-clkcon] pc=0x22000e00 R32 addr=0x3c500004
+[nano7-clkcon] pc=0x22000d5c R32 addr=0x3c50001c
+[nano7-clkcon] pc=0x22000d80 W32 addr=0x3c50001c value=0xffffe007
+[nano7-clkcon] pc=0x22000d84 R32 addr=0x3c50001c
+[nano7-clkcon] pc=0x22000468 R32 addr=0x3c500058
+[nano7-clkcon] pc=0x22000472 W32 addr=0x3c500058 value=0xfffffffb
+[nano7-spc] pc=0x0855085c W32 addr=0x3de00014 value=0x00000000
+[nano7-spc] pc=0x0855087a W32 addr=0x3de00018 value=0x00006200
+[nano7-spc] pc=0x0855087c R32 addr=0x3de00014
+[nano7-spc] pc=0x08550882 W32 addr=0x3de00014 value=0x00000001
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-vic] pc=0x00000000 first assertion of IRQ 52 (enabled=1)
+[nano7-clkcon] pc=0x0802fb0a R32 addr=0x3c500048
+[nano7-clkcon] pc=0x0802fb12 R32 addr=0x3c50004c
+[nano7-clkcon] pc=0x0802fb1a R32 addr=0x3c500058
+[nano7-clkcon] pc=0x0802fb22 R32 addr=0x3c500068
+[nano7-clkcon] pc=0x0802fb2a R32 addr=0x3c50006c
+[nano7-spc] pc=0x08000cbc R32 addr=0x3de0000c
+[nano7-spc] pc=0x08000cbe W32 addr=0x3de0000c value=0x00000001
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-clkcon] pc=0x220008b8 R32 addr=0x3c500020
+[nano7-clkcon] pc=0x220008be W32 addr=0x3c500020 value=0xfffffff8
+[nano7-clkcon] pc=0x220008c4 R32 addr=0x3c500020
+[nano7-pc] pc=0x0800eb88 cpsr=0x00000010 sp=0x09954328 lr=0x0802afd1
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0899cac8 0802afd1 00000000 0899cac8 0995a9b4 081ba685 00000001 08005ec5 0995a99c 0819827d 09954358 0995a9cc 02000001 08041889 0989e8a8 00000000 00000000 5da35da3 0862daf8 0862dad0 00000032 09954390 0862dd8c 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pmu] t=8.000 s button home pressed
+[nano7-gpio] GPIO 0x56 falling edge -> group 3 bit 14 pending (mask 0x00004000, IRQ 3)
+[nano7-vic] pc=0x00000000 first assertion of IRQ 3 (enabled=1)
+[nano7-pmu] t=8.001 s R reg 0x01 -> 0x00
+[nano7-pmu] t=8.001 s W reg 0x01 = 0x00
+[nano7-pmu] t=8.001 s R reg 0x02 -> 0x00
+[nano7-pmu] t=8.001 s W reg 0x02 = 0x00
+[nano7-pmu] t=8.002 s R reg 0x03 -> 0x01
+[nano7-pmu] t=8.002 s W reg 0x03 = 0x01
+[nano7-pmu] t=8.002 s R reg 0x04 -> 0x00
+[nano7-pmu] t=8.002 s W reg 0x04 = 0x00
+[nano7-pmu] t=8.003 s R reg 0x05 -> 0x48
+[nano7-pmu] t=8.003 s R reg 0x06 -> 0x00
+[nano7-pmu] t=8.004 s R reg 0x07 -> 0x20
+[nano7-pmu] t=8.004 s R reg 0x08 -> 0x02
+[nano7-pmu] t=8.150 s button home released
+[nano7-gpio] GPIO 0x56 falling edge -> group 3 bit 14 pending (mask 0x00004000, IRQ 3)
+[nano7-pmu] t=8.150 s R reg 0x01 -> 0x00
+[nano7-pmu] t=8.151 s W reg 0x01 = 0x00
+[nano7-pmu] t=8.151 s R reg 0x02 -> 0x00
+[nano7-pmu] t=8.151 s W reg 0x02 = 0x00
+[nano7-pmu] t=8.151 s R reg 0x03 -> 0x01
+[nano7-pmu] t=8.151 s W reg 0x03 = 0x01
+[nano7-pmu] t=8.152 s R reg 0x04 -> 0x00
+[nano7-pmu] t=8.152 s W reg 0x04 = 0x00
+[nano7-pmu] t=8.152 s R reg 0x05 -> 0x48
+[nano7-pmu] t=8.152 s R reg 0x06 -> 0x00
+[nano7-pmu] t=8.153 s R reg 0x07 -> 0x30
+[nano7-pmu] t=8.153 s R reg 0x08 -> 0x02
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=8.852 s pc=0x081bad1e kick #512 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-pmu] t=9.066 s R reg 0x05 -> 0x48
+[nano7-pmu] t=9.082 s R reg 0x05 -> 0x48
+[nano7-pmu] t=9.082 s R reg 0x06 -> 0x00
+[nano7-pmu] t=9.083 s R reg 0x07 -> 0x30
+[nano7-pmu] t=9.083 s R reg 0x08 -> 0x02
+[nano7-pmu] t=9.084 s R reg 0x0d -> 0x00
+[nano7-pmu] t=9.085 s W reg 0x0d = 0x50
+[nano7-spc] pc=0x0800ada4 W32 addr=0x3de00004 value=0x00000001
+[nano7-spc] pc=0x0800adae W32 addr=0x3de00000 value=0x00001703
+[nano7-spc] pc=0x0800adb0 R32 addr=0x3de00010
+[nano7-spc] pc=0x0800adb6 W32 addr=0x3de00010 value=0x00000000
+[nano7-pmu] t=9.086 s R reg 0x0d -> 0x50
+[nano7-pmu] t=9.086 s W reg 0x0d = 0x50
+[nano7-pmu] t=9.087 s R reg 0x26 -> 0x00
+[nano7-pmu] t=9.087 s W reg 0x26 = 0x02
+[nano7-pmu] t=9.087 s R reg 0x27 -> 0x00
+[nano7-pmu] t=9.088 s W reg 0x27 = 0x10
+[nano7-pmu] t=9.088 s R reg 0x26 -> 0x02
+[nano7-pmu] t=9.088 s W reg 0x26 = 0x03
+[nano7-pmu] t=9.089 s R reg 0x05 -> 0x48
+[nano7-pmu] t=9.182 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.183 s R reg 0x10 -> 0x00
+[nano7-clkcon] pc=0x08001270 R32 addr=0x3c500048
+[nano7-clkcon] pc=0x08001274 R32 addr=0x3c50004c
+[nano7-clkcon] pc=0x08001278 R32 addr=0x3c500058
+[nano7-clkcon] pc=0x0800127c R32 addr=0x3c500068
+[nano7-clkcon] pc=0x08001280 R32 addr=0x3c50006c
+[nano7-vic] pc=0x08001294 W32 addr=0x3970001c value=0x00140065
+[nano7-vic] pc=0x08001296 R32 addr=0x39700100
+[nano7-vic] pc=0x080012a4 W32 addr=0x39700100 value=0x00000000
+[nano7-vic] pc=0x080012a8 W32 addr=0x3970000c value=0x00000040
+[nano7-vic] pc=0x080012aa R32 addr=0x39700014
+[nano7-vic] pc=0x080012ac R32 addr=0x39700008
+[nano7-vic] pc=0x080012be R32 addr=0x39700014
+[nano7-vic] pc=0x080012c6 R32 addr=0x39700100
+[nano7-vic] pc=0x080012cc W32 addr=0x39700100 value=0x00000040
+[nano7-clkcon] pc=0x080012d6 W32 addr=0x3c500048 value=0xffffffff
+[nano7-clkcon] pc=0x080012da W32 addr=0x3c50004c value=0xffffffff
+[nano7-clkcon] pc=0x080012de W32 addr=0x3c500058 value=0xffffffff
+[nano7-clkcon] pc=0x080012e2 W32 addr=0x3c500068 value=0xffffffef
+[nano7-clkcon] pc=0x080012e6 W32 addr=0x3c50006c value=0xfdffffff
+[nano7-pmu] t=9.190 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.193 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.194 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.195 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.195 s R reg 0x10 -> 0x00
+[nano7-disp] t=9.199 s kick #537 layout: |010: 6 b629200 0 f0 0 100010 0 0 6 b629200 0 f0 f0001b 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-pmu] t=9.207 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.208 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.213 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.213 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.214 s R reg 0x10 -> 0x00
+[nano7-pmu] t=9.215 s R reg 0x10 -> 0x00
+[nano7-disp] t=9.228 s kick #539 layout: |010: 6 b61fe80 0 f0 0 100010 0 0 6 b61fe80 0 f0 f0000c 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.292 s kick #541 layout: |010: 6 b60e480 0 76 0 100010 0 0 6 b60e480 0 76 760080 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.306 s kick #553 layout: |010: 6 97358d0 0 70 0 700070 0 0 6 b60e480 0 76 700070 30000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.333 s kick #559 layout: |010: 6 b629200 0 f0 0 100010 0 0 6 b629200 0 f0 f0001b 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-disp] t=9.358 s kick #560 layout: |010: 6 b694c00 0 f0 0 f001b0 0 0 6 b62f780 0 f0 f001b0 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-disp] t=9.362 s kick #561 layout: |010: 6 b629200 0 f0 0 f0001b 0 0 6 b622c00 0 f0 f0001b 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-disp] t=9.363 s kick #562 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 b5ff800 0 76 760080 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-pmu] t=9.371 s R reg 0x05 -> 0x48
+[nano7-pmu] t=9.371 s R reg 0x06 -> 0x00
+[nano7-pmu] t=9.372 s R reg 0x07 -> 0x30
+[nano7-pmu] t=9.372 s R reg 0x08 -> 0x02
+[nano7-pmu] t=9.372 s R reg 0x0d -> 0x50
+[nano7-pmu] t=9.372 s W reg 0x0d = 0x50
+[nano7-pmu] t=9.373 s R reg 0x0d -> 0x50
+[nano7-pmu] t=9.373 s W reg 0x0d = 0x50
+[nano7-pmu] t=9.373 s R reg 0x26 -> 0x03
+[nano7-pmu] t=9.373 s W reg 0x26 = 0x03
+[nano7-pmu] t=9.374 s R reg 0x27 -> 0x10
+[nano7-pmu] t=9.374 s W reg 0x27 = 0x10
+[nano7-pmu] t=9.374 s R reg 0x26 -> 0x03
+[nano7-pmu] t=9.374 s W reg 0x26 = 0x03
+[nano7-disp] t=9.393 s kick #570 layout: |010: 6 b629200 0 f0 0 f0001b 0 0 6 bec3f00 0 f0 f0001b 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.393 s kick #571 layout: |010: 6 b5d3280 0 76 16c0000 1b0080 0 0 6 bec3f00 0 f0 1b0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.394 s kick #572 layout: |010: 6 b5b5900 0 76 0 1a0080 0 0 6 bec3f00 0 f0 1a0080 d6009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.403 s kick #575 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 c3 c3015f 0 0 0 13b13 13b13 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.405 s kick #576 layout: |010: 6 bf8e800 0 c3 0 c3015f 0 0 6 bec3f00 0 f0 c3015f 170029 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 70000cf 37000000 370000cf
+[nano7-pmu] t=9.427 s R reg 0x10 -> 0x00
+[nano7-disp] t=9.427 s kick #580 layout: |010: 6 b60e480 0 76 1140198 31001a 0 0 6 bf29380 0 f0 31001a 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.428 s kick #581 layout: |010: 6 b5f0b80 0 76 1a8 2f0016 0 0 6 bf29380 0 f0 2f0016 c10000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-pmu] t=9.428 s R reg 0x10 -> 0x00
+[nano7-disp] t=9.428 s kick #582 layout: |010: 6 b5d3280 0 76 11c0000 2f0080 0 0 6 bf29380 0 f0 2f0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.428 s kick #583 layout: |010: 6 b5b5900 0 76 0 2e0080 0 0 6 bf29380 0 f0 2e0080 c2009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-pmu] t=9.429 s R reg 0x10 -> 0x00
+[nano7-disp] t=9.430 s kick #584 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 a2 a20123 0 0 0 17b42 17c0a 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.432 s kick #585 layout: |010: 6 bf8e800 0 a2 0 a20123 0 0 6 bf29380 0 f0 a20123 270047 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 70000ac 37000000 370000ac
+[nano7-disp] t=9.445 s kick #589 layout: |010: 6 b60e480 0 76 f00158 3a002a 0 0 6 bec3f00 0 f0 3a002a 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.445 s kick #590 layout: |010: 6 b5f0b80 0 76 168 380026 0 0 6 bec3f00 0 f0 380026 b80000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.445 s kick #591 layout: |010: 6 b5d3280 0 76 f80000 380080 0 0 6 bec3f00 0 f0 380080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.446 s kick #592 layout: |010: 6 b5b5900 0 76 0 370080 0 0 6 bec3f00 0 f0 370080 b9009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.446 s kick #593 layout: |010: 6 b598000 0 76 fc0000 370017 0 0 6 bec3f00 0 f0 370017 199 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.446 s kick #594 layout: |010: 6 b57a700 0 76 0 370017 0 0 6 bec3f00 0 f0 370017 b90199 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.447 s kick #595 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 91 910105 0 0 0 1a7b9 1a7b9 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.448 s kick #596 layout: |010: 6 bf8e800 0 91 0 910105 0 0 6 bec3f00 0 f0 910105 300056 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 700009a 37000000 3700009a
+[nano7-disp] t=9.462 s kick #600 layout: |010: 6 b60e480 0 76 cc0120 430038 0 0 6 bf29380 0 f0 430038 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.462 s kick #601 layout: |010: 6 b5f0b80 0 76 12c 410035 0 0 6 bf29380 0 f0 410035 af0000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.462 s kick #602 layout: |010: 6 b5d3280 0 76 d80000 400080 0 0 6 bf29380 0 f0 400080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.463 s kick #603 layout: |010: 6 b5b5900 0 76 0 400080 0 0 6 bf29380 0 f0 400080 b0009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.463 s kick #604 layout: |010: 6 b598000 0 76 dc0000 3f0026 0 0 6 bf29380 0 f0 3f0026 18a 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.463 s kick #605 layout: |010: 6 b57a700 0 76 0 3f0026 0 0 6 bf29380 0 f0 3f0026 b1018a 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.464 s kick #606 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 80 8000e7 0 0 0 1e000 1dec0 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.465 s kick #607 layout: |010: 6 bf8e800 0 80 0 8000e7 0 0 6 bf29380 0 f0 8000e7 380065 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 7000088 37000000 37000088
+[nano7-disp] t=9.478 s kick #611 layout: |010: 6 b60e480 0 76 b000e8 4a0046 0 0 6 bec3f00 0 f0 4a0046 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.478 s kick #612 layout: |010: 6 b5f0b80 0 76 f4 490043 0 0 6 bec3f00 0 f0 490043 a70000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.479 s kick #613 layout: |010: 6 b5d3280 0 76 b80000 480080 0 0 6 bec3f00 0 f0 480080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.480 s kick #614 layout: |010: 6 b5b5900 0 76 0 480080 0 0 6 bec3f00 0 f0 480080 a8009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.480 s kick #615 layout: |010: 6 b598000 0 76 bc0000 470035 0 0 6 bec3f00 0 f0 470035 17b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.481 s kick #616 layout: |010: 6 b57a700 0 76 0 470035 0 0 6 bec3f00 0 f0 470035 a9017b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.482 s kick #617 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 70 7000c9 0 0 0 22492 22635 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.484 s kick #618 layout: |010: 6 bf8e800 0 70 0 7000c9 0 0 6 bec3f00 0 f0 7000c9 400073 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 7000077 37000000 37000077
+[nano7-disp] t=9.503 s kick #622 layout: |010: 6 b60e480 0 76 9000b0 520054 0 0 6 bf29380 0 f0 520054 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.504 s kick #623 layout: |010: 6 b5f0b80 0 76 bc 500051 0 0 6 bf29380 0 f0 500051 a00000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.505 s kick #624 layout: |010: 6 b5d3280 0 76 980000 500080 0 0 6 bf29380 0 f0 500080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.507 s kick #625 layout: |010: 6 b5b5900 0 76 0 4f0080 0 0 6 bf29380 0 f0 4f0080 a1009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.508 s kick #626 layout: |010: 6 b598000 0 76 9c0000 4f0043 0 0 6 bf29380 0 f0 4f0043 16d 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.509 s kick #627 layout: |010: 6 b57a700 0 76 0 4f0043 0 0 6 bf29380 0 f0 4f0043 a1016d 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.510 s kick #628 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 5e 5e00a9 0 0 0 28d9d 28e63 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.512 s kick #629 layout: |010: 6 bf8e800 0 5e 0 5e00a9 0 0 6 bf29380 0 f0 5e00a9 490083 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 7000064 37000000 37000064
+[nano7-disp] t=9.535 s kick #633 layout: |010: 6 b60e480 0 76 60005c 5e0069 0 0 6 bec3f00 0 f0 5e0069 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.536 s kick #634 layout: |010: 6 b5f0b80 0 76 64 5c0067 0 0 6 bec3f00 0 f0 5c0067 940000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.537 s kick #635 layout: |010: 6 b5d3280 0 76 680000 5c0080 0 0 6 bec3f00 0 f0 5c0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.539 s kick #636 layout: |010: 6 b5b5900 0 76 0 5c0080 0 0 6 bec3f00 0 f0 5c0080 94009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.540 s kick #637 layout: |010: 6 b598000 0 76 6c0000 5b0059 0 0 6 bec3f00 0 f0 5b0059 157 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.541 s kick #638 layout: |010: 6 b57a700 0 76 0 5b0059 0 0 6 bec3f00 0 f0 5b0059 950157 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.543 s kick #639 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 3f 3f0071 0 0 0 3cf3c 3d2b0 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.544 s kick #640 layout: |010: 6 bf8e800 0 3f 0 3f0071 0 0 6 bec3f00 0 f0 3f0071 5900a0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 7000043 37000000 37000043
+[nano7-disp] t=9.564 s kick #644 layout: |010: 6 b60e480 0 76 380010 68007c 0 0 6 bf29380 0 f0 68007c 0 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.565 s kick #645 layout: |010: 6 b5f0b80 0 76 18 67007a 0 0 6 bf29380 0 f0 67007a 890000 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.565 s kick #646 layout: |010: 6 b5d3280 0 76 3c0000 670080 0 0 6 bf29380 0 f0 670080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.566 s kick #647 layout: |010: 6 b5b5900 0 76 0 670080 0 0 6 bf29380 0 f0 670080 89009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.567 s kick #648 layout: |010: 6 b598000 0 76 400000 66006d 0 0 6 bf29380 0 f0 66006d 143 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.567 s kick #649 layout: |010: 6 b57a700 0 76 0 66006d 0 0 6 bf29380 0 f0 66006d 8a0143 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.569 s kick #650 layout: |010: 6 b7c5780 0 f0 0 f001b0 0 0 6 bf8e800 0 3c 3c006c 0 0 0 40000 40000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.570 s kick #651 layout: |010: 6 bf8e800 0 3c 0 3c006c 0 0 6 bffd9b0 0 1c 1c0033 0 0 0 22492 21e1e 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.570 s kick #652 layout: |010: 6 bffd9b0 0 1c 0 1c0033 0 0 6 bf29380 0 f0 1c0033 6a00be 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 27000000 700001e 37000000 3700001e
+[nano7-disp] t=9.580 s kick #656 layout: |010: 6 b60e480 0 76 240000 6d0080 0 0 6 bec3f00 0 f0 6d0080 4 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.581 s kick #657 layout: |010: 6 b5f0b80 0 76 0 6c0080 0 0 6 bec3f00 0 f0 6c0080 840002 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.582 s kick #658 layout: |010: 6 b5d3280 0 76 2c0000 6b0080 0 0 6 bec3f00 0 f0 6b0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.582 s kick #659 layout: |010: 6 b5b5900 0 76 0 6b0080 0 0 6 bec3f00 0 f0 6b0080 85009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.583 s kick #660 layout: |010: 6 b598000 0 76 2c0000 6b0075 0 0 6 bec3f00 0 f0 6b0075 13b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.584 s kick #661 layout: |010: 6 b57a700 0 76 0 6b0075 0 0 6 bec3f00 0 f0 6b0075 85013b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.586 s kick #663 layout: |010: 6 bf8e800 0 3c 0 3c006c 0 0 6 bffe9ac 0 f f001b 0 0 0 40000 40000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 20000000 0
+[nano7-disp] t=9.597 s kick #667 layout: |010: 6 b60e480 0 76 180000 700080 0 0 6 bf29380 0 f0 700080 b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.598 s kick #668 layout: |010: 6 b5f0b80 0 76 0 700080 0 0 6 bf29380 0 f0 700080 800009 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.598 s kick #669 layout: |010: 6 b5d3280 0 76 1c0000 6f0080 0 0 6 bf29380 0 f0 6f0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.599 s kick #670 layout: |010: 6 b5b5900 0 76 0 6f0080 0 0 6 bf29380 0 f0 6f0080 81009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.600 s kick #671 layout: |010: 6 b598000 0 76 1c0000 6f007c 0 0 6 bf29380 0 f0 6f007c 134 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.601 s kick #672 layout: |010: 6 b57a700 0 76 0 6f007c 0 0 6 bf29380 0 f0 6f007c 810134 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.614 s kick #676 layout: |010: 6 b60e480 0 76 c0000 730080 0 0 6 bec3f00 0 f0 730080 10 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.615 s kick #677 layout: |010: 6 b5f0b80 0 76 0 730080 0 0 6 bec3f00 0 f0 730080 7d000f 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.616 s kick #678 layout: |010: 6 b5d3280 0 76 c0000 730080 0 0 6 bec3f00 0 f0 730080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.616 s kick #679 layout: |010: 6 b5b5900 0 76 0 720080 0 0 6 bec3f00 0 f0 720080 7e009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.617 s kick #680 layout: |010: 6 b598000 0 76 100000 720080 0 0 6 bec3f00 0 f0 720080 12e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.618 s kick #681 layout: |010: 6 b57a700 0 76 0 720080 0 0 6 bec3f00 0 f0 720080 7e012e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.630 s kick #685 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 15 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.631 s kick #686 layout: |010: 6 b5f0b80 0 76 0 750080 0 0 6 bf29380 0 f0 750080 7b0014 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.632 s kick #687 layout: |010: 6 b5d3280 0 76 40000 750080 0 0 6 bf29380 0 f0 750080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.632 s kick #688 layout: |010: 6 b5b5900 0 76 0 750080 0 0 6 bf29380 0 f0 750080 7b009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.633 s kick #689 layout: |010: 6 b598000 0 76 40000 750080 0 0 6 bf29380 0 f0 750080 129 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.634 s kick #690 layout: |010: 6 b57a700 0 76 0 750080 0 0 6 bf29380 0 f0 750080 7b0129 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.647 s kick #694 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 20019 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.647 s kick #695 layout: |010: 6 b5f0b80 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 780018 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.648 s kick #696 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 2009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.649 s kick #697 layout: |010: 6 b5b5900 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 79009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.650 s kick #698 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 10125 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.650 s kick #699 layout: |010: 6 b57a700 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 790125 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.663 s kick #703 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 4001b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.664 s kick #704 layout: |010: 6 b5f0b80 0 76 0 760080 0 0 6 bf29380 0 f0 760080 77001b 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.664 s kick #705 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 3009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.665 s kick #706 layout: |010: 6 b5b5900 0 76 0 760080 0 0 6 bf29380 0 f0 760080 77009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.666 s kick #707 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 30122 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.667 s kick #708 layout: |010: 6 b57a700 0 76 0 760080 0 0 6 bf29380 0 f0 760080 770122 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.680 s kick #712 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 5001d 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.681 s kick #713 layout: |010: 6 b5f0b80 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 76001d 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.681 s kick #714 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 4009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.682 s kick #715 layout: |010: 6 b5b5900 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 76009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.683 s kick #716 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 4011f 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.683 s kick #717 layout: |010: 6 b57a700 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 76011f 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.696 s kick #721 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 5001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.697 s kick #722 layout: |010: 6 b5f0b80 0 76 0 760080 0 0 6 bf29380 0 f0 760080 75001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.698 s kick #723 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 5009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.699 s kick #724 layout: |010: 6 b5b5900 0 76 0 760080 0 0 6 bf29380 0 f0 760080 75009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.699 s kick #725 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 5011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.700 s kick #726 layout: |010: 6 b57a700 0 76 0 760080 0 0 6 bf29380 0 f0 760080 75011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=9.767 s pc=0x081bad1e kick #768 mode 0x22000000 L0 0x0b57a700 00760080 -> L1 0x0bf29380 size 00760080 at 0075011e, irq en 1
+[nano7-torn] summary: 2/2 torn blocks hit by stale reads, 54643 stale / 69346 reads
+[nano7-torn]   0x093e0000 PD stale_words=7474 stale_reads=18643 reads=27885 writes=9313
+[nano7-torn]   0x099a0000 P  stale_words=8339 stale_reads=36000 reads=41461 writes=4188
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=11.630 s kick #850 layout: |010: 6 b622c00 0 f0 0 100010 0 0 6 b622c00 0 f0 81001a 370001 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 20000000 0 30000000 10000000
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-touch] t=15.035 s down at (25, 150) raw (223, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-clkcon] pc=0x220009e8 W32 addr=0x3c500000 value=0x00001001
+[nano7-vic] pc=0x083f505e first assertion of IRQ 11 (enabled=1)
+[nano7-b3cf] pc=0x0842a5be R32 addr=0x3cf00094
+[nano7-b3cf] pc=0x0842a5c2 W32 addr=0x3cf00094 value=0xffffffff
+[nano7-touch] t=15.056 s move at (32, 150) raw (306, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-touch] t=15.078 s move at (40, 150) raw (402, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-touch] t=15.100 s move at (47, 150) raw (485, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-disp] t=15.101 s kick #864 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 d001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.102 s kick #865 layout: |010: 6 b5f0b80 0 76 0 730080 0 0 6 bec3f00 0 f0 730080 7d001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.103 s kick #866 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 d009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.103 s kick #867 layout: |010: 6 b5b5900 0 76 0 730080 0 0 6 bec3f00 0 f0 730080 7d009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.104 s kick #868 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 d011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.105 s kick #869 layout: |010: 6 b57a700 0 76 0 730080 0 0 6 bec3f00 0 f0 730080 7d011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.117 s kick #873 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 c001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.118 s kick #874 layout: |010: 6 b5f0b80 0 76 0 740080 0 0 6 bf29380 0 f0 740080 7c001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.119 s kick #875 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 c009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.120 s kick #876 layout: |010: 6 b5b5900 0 76 0 740080 0 0 6 bf29380 0 f0 740080 7c009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.120 s kick #877 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 c011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.121 s kick #878 layout: |010: 6 b57a700 0 76 0 740080 0 0 6 bf29380 0 f0 740080 7c011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.122 s move at (55, 150) raw (580, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-disp] t=15.134 s kick #882 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 14001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.135 s kick #883 layout: |010: 6 b5f0b80 0 76 0 6c0080 0 0 6 bec3f00 0 f0 6c0080 84001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.136 s kick #884 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 14009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.136 s kick #885 layout: |010: 6 b5b5900 0 76 0 6c0080 0 0 6 bec3f00 0 f0 6c0080 84009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.137 s kick #886 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 14011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.138 s kick #887 layout: |010: 6 b57a700 0 76 0 6c0080 0 0 6 bec3f00 0 f0 6c0080 84011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.143 s move at (63, 150) raw (675, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-disp] t=15.153 s kick #891 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 1c001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.154 s kick #892 layout: |010: 6 b5f0b80 0 76 0 640080 0 0 6 bf29380 0 f0 640080 8c001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.154 s kick #893 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 1c009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.155 s kick #894 layout: |010: 6 b5b5900 0 76 0 640080 0 0 6 bf29380 0 f0 640080 8c009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.156 s kick #895 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 1c011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.156 s kick #896 layout: |010: 6 b57a700 0 76 0 640080 0 0 6 bf29380 0 f0 640080 8c011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.157 s kick #897 layout: |010: 6 b799200 0 76 1900000 120080 0 0 6 bf29380 0 f0 120080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.157 s kick #898 layout: |010: 6 b75e000 0 76 1900000 120080 0 0 6 bf29380 0 f0 120080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.158 s kick #899 layout: |010: 6 b722d80 0 76 1900000 120080 0 0 6 bf29380 0 f0 120080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.164 s move at (70, 150) raw (759, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32)
+[nano7-disp] t=15.174 s kick #903 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 23001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.175 s kick #904 layout: |010: 6 b5f0b80 0 76 0 5d0080 0 0 6 bec3f00 0 f0 5d0080 93001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.176 s kick #905 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 23009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.177 s kick #906 layout: |010: 6 b5b5900 0 76 0 5d0080 0 0 6 bec3f00 0 f0 5d0080 93009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.178 s kick #907 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 23011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.178 s kick #908 layout: |010: 6 b57a700 0 76 0 5d0080 0 0 6 bec3f00 0 f0 5d0080 93011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.179 s kick #909 layout: |010: 6 b799200 0 76 1740000 190080 0 0 6 bec3f00 0 f0 190080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.179 s kick #910 layout: |010: 6 b75e000 0 76 1740000 190080 0 0 6 bec3f00 0 f0 190080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.180 s kick #911 layout: |010: 6 b722d80 0 76 1740000 190080 0 0 6 bec3f00 0 f0 190080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.185 s move at (78, 150) raw (854, 3348)
+[nano7-gpio] GPIO 0x26 falling edge -> group 1 bit 30 pending (mask 0x40000040, IRQ 32) (further edges not logged)
+[nano7-disp] t=15.200 s kick #915 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 2b001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.201 s kick #916 layout: |010: 6 b5f0b80 0 76 0 550080 0 0 6 bf29380 0 f0 550080 9b001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.201 s kick #917 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 2b009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.202 s kick #918 layout: |010: 6 b5b5900 0 76 0 550080 0 0 6 bf29380 0 f0 550080 9b009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.203 s kick #919 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 2b011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.203 s kick #920 layout: |010: 6 b57a700 0 76 0 550080 0 0 6 bf29380 0 f0 550080 9b011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.204 s kick #921 layout: |010: 6 b799200 0 76 1540000 210080 0 0 6 bf29380 0 f0 210080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.204 s kick #922 layout: |010: 6 b75e000 0 76 1540000 210080 0 0 6 bf29380 0 f0 210080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.205 s kick #923 layout: |010: 6 b722d80 0 76 1540000 210080 0 0 6 bf29380 0 f0 210080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.206 s move at (85, 150) raw (937, 3348)
+[nano7-touch] t=15.228 s move at (93, 150) raw (1033, 3348)
+[nano7-disp] t=15.237 s kick #927 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 3a001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.238 s kick #928 layout: |010: 6 b5f0b80 0 76 0 460080 0 0 6 bec3f00 0 f0 460080 aa001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.238 s kick #929 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 3a009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.239 s kick #930 layout: |010: 6 b5b5900 0 76 0 460080 0 0 6 bec3f00 0 f0 460080 aa009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.240 s kick #931 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 3a011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.241 s kick #932 layout: |010: 6 b57a700 0 76 0 460080 0 0 6 bec3f00 0 f0 460080 aa011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.241 s kick #933 layout: |010: 6 b799200 0 76 1180000 300080 0 0 6 bec3f00 0 f0 300080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.241 s kick #934 layout: |010: 6 b75e000 0 76 1180000 300080 0 0 6 bec3f00 0 f0 300080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.242 s kick #935 layout: |010: 6 b722d80 0 76 1180000 300080 0 0 6 bec3f00 0 f0 300080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.249 s move at (101, 150) raw (1128, 3348)
+[nano7-disp] t=15.259 s kick #939 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 42001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.260 s kick #940 layout: |010: 6 b5f0b80 0 76 0 3e0080 0 0 6 bf29380 0 f0 3e0080 b2001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.261 s kick #941 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 42009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.262 s kick #942 layout: |010: 6 b5b5900 0 76 0 3e0080 0 0 6 bf29380 0 f0 3e0080 b2009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.262 s kick #943 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 42011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.263 s kick #944 layout: |010: 6 b57a700 0 76 0 3e0080 0 0 6 bf29380 0 f0 3e0080 b2011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.263 s kick #945 layout: |010: 6 b799200 0 76 f80000 380080 0 0 6 bf29380 0 f0 380080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.264 s kick #947 layout: |010: 6 b722d80 0 76 f80000 380080 0 0 6 bf29380 0 f0 380080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.270 s move at (108, 150) raw (1211, 3348)
+[nano7-disp] t=15.283 s kick #951 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 49001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.284 s kick #952 layout: |010: 6 b5f0b80 0 76 0 370080 0 0 6 bec3f00 0 f0 370080 b9001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.285 s kick #953 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 49009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.286 s kick #955 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 49011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.286 s kick #956 layout: |010: 6 b57a700 0 76 0 370080 0 0 6 bec3f00 0 f0 370080 b9011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.287 s kick #957 layout: |010: 6 b799200 0 76 dc0000 3f0080 0 0 6 bec3f00 0 f0 3f0080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.287 s kick #958 layout: |010: 6 b75e000 0 76 dc0000 3f0080 0 0 6 bec3f00 0 f0 3f0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.288 s kick #959 layout: |010: 6 b722d80 0 76 dc0000 3f0080 0 0 6 bec3f00 0 f0 3f0080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.291 s move at (116, 150) raw (1306, 3348)
+[nano7-disp] t=15.302 s kick #963 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 51001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.303 s kick #964 layout: |010: 6 b5f0b80 0 76 0 2f0080 0 0 6 bf29380 0 f0 2f0080 c1001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.303 s kick #965 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 51009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.304 s kick #966 layout: |010: 6 b5b5900 0 76 0 2f0080 0 0 6 bf29380 0 f0 2f0080 c1009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.304 s kick #967 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 51011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.305 s kick #968 layout: |010: 6 b57a700 0 76 0 2f0080 0 0 6 bf29380 0 f0 2f0080 c1011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.305 s kick #969 layout: |010: 6 b799200 0 76 bc0000 470080 0 0 6 bf29380 0 f0 470080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.306 s kick #970 layout: |010: 6 b75e000 0 76 bc0000 470080 0 0 6 bf29380 0 f0 470080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.306 s kick #971 layout: |010: 6 b722d80 0 76 bc0000 470080 0 0 6 bf29380 0 f0 470080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.312 s move at (123, 150) raw (1390, 3348)
+[nano7-disp] t=15.322 s kick #975 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 58001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.323 s kick #976 layout: |010: 6 b5f0b80 0 76 0 280080 0 0 6 bec3f00 0 f0 280080 c8001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.323 s kick #977 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 58009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.324 s kick #978 layout: |010: 6 b5b5900 0 76 0 280080 0 0 6 bec3f00 0 f0 280080 c8009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.325 s kick #979 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 58011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.325 s kick #980 layout: |010: 6 b57a700 0 76 0 280080 0 0 6 bec3f00 0 f0 280080 c8011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.326 s kick #981 layout: |010: 6 b799200 0 76 a00000 4e0080 0 0 6 bec3f00 0 f0 4e0080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.326 s kick #982 layout: |010: 6 b75e000 0 76 a00000 4e0080 0 0 6 bec3f00 0 f0 4e0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.327 s kick #983 layout: |010: 6 b722d80 0 76 a00000 4e0080 0 0 6 bec3f00 0 f0 4e0080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.333 s move at (131, 150) raw (1485, 3348)
+[nano7-disp] t=15.354 s kick #987 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 60001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.355 s move at (139, 150) raw (1580, 3348)
+[nano7-disp] t=15.356 s kick #988 layout: |010: 6 b5f0b80 0 76 0 200080 0 0 6 bf29380 0 f0 200080 d0001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.356 s kick #989 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 60009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.357 s kick #990 layout: |010: 6 b5b5900 0 76 0 200080 0 0 6 bf29380 0 f0 200080 d0009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.357 s kick #991 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 60011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.358 s kick #992 layout: |010: 6 b57a700 0 76 0 200080 0 0 6 bf29380 0 f0 200080 d0011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.358 s kick #993 layout: |010: 6 b799200 0 76 800000 560080 0 0 6 bf29380 0 f0 560080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.359 s kick #994 layout: |010: 6 b75e000 0 76 800000 560080 0 0 6 bf29380 0 f0 560080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.359 s kick #995 layout: |010: 6 b722d80 0 76 800000 560080 0 0 6 bf29380 0 f0 560080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.376 s move at (146, 150) raw (1663, 3348)
+[nano7-disp] t=15.384 s kick #999 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 68001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.385 s kick #1000 layout: |010: 6 b5f0b80 0 76 0 180080 0 0 6 bec3f00 0 f0 180080 d8001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.385 s kick #1001 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 68009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.386 s kick #1002 layout: |010: 6 b5b5900 0 76 0 180080 0 0 6 bec3f00 0 f0 180080 d8009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.386 s kick #1003 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 68011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.387 s kick #1004 layout: |010: 6 b57a700 0 76 0 180080 0 0 6 bec3f00 0 f0 180080 d8011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.387 s kick #1005 layout: |010: 6 b799200 0 76 600000 5e0080 0 0 6 bec3f00 0 f0 5e0080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.388 s kick #1006 layout: |010: 6 b75e000 0 76 600000 5e0080 0 0 6 bec3f00 0 f0 5e0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.389 s kick #1007 layout: |010: 6 b722d80 0 76 600000 5e0080 0 0 6 bec3f00 0 f0 5e0080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.400 s move at (154, 150) raw (1759, 3348)
+[nano7-disp] t=15.401 s kick #1011 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bf29380 0 f0 760080 6f001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.401 s kick #1012 layout: |010: 6 b5f0b80 0 76 0 110080 0 0 6 bf29380 0 f0 110080 df001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.402 s kick #1013 layout: |010: 6 b5d3280 0 76 0 760080 0 0 6 bf29380 0 f0 760080 6f009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.402 s kick #1014 layout: |010: 6 b5b5900 0 76 0 110080 0 0 6 bf29380 0 f0 110080 df009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.403 s kick #1015 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bf29380 0 f0 760080 6f011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.403 s kick #1016 layout: |010: 6 b57a700 0 76 0 110080 0 0 6 bf29380 0 f0 110080 df011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.403 s kick #1017 layout: |010: 6 b799200 0 76 440000 650080 0 0 6 bf29380 0 f0 650080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.404 s kick #1018 layout: |010: 6 b75e000 0 76 440000 650080 0 0 6 bf29380 0 f0 650080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.405 s kick #1019 layout: |010: 6 b722d80 0 76 440000 650080 0 0 6 bf29380 0 f0 650080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.417 s kick #1023 layout: |010: 6 b60e480 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 77001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.419 s pc=0x081bad1e kick #1024 mode 0x22000000 L0 0x0b5d3280 00760080 -> L1 0x0bec3f00 size 00760080 at 0077009e, irq en 1
+[nano7-disp] t=15.420 s kick #1025 layout: |010: 6 b598000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 77011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.421 s kick #1026 layout: |010: 6 b799200 0 76 240000 6d0080 0 0 6 bec3f00 0 f0 6d0080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.422 s move at (161, 150) raw (1842, 3348)
+[nano7-disp] t=15.422 s kick #1027 layout: |010: 6 b75e000 0 76 240000 6d0080 0 0 6 bec3f00 0 f0 6d0080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.423 s kick #1028 layout: |010: 6 b722d80 0 76 240000 6d0080 0 0 6 bec3f00 0 f0 6d0080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.434 s kick #1032 layout: |010: 6 b60e480 0 76 0 720080 0 0 6 bf29380 0 f0 720080 7e001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.437 s kick #1034 layout: |010: 6 b598000 0 76 0 720080 0 0 6 bf29380 0 f0 720080 7e011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.438 s kick #1035 layout: |010: 6 b799200 0 76 80000 740080 0 0 6 bf29380 0 f0 740080 1e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.439 s kick #1036 layout: |010: 6 b75e000 0 76 80000 740080 0 0 6 bf29380 0 f0 740080 9e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.440 s kick #1037 layout: |010: 6 b722d80 0 76 80000 740080 0 0 6 bf29380 0 f0 740080 11e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.443 s move at (169, 150) raw (1937, 3348)
+[nano7-disp] t=15.453 s kick #1041 layout: |010: 6 b60e480 0 76 0 6a0080 0 0 6 bec3f00 0 f0 6a0080 86001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.454 s kick #1042 layout: |010: 6 b5d3280 0 76 0 6a0080 0 0 6 bec3f00 0 f0 6a0080 86009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.454 s kick #1043 layout: |010: 6 b598000 0 76 0 6a0080 0 0 6 bec3f00 0 f0 6a0080 86011e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.455 s kick #1044 layout: |010: 6 b799200 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 6001e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-disp] t=15.457 s kick #1045 layout: |010: 6 b75e000 0 76 0 760080 0 0 6 bec3f00 0 f0 760080 6009e 0 0 10000 10000 0 |220: 200 0 0 0 200 0 0 0 200 |280: 21000000 10000ff 31000000 310000ff
+[nano7-touch] t=15.464 s move at (177, 150) raw (2032, 3348)
+[nano7-touch] t=15.486 s move at (184, 150) raw (2116, 3348)
+[nano7-touch] t=15.507 s move at (192, 150) raw (2211, 3348)
+[nano7-touch] t=15.529 s move at (199, 150) raw (2294, 3348)
+[nano7-touch] t=15.550 s move at (207, 150) raw (2390, 3348)
+[nano7-touch] t=15.571 s move at (215, 150) raw (2485, 3348)
+[nano7-touch] t=15.572 s up at (215, 150) raw (2485, 3348)
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=15.914 s pc=0x081bad1e kick #1280 mode 0x11000000 L0 0x0b819c80 00100010 -> L1 0x0b819c80 size 00760080 at 00000000, irq en 1
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-touch] t=17.642 s down at (64, 215) raw (687, 2557)
+[nano7-touch] t=17.793 s up at (64, 215) raw (687, 2557)
+[nano7-pc] pc=0x083b7846 cpsr=0x00000010 sp=0x0b403020 lr=0x0822933b
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0841bc23 00000000 094c536c 00000001 09514688 00000000 094c536c 00000001 094c5814 083b784d 094c536c 0b403060 094d7b10 00000000 094fc158 00000000 ffffffff 08228ea3 00000040 000000d7 094c536c 08229acd 0965350c 094c536c 
+[nano7-pmu] t=17.826 s R reg 0x10 -> 0x00
+[nano7-pmu] t=17.827 s R reg 0x10 -> 0x00
+[nano7-pmu] t=17.830 s R reg 0x10 -> 0x00
+[nano7-pmu] t=17.831 s R reg 0x10 -> 0x00
+[nano7-pmu] t=17.834 s R reg 0x10 -> 0x00
+[nano7-pmu] t=17.834 s R reg 0x10 -> 0x00
+[nano7-vic] pc=0x08131806 first assertion of IRQ 53 (enabled=1)
+[nano7-unimpl] pc=0x08191e2a R32 addr=0x39400004 -> 0x0
+[nano7-mbxr] draw with vertex format 0x0
+[nano7-mbxr] render job target 0x00000000 not modeled
+[nano7-pc] pc=0x083f1a92 cpsr=0x00000013 sp=0x2202bf44 lr=0x08136673
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 08136673 0997f8d4 000000c4 098dffbc 0997f8d4 00000000 098dcefc 00000020 00000000 00008775 08a45a9c 00000000 0813f7e3 098dfc98 098dff88 fffffffd 00000001 00000001 083eccad 08a45a9c 09984890 3b000000 00000010 
+[nano7-torn] summary: 2/2 torn blocks hit by stale reads, 85164 stale / 156017 reads
+[nano7-torn]   0x093e0000 PD stale_words=11198 stale_reads=26108 reads=35351 writes=9315
+[nano7-torn]   0x099a0000 P  stale_words=8410 stale_reads=59056 reads=120666 writes=10813
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=20.270 s pc=0x081bad1e kick #1536 mode 0x22000000 L0 0x0bdf9600 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0800eb88 cpsr=0x00000010 sp=0x09954328 lr=0x0802afd1
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0899cac8 0802afd1 00000000 0899cac8 0995a9b4 081ba685 00000001 08005ec5 0995a99c 0819827d 09954358 0995a9cc 02000203 08041889 0964fb5c 00000000 00000000 5da35da3 0862daf8 0862dad0 00000032 09954390 0862dd8c 00000000 
+[nano7-pmu] R reg 0x30 -> 0x00
+[nano7-pmu] W reg 0x30 = 0x14
+[nano7-pmu] R reg 0x32 -> 0xcc
+[nano7-pmu] R reg 0x31 -> 0x02
+[nano7-pmu] R reg 0x3c -> 0x08
+[nano7-pmu] R reg 0x3d -> 0x84
+[nano7-pmu] R reg 0x3e -> 0x7d
+[nano7-pmu] R reg 0x3f -> 0x7d
+[nano7-pmu] R reg 0x05 -> 0x48
+[nano7-pmu] R reg 0x29 -> 0x06
+[nano7-pmu] R reg 0x0d -> 0x50
+[nano7-pc] pc=0x22000008 cpsr=0x00000013 sp=0x2202c000 lr=0x0842af80
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0842af80 cpsr=0x00000013 sp=0x2202c000 lr=0x0842af80
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=24.311 s pc=0x081bad1e kick #1792 mode 0x11000000 L0 0x0bdf9600 00100010 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0842acd0 cpsr=0x00000013 sp=0x2202c000 lr=0x0842acd0
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0842af80 cpsr=0x00000010 sp=0x09954310 lr=0x0842b48d
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 08753088 081ba781 00000000 000003c0 5da35d0d 00000000 000653fc 00000001 09954340 0842b48d 0995a9cc 081980c3 0995a9e4 0995a99c 099588ec 08198383 09954358 0995a9cc 02000203 08041889 0964fb5c 00000000 00000000 5da35da3 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0800eb88 cpsr=0x00000010 sp=0x09954328 lr=0x0802afd1
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0899cac8 0802afd1 00000000 0899cac8 0995a9b4 081ba685 00000001 08005ec5 0995a99c 0819827d 09954358 0995a9cc 02000203 0801f38d 098e1dfc 00000000 00000000 5da35da3 0862daf8 0862dad0 00000032 09954390 0862dd8c 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-disp] t=28.433 s pc=0x081bad1e kick #2048 mode 0x22020000 L0 0x0bd94180 00f001b0 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0842b1d0 cpsr=0x00000010 sp=0x0b402980 lr=0x081987d3
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000002 00000000 000000f8 08002329 0b402b18 081987d3 0995a9e4 000003c0 00000000 000001b0 0000000d 00000000 000653fc 000001b0 099588ec 0b402b18 0995a99c 081985fd 0b402bc0 00000000 00000000 00000000 0b402b7c 084924e5 
+[nano7-pmu] R reg 0x06 -> 0x00
+[nano7-pmu] R reg 0x07 -> 0x30
+[nano7-pmu] R reg 0x08 -> 0x02
+[nano7-pmu] W reg 0x0d = 0x50
+[nano7-pmu] R reg 0x26 -> 0x03
+[nano7-pmu] W reg 0x26 = 0x03
+[nano7-pmu] R reg 0x27 -> 0x10
+[nano7-pmu] W reg 0x27 = 0x10
+[nano7-pmu] W reg 0x24 = 0x32
+[nano7-pmu] W reg 0x25 = 0x00
+[nano7-torn] summary: 2/2 torn blocks hit by stale reads, 92020 stale / 166851 reads
+[nano7-torn]   0x093e0000 PD stale_words=11198 stale_reads=26108 reads=35351 writes=9315
+[nano7-torn]   0x099a0000 P  stale_words=8411 stale_reads=65912 reads=131500 writes=13218
+[nano7-pc] pc=0x0842af80 cpsr=0x00000013 sp=0x2202c000 lr=0x0842af80
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-mbxr] state isp 22200e00 b1 e0000000 fmt 0503 tex0 00000000 ctl b00b0800: 1803 vertices
+[nano7-mbxr] state isp 22207f80 b1 e0000000 fmt 0003 tex0 00000000 ctl b00b0800: 903 vertices
+[nano7-mbxr] state isp 22620600 b1 e0000000 fmt 2003 tex0 00005600 ctl f0021004: 7224 vertices
+[nano7-mbxr] state isp 22604e80 b1 90000000 fmt 0003 tex0 00000000 ctl f0020004: 2408 vertices
+[nano7-mbxr] state isp 22600e80 b1 e0000000 fmt 0003 tex0 00000000 ctl f0020004: 90300 vertices
+[nano7-mbxr] state isp 96602e80 b1 e0000000 fmt 0003 tex0 00000000 ctl f0020004: 1204 vertices
+[nano7-mbxr] viewport x 120 + 120, y 216 + -216, z 0.5 + 0.5 * ndc
+[nano7-mbxr] tex 00005600 12005e59 86086610 raw: (0,0)=00f8 (1,1)=00f8 (9,1)=00f8
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=32.316 s pc=0x081bad1e kick #2304 mode 0x22020000 L0 0x0bd94180 00f001b0 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0842af80 cpsr=0x00000010 sp=0x09981980 lr=0x08404ec3
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 099819dc 09982238 09982244 00000001 081dcbe3 0842aec0 09982208 08576397 09982254 08404ec3 099821f4 081dcc0b 094bca38 098dcefc 00000000 00000000 099821fc 09982208 09982254 098de368 00000004 00000006 00001403 094bca38 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x08019604 cpsr=0x00000010 sp=0x0b4031e0 lr=0x0800c1f9
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0b40344c 0800c1f9 0b403228 0b407334 0b403318 0b4032b8 00008417 00000000 0b407334 0800d8cd 00000000 00000000 0b403254 0b407334 00000001 0801a945 0958c2e4 0800dc97 089a61c8 00000004 00000000 00000000 00000002 089a61c8 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x22000008 cpsr=0x00000013 sp=0x2202c000 lr=0x0842b1d0
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-disp] t=36.404 s pc=0x081bad1e kick #2560 mode 0x11000000 L0 0x0bf29380 00100010 -> L1 0x0bf29380 size 00f001b0 at 00000000, irq en 1
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0817adb8 cpsr=0x00000010 sp=0x09981900 lr=0x00000000
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000002 00000004 00000000 00000000 00000002 098df7d0 00000000 0000011c 0000000c 00000003 3b800000 00000001 3bc00000 098e073c 098e0730 00000000 00000000 098de368 094bca38 00000006 098de368 00000006 094bca38 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0842aff0 cpsr=0x00000010 sp=0x09954310 lr=0x0842b47d
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 081ba781 00000000 000003c0 5da35d0d 00000000 000653fc 00000001 09954340 0842b47d 0995a9cc 081980d1 0995a9e4 0995a99c 099588ec 08198383 09954358 0995a9cc 02000203 0801f38d 098e1dfc 00000000 00000000 5da35da3 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0842af80 cpsr=0x00000010 sp=0x09954310 lr=0x0842b48d
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 08753088 081ba781 00000000 000003c0 5da35d0d 00000000 000653fc 00000001 09954340 0842b48d 0995a9cc 081980c3 0995a9e4 0995a99c 099588ec 08198383 09954358 0995a9cc 02000203 08041889 0964fb5c 00000000 00000000 5da35da3 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-torn] summary: 2/2 torn blocks hit by stale reads, 98868 stale / 177682 reads
+[nano7-torn]   0x093e0000 PD stale_words=11198 stale_reads=26108 reads=35351 writes=9315
+[nano7-torn]   0x099a0000 P  stale_words=8411 stale_reads=72760 reads=142331 writes=15628
+[nano7-pc] pc=0x0842af80 cpsr=0x00000010 sp=0x09954310 lr=0x0842b48d
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 08753088 081ba781 00000000 000003c0 5da35d0d 00000000 000653fc 00000001 09954340 0842b48d 0995a9cc 081980c3 0995a9e4 0995a99c 099588ec 08198383 09954358 0995a9cc 02000203 08041889 0964fb5c 00000000 00000000 5da35da3 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-disp] t=40.437 s pc=0x081bad1e kick #2816 mode 0x22000000 L0 0x0bdf9600 00f001b0 -> L1 0x0bec3f00 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0842b1d0 cpsr=0x00000013 sp=0x2202c000 lr=0x0842b1d0
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-spc] ch0 frame 0x6200 done -> IRQ 52
+[nano7-spc] ch0 frame 0x6000 done -> IRQ 52
+[nano7-pc] pc=0x083f1a92 cpsr=0x00000013 sp=0x2202bf44 lr=0x08136673
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 08136673 0997f8d4 000000c4 098dfe3c 0997f8d4 00000000 098dcefc 000004e4 00000000 00008775 08a45a9c 00000000 0813f7e3 098dfc98 098dfe08 fffffffd 00000001 00000001 083eccad 08a45a9c 09984890 3b000000 00000010 
+[nano7-pc] pc=0x08191f6a cpsr=0x00000013 sp=0x2202bf6c lr=0x083ecccd
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 09984a3c 38e0200c 38e01f00 00000001 08000000 00000001 2202fff8 00000000 83126c00 0814e331 00000035 0800d355 00000000 00000002 0bfb2491 0bfb2491 08000000 0800ab93 0890b948 0862b838 20000113 08d18060 08aad6a0 08a9c8b4 
+[nano7-disp] t=44.534 s pc=0x081bad1e kick #3072 mode 0x11000000 L0 0x0bdf9600 00100010 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x22001450 cpsr=0x00000012 sp=0x2202f000 lr=0x22001450
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 000092b1 00000240 000093c8 00000000 00000020 00000020 00000000 00000000 00000000 00000000 0000b7c0 00000240 00000000 0000000b 00000000 00000000 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x0800eb88 cpsr=0x00000010 sp=0x09981988 lr=0x0802afd1
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0899ca5c 0802afd1 00000000 0899ca5c 09982230 09982228 00000000 08005ec5 099821f4 081dcbdd 094bca38 098dcefc 00000000 00000000 099821fc 09982208 09982254 098de368 00000004 00000006 00001403 094bca38 0b402b40 00000004 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-disp] t=48.646 s pc=0x081bad1e kick #3328 mode 0x22020000 L0 0x0bd94180 00f001b0 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-torn] summary: 2/2 torn blocks hit by stale reads, 105990 stale / 188930 reads
+[nano7-torn]   0x093e0000 PD stale_words=11198 stale_reads=26108 reads=35351 writes=9315
+[nano7-torn]   0x099a0000 P  stale_words=8411 stale_reads=79882 reads=153579 writes=18128
+[nano7-pc] pc=0x083f1a92 cpsr=0x00000013 sp=0x2202bf44 lr=0x08136673
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 00000000 08136673 0997f8d4 000000c4 098dfe3c 0997f8d4 00000000 098dcefc 00000644 00000000 00008775 08a45a9c 00000000 0813f7e3 098dfc98 098dfe08 fffffffd 00000001 00000001 083eccad 08a45a9c 09984890 3b000000 00000010 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+[nano7-pc] pc=0x08191f6a cpsr=0x00000013 sp=0x2202bf6c lr=0x083ecccd
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 09984a3c 38e0200c 38e01f00 00000001 00000001 00000000 0b407334 0b3c05c8 83126c00 0814e331 00000035 0800d355 00000000 00000002 0b402f98 0b3cb05c 00000001 0800ab93 0890b948 0862b838 20000113 0b402bf8 08aadf10 08a9c8b4 
+[nano7-disp] t=52.637 s pc=0x081bad1e kick #3584 mode 0x22020000 L0 0x0bd94180 00f001b0 -> L1 0x0bdf9600 size 00f001b0 at 00000000, irq en 1
+[nano7-pc] pc=0x0800eb9a cpsr=0x00000010 sp=0x09954328 lr=0x0802afdf
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0899cac8 0802afdf 00000000 0899cac8 0995a9b4 081ba685 00000001 08005ec5 0995a99c 0819827d 09954358 0995a9cc 02000203 0801f38d 098e1dfc 00000000 00000000 5da35da3 0862daf8 0862dad0 00000032 09954390 0862dd8c 00000000 
+[nano7-pc] pc=0x0862adec cpsr=0x00000013 sp=0x2202bff0 lr=0x22001468
+[nano7-iram] e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 e59ff038 00000000 00000000 ea0003aa 00000000 00000000 00000000 00000000 00000000  [vic-struct ptr=08ae67b8 w0=38e00010 w1=38e01010] [brstate st=0x2202ba3c f28=00 f29=00 a0=00000000 vt=20000020] [iram@11c0: f7ff4669 a901ffef f7ff4618 9900ffd9 eb004805 f8500081 22011fc0 409a9b01 60014391 bd0c2000 39700000 28004993 b5104b93 547cf44f 461ad004 d1036214]
+[nano7-stack] 0bc31ddc 082f3868 6000005f 22001450 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 
+qemu-system-arm: terminating on signal 15 from pid 103 (python3)
+[nano7-unimpl] summary: 0x39400000.. 5458 accesses
+[nano7-unimpl] summary: 0x38300000.. 1917 accesses
+[nano7-mbx] summary: 906 scenes, 906 renders done, 906 render jobs (nothing drawn)
+[nano7-i2s] summary: 9117696 bytes = 51.7 s of 44100 Hz s16 stereo, peak 0 / 32767 (silence), 0 dropped
+[nano7-lcd] summary: 3054 TE pulses, 640 window-base changes, 509 console updates, 0 screen dumps, 1917 DSI packets (0 px); written regs: +0x004=00000010 +0x010=00000321 +0x020=002107ff +0x024=0bf29380 +0x028=000000f0 +0x02c=00000000 +0x030=00f001b0 +0x034=00000000 +0x060=00000000 +0x064=00000000 +0x068=00000000 +0x06c=00000000
+[nano7-disp] summary: 3664 kicks, 3663 frames done, 3664 blits (317989910 px)
+[nano7-fmc] summary: 1977 FMSS runs, DMA in 14843904 B / out 73682528 B
+[nano7-fmc] NAND store: 4496 pages / 17984 sectors programmed, 4496 pages held; read sectors: 389 hit, 3235 miss (3235 oracle-filled)

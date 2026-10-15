@@ -1,0 +1,18 @@
+{
+  "trafficcone.dff": {
+    "sector": 31449,
+    "sectors": 1,
+    "bytes": 2024,
+    "sha256": "07dbfda36c9f5d6120ca3d78d6a34ac5fe282f6c78e475c9799df8039851d32a",
+    "chunk": 16,
+    "version": 268697599
+  },
+  "dyncones.txd": {
+    "sector": 30678,
+    "sectors": 3,
+    "bytes": 5832,
+    "sha256": "b2cec0b6cd53a7ff7980b0b9c23f3350d246492f15296a0397fabbb079267721",
+    "chunk": 22,
+    "version": 268697599
+  }
+}

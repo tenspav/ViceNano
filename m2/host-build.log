@@ -1,0 +1,64 @@
+Consolidate compiler generated dependencies of target librw
+[  1%] Building CXX object src/CMakeFiles/librw.dir/gles1/gles1immed.cpp.o
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:5,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp:1:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function ‘void rw::memNative32(void*, rw::uint32)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:461:31: warning: unused parameter ‘data’ [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:461:44: warning: unused parameter ‘size’ [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function ‘void rw::memNative16(void*, rw::uint32)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:462:31: warning: unused parameter ‘data’ [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:462:44: warning: unused parameter ‘size’ [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function ‘void rw::memLittle32(void*, rw::uint32)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:463:31: warning: unused parameter ‘data’ [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:463:44: warning: unused parameter ‘size’ [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function ‘void rw::memLittle16(void*, rw::uint32)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:464:31: warning: unused parameter ‘data’ [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:464:44: warning: unused parameter ‘size’ [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:16,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp:1:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h: In member function ‘void rw::ps2::Im2DVertex::setU(rw::float32, float)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h:28:36: warning: unused parameter ‘recipz’ [-Wunused-parameter]
+   28 |         void setU(float32 u, float recipz) { this->u = u; }
+      |                              ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h: In member function ‘void rw::ps2::Im2DVertex::setV(rw::float32, float)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h:29:36: warning: unused parameter ‘recipz’ [-Wunused-parameter]
+   29 |         void setV(float32 v, float recipz) { this->v = v; }
+      |                              ~~~~~~^~~~~~
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:28,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp:1:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h: In member function ‘void rw::gles1::Im2DVertex::setU(rw::float32, float)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h:68:36: warning: unused parameter ‘recipz’ [-Wunused-parameter]
+   68 |         void setU(float32 u, float recipz) { this->u = u; }
+      |                              ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h: In member function ‘void rw::gles1::Im2DVertex::setV(rw::float32, float)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h:69:36: warning: unused parameter ‘recipz’ [-Wunused-parameter]
+   69 |         void setV(float32 v, float recipz) { this->v = v; }
+      |                              ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp: In function ‘void rw::gles1::im2DRenderIndexedPrimitive(rw::PrimitiveType, void*, rw::int32, void*, rw::int32)’:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp:38:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   38 |  if(!setup2(v,n))return;glDrawElements(primitive(p),ni,GL_UNSIGNED_SHORT,ix);restore3D();
+      |  ^~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1immed.cpp:38:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   38 |  if(!setup2(v,n))return;glDrawElements(primitive(p),ni,GL_UNSIGNED_SHORT,ix);restore3D();
+      |                         ^~~~~~~~~~~~~~
+[  3%] Linking CXX static library librw.a
+[100%] Built target librw

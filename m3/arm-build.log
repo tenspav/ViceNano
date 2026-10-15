@@ -1,0 +1,67 @@
+Consolidate compiler generated dependencies of target librw
+[  1%] Building CXX object src/CMakeFiles/librw.dir/gles1/gles1pipe.cpp.obj
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:6,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp:3:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:267:2: warning: extra ';' [-Wpedantic]
+  267 | };
+      |  ^
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function 'void rw::memNative32(void*, rw::uint32)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:461:31: warning: unused parameter 'data' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:461:44: warning: unused parameter 'size' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function 'void rw::memNative16(void*, rw::uint32)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:462:31: warning: unused parameter 'data' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:462:44: warning: unused parameter 'size' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function 'void rw::memLittle32(void*, rw::uint32)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:463:31: warning: unused parameter 'data' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:463:44: warning: unused parameter 'size' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h: In function 'void rw::memLittle16(void*, rw::uint32)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:464:31: warning: unused parameter 'data' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/rwbase.h:464:44: warning: unused parameter 'size' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:17,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp:3:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setU(rw::float32, float)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h:28:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   28 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setV(rw::float32, float)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/ps2/rwps2.h:29:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   29 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
+In file included from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../rw.h:29,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1impl.h:2,
+                 from /home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp:3:
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setU(rw::float32, float)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h:70:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   70 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setV(rw::float32, float)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/../../src/gles1/rwgles1.h:71:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   71 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp: In function 'void rw::gles1::instance(rw::ObjPipeline*, rw::Atomic*)':
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp:22:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   22 |  if(!h)return;memset(h,0,sizeof(Header)+(count-1)*sizeof(MeshInstance));h->platform=PLATFORM_GLES1;h->serial=g->meshHeader->serialNum;h->count=count;g->instData=h;
+      |  ^~
+/home/pavliukov/ipodwork/ViceNano/vendor/librw/src/gles1/gles1pipe.cpp:22:15: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   22 |  if(!h)return;memset(h,0,sizeof(Header)+(count-1)*sizeof(MeshInstance));h->platform=PLATFORM_GLES1;h->serial=g->meshHeader->serialNum;h->count=count;g->instData=h;
+      |               ^~~~~~
+[  2%] Linking CXX static library librw.a
+[100%] Built target librw

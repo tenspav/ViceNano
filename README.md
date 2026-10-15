@@ -30,7 +30,7 @@
 
 ## Development progress
 
-> ✅ **M0-M1 DONE:** toolchain works, the first GL triangle renders in NanoEmu through the real SDK GL path ([proof](docs/first-triangle.png), [report](m0/REPORT.md)). Next: M2-M3 renderer.
+> **Renderer progress:** [M1b](m1b/REPORT.md) verifies the textured cube and native indexed draws; [M2](m2/REPORT.md) renders through librw GLES1. [M3](m3/REPORT.md) renders a converted Vice City traffic cone through reVC’s renderer adapter. Evidence is from NanoEmu; device and full-game gates remain open.
 
 
 
@@ -40,7 +40,7 @@
 | 🖥️ Emulator | ![97%](https://img.shields.io/badge/97%25-brightgreen) | boots real OS, window, audio, **renders 3D games** |
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
 | 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
-| 🏝️ Engine port | ![40%](https://img.shields.io/badge/40%25-yellowgreen) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
+| 🏝️ Engine port | ![50%](https://img.shields.io/badge/50%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
 ## The stages

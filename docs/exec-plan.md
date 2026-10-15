@@ -1,17 +1,3 @@
-t` and `MakeSpaceFor/RemoveModel`.
-SDK `hb_fs_read` only reads from the beginning: implement verified persistent seek/read-at support before IMG streaming; start synchronously, then add bounded per-frame I/O. Show loading progress.
-Keep RetailOS resident for SDK GL. If it cannot provide the envelope, reduced residency or an OS-memory project is required; bare-metal chainloading cannot retain these OS GL entry points.
-
-| Work | Estimate, one developer | Main risk |
-|---|---|---|
-| M0–M1 | 2–5 days | Dependencies, SDK ABI and indexed/state verification |
-| M2–M3 | 2–4 weeks | RW lifecycle/state semantics, raster conversion and atomic rendering |
-| M4 | 1–3 weeks | Freestanding C++, relocation/runtime coverage and dependency removal |
-| M5 | 3–7 days measurement; potentially weeks of remediation | RetailOS ownership, fragmentation and hidden driver allocations |
-| M6–M7 | 3–6 weeks | Seek API, asset reduction, expanded-memory accounting and streaming stalls |
-| M8–M9 | 6–12+ weeks | CPU skinning/simulation cost, controls, mission assumptions and audio; full-game performance remains unproven |
-tokens used
-61,628
 **Execution order: SDK cube → librw asset viewer → reduced reVC → bounded streamed world → gameplay.** First 3D is M1; first VC model is M3.
 The embedded [analysis](/home/pavliukov/ipodwork/NanoRework/docs/research/revc-gles1-port.md) informs this plan, but two assumptions need correction: librw is an empty `vendor/librw` submodule, and available game RAM is unproven.
 
