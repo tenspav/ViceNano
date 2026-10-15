@@ -55,7 +55,7 @@
 |  M5 world stream| ![done](https://img.shields.io/badge/done-brightgreen) | three building cells stream below 18 MiB; LRU and 64 evictions verified ([m5](m5/REPORT.md)) |
 | M6 audio | ![done](https://img.shields.io/badge/done-brightgreen) | SFX + 60-second radio through DMA/I2S; capture, timing and 28 cycles verified ([m6](m6/REPORT.md)) |
 | M7 controls | ![done](https://img.shields.io/badge/done-brightgreen) | touch + BT gamepad drive the game ([m7](m7/REPORT.md)) |
-| M8 performance | ![planned](https://img.shields.io/badge/planned-lightgrey) | 24+ fps sustained with unlocked clocks |
+| M8 performance | ![wip](https://img.shields.io/badge/building-orange) | 24+ fps sustained with unlocked clocks |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
 
 **Overall: research 100% + emulator 97% + engine 50% = the game itself is the remaining work.**

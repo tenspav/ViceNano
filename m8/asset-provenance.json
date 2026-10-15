@@ -1,0 +1,102 @@
+{
+  "ide_sha256": "2d5f7d0b5f12c88d4c22aa9ec640f0f1293c1d5469f1df1d947fa95c7ad21670",
+  "ipl_sha256": "a565e0246d35fd9138cb088de483f542da8e4a6b962e372935bf2308af5c81f3",
+  "buildings": [
+    {
+      "model": "nbdecoshop01",
+      "id": 4187,
+      "txd": "nbdecoshop01",
+      "ide_line": "4187, nbdecoshop01, nbdecoshop01, 1, 169.5, 128",
+      "ipl_line": "4187, nbdecoshop01, 0, 493.0415039, 829.5327148, 22.83003235, 1, 1, 1, 0, 0, 0, 1",
+      "position": [
+        493.0415039,
+        829.5327148,
+        22.83003235
+      ],
+      "cell": [
+        4,
+        -9
+      ],
+      "entries": {
+        "nbdecoshop01.dff": {
+          "sector": 64382,
+          "sectors": 49,
+          "bytes": 99309,
+          "sha256": "7229d2957e006769f1025555c46065c2ee7c5fd9638033d2099817a6024b6ebe"
+        },
+        "nbdecoshop01.txd": {
+          "sector": 65389,
+          "sectors": 348,
+          "bytes": 712104,
+          "sha256": "fa03d199202adb4937bc2f0b4a0d32e68cabfd8b77771e3e7f261b0ef9e3a545"
+        }
+      },
+      "packed_bytes": 126760,
+      "reservation": 880704
+    },
+    {
+      "model": "nbdecoshop02",
+      "id": 4186,
+      "txd": "nbdecoshop02",
+      "ide_line": "4186, nbdecoshop02, nbdecoshop02, 1, 149.5, 128",
+      "ipl_line": "4186, nbdecoshop02, 0, 481.17276, 917.854126, 21.00377846, 1, 1, 1, 0, 0, 0, 1",
+      "position": [
+        481.17276,
+        917.854126,
+        21.00377846
+      ],
+      "cell": [
+        4,
+        -10
+      ],
+      "entries": {
+        "nbdecoshop02.dff": {
+          "sector": 64431,
+          "sectors": 57,
+          "bytes": 116153,
+          "sha256": "aca1e3c4483f36b69c33ad85eb36073bfbdfe700c0d08178e35d9d27cba845d2"
+        },
+        "nbdecoshop02.txd": {
+          "sector": 65737,
+          "sectors": 182,
+          "bytes": 371588,
+          "sha256": "d3df1eedae52069bf8549c4a2256cc4dcb36a740f798769c697100f92a5ab071"
+        }
+      },
+      "packed_bytes": 113618,
+      "reservation": 847592
+    },
+    {
+      "model": "nbdecoshop03",
+      "id": 4188,
+      "txd": "nbdecoshop03",
+      "ide_line": "4188, nbdecoshop03, nbdecoshop03, 1, 149.5, 128",
+      "ipl_line": "4188, nbdecoshop03, 0, 368.0335083, 911.8964233, 20.79947662, 1, 1, 1, 0, 0, 0, 1",
+      "position": [
+        368.0335083,
+        911.8964233,
+        20.79947662
+      ],
+      "cell": [
+        3,
+        -10
+      ],
+      "entries": {
+        "nbdecoshop03.dff": {
+          "sector": 64488,
+          "sectors": 48,
+          "bytes": 98096,
+          "sha256": "b8a86ff340596bff7d20cf3f2bf9d7058b654eac23a0a5eb82c042a88c72eb3a"
+        },
+        "nbdecoshop03.txd": {
+          "sector": 65919,
+          "sectors": 167,
+          "bytes": 340364,
+          "sha256": "9cbde08ff39d53d194ee3eb55691a4a97c8798bd63a4e3cb0fbd131917db5df3"
+        }
+      },
+      "packed_bytes": 95666,
+      "reservation": 730472
+    }
+  ]
+}

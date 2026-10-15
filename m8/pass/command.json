@@ -1,0 +1,13 @@
+[
+  "/home/pavliukov/ipodwork/NanoRework/emulator/build/qemu-system-arm",
+  "-M",
+  "nano7,mmu=0x08b28000,torn-ignore-pc=0x093d2a80:0x093d4100,pcsample-ms=1000,bootrom=/home/pavliukov/ipodwork/NanoRework/dumps/bootrom-vrom.bin,os-image=/home/pavliukov/ipodwork/NanoRework/dumps/snap6/ram-full.bin,iram-image=/home/pavliukov/ipodwork/NanoRework/dumps/snap6/iram.bin,ctx=/home/pavliukov/ipodwork/NanoRework/emulator/fixups/snap6-ctx.bin,overlay=/home/pavliukov/ipodwork/NanoRework/dumps/snap6/overlay.bin,os-poke-file=/home/pavliukov/ipodwork/ViceNano/m8/pass/m8.poke,torn-map=/home/pavliukov/ipodwork/NanoRework/dumps/snap6/torn-map.bin,nand-miss=oracle,nand-patch=/home/pavliukov/ipodwork/ViceNano/m8/pass/app.patch,nand-disk=/home/pavliukov/ipodwork/NanoRework/dumps/ipod-disk.dd,nand-disk-offset=49216,nand-rsrc=/home/pavliukov/ipodwork/NanoRework/emulator/rsrc/rsrc-1.1.2.img1,bt-peer=gamepad,bt-pad=2:lx=100:2500/6:rx=100:1500/10:a+ly=-100:2000,buttons=8:home:150,state-dir=/home/pavliukov/ipodwork/ViceNano/m8/pass/state,screens-dir=/home/pavliukov/ipodwork/ViceNano/m8/pass/screens,audio-out=/home/pavliukov/ipodwork/ViceNano/m8/pass/audio.wav",
+  "-display",
+  "none",
+  "-serial",
+  "none",
+  "-monitor",
+  "none",
+  "-qmp",
+  "stdio"
+]
