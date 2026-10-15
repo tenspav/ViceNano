@@ -1,0 +1,102 @@
+{
+  "passed": false,
+  "reason": "Framebuffer stopped advancing",
+  "frames": [
+    {
+      "file": "vcstream-0.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-1.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-10.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-11.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-12.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-13.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-14.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-15.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-2.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-3.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-4.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-5.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-6.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-7.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-8.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    },
+    {
+      "file": "vcstream-9.png",
+      "loads": 22,
+      "evictions": 20,
+      "frame": 226
+    }
+  ]
+}

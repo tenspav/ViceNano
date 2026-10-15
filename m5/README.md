@@ -1,0 +1,9 @@
+M5 is the user-requested world-streaming milestone (the older execution-plan table assigns different numbers).
+
+Reproduce with `python3 prepare-assets.py`, `./check-host.sh`, `python3 check-selection.py`, `./run-in-emulator.sh`, and `python3 verify.py`, from this directory. The packer uses the local Vice City installation read-only; no game assets are distributed. It requires the NULL-platform host librw archive built by M4's `prepare-assets.sh` and the GLES1 host archive built by M4's `check-host.sh`.
+
+The shared `tools/emulator_check.py` boots RetailOS and loads the ARM package through an in-memory NAND overlay. QMP uses stdio pipes, with no sockets or device access. The runner sends periodic canvas touches to keep RetailOS awake during the long test. Screenshots and the original disk hash checks are in `run/`.
+
+`stream.cpp` owns camera-cell requests and a two-slot LRU. `model.cpp` loads/destroys the reduced reVC clump/dictionary for a slot. `nano.cpp` supplies the moving camera. `viewer.cpp` batches status geometry into bounded client-array draws and emits 16 binary telemetry rows, decoded by `verify.py`. The retained reVC source bodies are verified by `check-selection.py`.
+
+Packs are embedded read-only backing storage. Decoded geometry, per-block texture dictionaries, CPU raster shadows, and GL textures are loaded/evicted. This test does not implement a NAND filesystem read-at adapter or the original reVC CStreaming sector pipeline. The 18 MiB allocator cap applies to tracked RW allocations; conservative per-block reservations include additional texture copies and are checked before eviction/allocation. Guest OS free-heap measurements are the check on driver behavior outside that allocator. Hidden shared GPU memory and physical-device RAM availability remain separate gates.

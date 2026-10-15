@@ -20,6 +20,7 @@ ap.add_argument('--app', type=Path, required=True)
 ap.add_argument('--output', type=Path, required=True)
 ap.add_argument('--prefix', default='frame')
 ap.add_argument('--vnc', help='QEMU VNC display, e.g. 127.0.0.1:5')
+ap.add_argument('--keep-awake', action='store_true', help='Send periodic harmless canvas touches to prevent RetailOS idle sleep')
 ap.add_argument('--warmup', type=float, default=20)
 ap.add_argument('--samples', type=int, default=8)
 ap.add_argument('--page', type=int, default=3)
@@ -97,6 +98,15 @@ with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlo
             {'type': 'abs', 'data': {'axis': 'y', 'value': y * 32767 // 431}},
             {'type': 'btn', 'data': {'button': 'left', 'down': down}},
         ]})
+    def idle(seconds):
+        remaining = seconds
+        while remaining > 0:
+            delay = min(5, remaining) if a.keep_awake else remaining
+            time.sleep(delay)
+            remaining -= delay
+            if a.keep_awake:
+                pointer(True, 5, 300)
+                pointer(False, 5, 300)
     def shot(name):
         ppm = run / (name + '.ppm')
         command('screendump', {'filename': str(ppm)})
@@ -128,10 +138,10 @@ with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlo
         pointer(True, a.tap_x, 215)
         time.sleep(.15)
         pointer(False, a.tap_x, 215)
-        time.sleep(a.warmup)
+        idle(a.warmup)
         for i in range(a.samples):
             shot(f'{a.prefix}-{i}')
-            time.sleep(2)
+            idle(2)
         if a.dump_memory: command('pmemsave', {'val': 0x08000000, 'size': 0x04000000, 'filename': str(run / 'memory.bin')})
     finally:
         proc.terminate()

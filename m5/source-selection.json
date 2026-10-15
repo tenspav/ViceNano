@@ -1,0 +1,7 @@
+{
+  "reference": "/home/pavliukov/ipodwork/NanoRework/games/reVC",
+  "target_sources": ["viewer.cpp", "nano.cpp", "model.cpp", "fakerw.cpp", "rw_helpers.cpp", "../sdk/runtime.cpp", "../sdk/gl.c"],
+  "fakerw_functions": ["RwCameraBeginUpdate", "RwCameraEndUpdate", "RwCameraClear", "RwRenderStateSet", "RpAtomicRender", "RwTextureCreate", "RwTextureDestroy", "RwTextureSetName", "RwTexDictionaryCreate", "RwTexDictionaryDestroy", "RwTexDictionaryAddTexture", "RwTexDictionaryFindNamedTexture", "RwTexDictionaryGetCurrent", "RwTexDictionarySetCurrent", "RwTexDictionaryForAllTextures", "RpClumpGetFrame", "RpClumpSetFrame", "RpClumpForAllAtomics", "RpClumpRender", "RpClumpAddAtomic", "RpClumpDestroy", "RpClumpCreate", "RpClumpGetNumAtomics"],
+  "rw_helper_functions": ["GetFirstAtomicCallback", "GetFirstAtomic", "GetFirstTextureCallback", "GetFirstTexture"],
+  "omitted": ["CGame", "streaming", "audio", "frontend/HUD", "missions", "population/traffic", "movies", "skin", "custom shaders", "postfx"]
+}

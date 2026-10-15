@@ -1,0 +1,1 @@
+PASS: LRU victim/hit; 30 traversals, 300 loads, final live=0 peak=771374 baseline=6140 uploads=5239 deletes=5239 draws=123000 failures=0 budget=18874368

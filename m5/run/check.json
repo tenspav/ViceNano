@@ -1,0 +1,88 @@
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 83001,
+      "colored_pixels": 1636
+    },
+    {
+      "background_pixels": 61484,
+      "colored_pixels": 8371
+    },
+    {
+      "background_pixels": 88413,
+      "colored_pixels": 1745
+    },
+    {
+      "background_pixels": 82257,
+      "colored_pixels": 3848
+    },
+    {
+      "background_pixels": 86748,
+      "colored_pixels": 1922
+    },
+    {
+      "background_pixels": 87501,
+      "colored_pixels": 1587
+    },
+    {
+      "background_pixels": 74733,
+      "colored_pixels": 5802
+    },
+    {
+      "background_pixels": 86748,
+      "colored_pixels": 1922
+    },
+    {
+      "background_pixels": 82513,
+      "colored_pixels": 1486
+    },
+    {
+      "background_pixels": 89073,
+      "colored_pixels": 2584
+    },
+    {
+      "background_pixels": 88204,
+      "colored_pixels": 1830
+    },
+    {
+      "background_pixels": 88413,
+      "colored_pixels": 1745
+    },
+    {
+      "background_pixels": 89073,
+      "colored_pixels": 2584
+    },
+    {
+      "background_pixels": 61484,
+      "colored_pixels": 8371
+    },
+    {
+      "background_pixels": 80137,
+      "colored_pixels": 2453
+    },
+    {
+      "background_pixels": 81413,
+      "colored_pixels": 1639
+    }
+  ],
+  "changed_pixels": [
+    34197,
+    15756,
+    22331,
+    15966,
+    15881,
+    25140,
+    15951,
+    18041,
+    18601,
+    15985,
+    16086,
+    18571,
+    34422,
+    17407,
+    14411
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "08981f722125507ef35058e3b570008dd1789a884f70da3cd9a5f2d0233e4447"
+}

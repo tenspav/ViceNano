@@ -1,0 +1,184 @@
+make: Entering directory '/home/pavliukov/ipodwork/ViceNano/m5'
+arm-none-eabi-g++ -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -fno-pic -fno-builtin -ffreestanding -nostdlib -fno-jump-tables -fno-common -fno-exceptions -Os -Wall -Wextra -fdata-sections -ffunction-sections -fno-strict-aliasing -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk -DHB_GL_SURFACE_APP -DHB_LV_RELOC -I/usr/include/newlib -DRW_GLES1 -DRW_NANO -fno-rtti -fno-threadsafe-statics -mword-relocations -std=c++11 -MMD -MP -I. -I../vendor/librw -I../vendor/revc-viewer/fakerw -c nano.cpp -o build/nano.o
+In file included from ../vendor/librw/rw.h:6,
+                 from memory.h:2,
+                 from nano.cpp:2:
+../vendor/librw/src/rwbase.h: In function 'void rw::memNative32(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:461:31: warning: unused parameter 'data' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:461:44: warning: unused parameter 'size' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memNative16(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:462:31: warning: unused parameter 'data' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:462:44: warning: unused parameter 'size' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memLittle32(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:463:31: warning: unused parameter 'data' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:463:44: warning: unused parameter 'size' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memLittle16(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:464:31: warning: unused parameter 'data' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:464:44: warning: unused parameter 'size' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+In file included from ../vendor/librw/rw.h:17,
+                 from memory.h:2,
+                 from nano.cpp:2:
+../vendor/librw/src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setU(rw::float32, float)':
+../vendor/librw/src/ps2/rwps2.h:28:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   28 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+../vendor/librw/src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setV(rw::float32, float)':
+../vendor/librw/src/ps2/rwps2.h:29:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   29 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
+In file included from ../vendor/librw/rw.h:29,
+                 from memory.h:2,
+                 from nano.cpp:2:
+../vendor/librw/src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setU(rw::float32, float)':
+../vendor/librw/src/gles1/rwgles1.h:70:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   70 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+../vendor/librw/src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setV(rw::float32, float)':
+../vendor/librw/src/gles1/rwgles1.h:71:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   71 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
+nano.cpp: In function 'bool NanoExit()':
+nano.cpp:21:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   21 |  if(started)Engine::stop();if(opened)Engine::close();Engine::term();
+      |  ^~
+nano.cpp:21:28: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   21 |  if(started)Engine::stop();if(opened)Engine::close();Engine::term();
+      |                            ^~
+nano.cpp: In function 'bool NanoInit(int, int)':
+nano.cpp:27:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   27 |  if(!Engine::init(&trackedMemory))return false;initialized=true;
+      |  ^~
+nano.cpp:27:48: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   27 |  if(!Engine::init(&trackedMemory))return false;initialized=true;
+      |                                                ^~~~~~~~~~~
+cmake -S ../vendor/librw -B arm-build -DCMAKE_TOOLCHAIN_FILE=/home/pavliukov/ipodwork/ViceNano/m5/arm-toolchain.cmake -DLIBRW_PLATFORM=GLES1 -DLIBRW_TOOLS=OFF -DLIBRW_INSTALL=OFF
+-- LIBRW_PLATFORM = GLES1 (choices=NULL;GL3;GLES1)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pavliukov/ipodwork/ViceNano/m5/arm-build
+cmake --build arm-build -j4
+gmake[1]: Entering directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+gmake[2]: Entering directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+gmake[3]: Entering directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+Consolidate compiler generated dependencies of target librw
+gmake[3]: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+[100%] Built target librw
+gmake[2]: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+gmake[1]: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m5/arm-build'
+arm-none-eabi-gcc -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -fno-pic -fno-builtin -ffreestanding -nostdlib -fno-jump-tables -fno-common -fno-exceptions -Os -Wall -Wextra -fdata-sections -ffunction-sections -fno-strict-aliasing -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/freestanding -DHB_GL_SURFACE_APP -DHB_LV_RELOC -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -nostdlib -Wl,--gc-sections -Wl,--build-id=none -Wl,-q -Wl,-e,payload_entry -Wl,-Ttext,0 -Wl,-T,../sdk/hbapp.ld -Wl,--target1-rel -o build/vcstream.reloc.elf /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_gl_surface.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_surface_input.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_mipi.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_gpu.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_text.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_font.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_touch.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_touch_mb.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_button.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_fs.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_ui.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_kb.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_audio.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_paged_list.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_brightness.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_rtc.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_battery.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_prefs.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_accel.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_media.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_orientation.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_image.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_screenshot.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_heap.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_record.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_sysfx.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_trace.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_shared.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_time.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_fpu.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_app.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_res.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_uitask.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_icon.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_gfx.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_compositor.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_reloc.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_reloc_file.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_app_bundle.c ../sdk/gl.c  build/viewer.o build/model.o build/stream.o build/fakerw.o build/helpers.o build/nano.o build/runtime.o arm-build/src/librw.a /usr/lib/arm-none-eabi/newlib/thumb/nofp/libm.a /usr/lib/arm-none-eabi/newlib/thumb/nofp/libc.a /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a/nofp/libgcc.a
+Thumb-FP gate: PASS (build/vcstream.reloc.elf)
+   text	   data	    bss	    dec	    hex	filename
+ 713392	   2696	  46136	 762224	  ba170	build/vcstream.reloc.elf
+python3 /home/pavliukov/ipodwork/nano7-untethered/nanoapps/tools/mkrelocapp.py build/vcstream.reloc.elf build/vcstream.hbapp payload_entry
+wrote build/vcstream.hbapp: entry@0x0 image=716096 span=762232 bss=46136 relocs=1273
+=== build/vcstream.hbapp ===
+721212 build/vcstream.hbapp
+cp build/vcstream.hbapp vcstream.hbapp
+make: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m5'
+/Apps/Executables/Mario Kart.hbapp: 1111628 bytes from /home/pavliukov/ipodwork/ViceNano/m5/vcstream.hbapp over 272 blocks (FTL LBA 0x1c85b..)
+wrote /home/pavliukov/ipodwork/ViceNano/m5/run/app.patch (272 blocks)
+Renderer replaces Mario Kart only inside the NAND overlay; source opened read-only
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 83001,
+      "colored_pixels": 1636
+    },
+    {
+      "background_pixels": 61484,
+      "colored_pixels": 8371
+    },
+    {
+      "background_pixels": 88413,
+      "colored_pixels": 1745
+    },
+    {
+      "background_pixels": 82257,
+      "colored_pixels": 3848
+    },
+    {
+      "background_pixels": 86748,
+      "colored_pixels": 1922
+    },
+    {
+      "background_pixels": 87501,
+      "colored_pixels": 1587
+    },
+    {
+      "background_pixels": 74733,
+      "colored_pixels": 5802
+    },
+    {
+      "background_pixels": 86748,
+      "colored_pixels": 1922
+    },
+    {
+      "background_pixels": 82513,
+      "colored_pixels": 1486
+    },
+    {
+      "background_pixels": 89073,
+      "colored_pixels": 2584
+    },
+    {
+      "background_pixels": 88204,
+      "colored_pixels": 1830
+    },
+    {
+      "background_pixels": 88413,
+      "colored_pixels": 1745
+    },
+    {
+      "background_pixels": 89073,
+      "colored_pixels": 2584
+    },
+    {
+      "background_pixels": 61484,
+      "colored_pixels": 8371
+    },
+    {
+      "background_pixels": 80137,
+      "colored_pixels": 2453
+    },
+    {
+      "background_pixels": 81413,
+      "colored_pixels": 1639
+    }
+  ],
+  "changed_pixels": [
+    34197,
+    15756,
+    22331,
+    15966,
+    15881,
+    25140,
+    15951,
+    18041,
+    18601,
+    15985,
+    16086,
+    18571,
+    34422,
+    17407,
+    14411
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "08981f722125507ef35058e3b570008dd1789a884f70da3cd9a5f2d0233e4447"
+}

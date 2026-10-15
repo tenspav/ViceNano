@@ -20,3 +20,6 @@ m4/converter
 m4/asset-check
 m4/cone-check
 m4/generated/
+m5/generated/
+m5/converter
+m5/asset-check
