@@ -9,9 +9,8 @@ void nano_run_constructors();
 }
 using namespace rw;
 bool loadModel();void unloadModel();void renderModel(unsigned);
-static Camera *camera;
 static unsigned errors,cycles,cpuBaseline,heapLow=~0u,heapHigh,loadedHeap,unloadedHeap;
-static bool ready,balanced=true,loaded;
+static bool ready,balanced=true;
 static void tile(int x,int y,int w,int h,unsigned r,unsigned g,unsigned b){
  gles1::Im2DVertex v[4]={};v[0].x=x;v[0].y=y;v[1].x=x+w;v[1].y=y;v[2].x=x+w;v[2].y=y+h;v[3].x=x;v[3].y=y+h;
  for(int i=0;i<4;i++){v[i].w=1;v[i].setColor(r,g,b,255);}uint16 ix[]={0,1,2,0,2,3};im2d::RenderIndexedPrimitive(PRIMTYPETRILIST,v,4,ix,6);
@@ -23,7 +22,7 @@ extern "C" void gl_app_frame(int w,int h,uint32_t frame){
   if(!NanoInit(w,h)){errors++;return;}
   cpuBaseline=NanoBaseline();unloadedHeap=hb_os_heap_free();ready=true;
  }
- if(frame && frame%180==0){
+ if(frame && frame%90==0){
   balanced=NanoExit() && balanced;ready=false;
   balanced=NanoLive()==0 && balanced;
   if(!NanoInit(w,h)){errors++;return;}ready=true;cpuBaseline=NanoBaseline();

@@ -16,3 +16,7 @@ m3/asset-check
 m3/generated/
 core
 workers-m4-log.txt
+m4/converter
+m4/asset-check
+m4/cone-check
+m4/generated/

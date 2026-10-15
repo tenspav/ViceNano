@@ -19,6 +19,7 @@ ap.add_argument('--nanorework', type=Path, default=Path('/home/pavliukov/ipodwor
 ap.add_argument('--app', type=Path, required=True)
 ap.add_argument('--output', type=Path, required=True)
 ap.add_argument('--prefix', default='frame')
+ap.add_argument('--vnc', help='QEMU VNC display, e.g. 127.0.0.1:5')
 ap.add_argument('--warmup', type=float, default=20)
 ap.add_argument('--samples', type=int, default=8)
 ap.add_argument('--page', type=int, default=3)
@@ -65,6 +66,7 @@ machine = ','.join([
 ])
 cmd = [str(emu / 'build/qemu-system-arm'), '-M', machine, '-display', 'none',
        '-serial', 'none', '-monitor', 'none', '-qmp', 'stdio']
+if a.vnc: cmd += ['-vnc', a.vnc]
 if a.debug: cmd += ['-d', 'int', '-D', str(run / 'cpu-debug.log')]
 (run / 'command.json').write_text(json.dumps(cmd, indent=2) + '\n')
 

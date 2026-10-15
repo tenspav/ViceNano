@@ -30,7 +30,7 @@
 
 ## Development progress
 
-> **Renderer progress:** [M1b](m1b/REPORT.md) verifies the textured cube and native indexed draws; [M2](m2/REPORT.md) renders through librw GLES1. [M3](m3/REPORT.md) renders a converted Vice City traffic cone through reVC’s renderer adapter. Evidence is from NanoEmu; device and full-game gates remain open.
+> **Renderer progress:** [M1b](m1b/REPORT.md) verifies textured native indexed draws; [M2](m2/REPORT.md) renders through librw GLES1; [M3](m3/REPORT.md) renders the converted VC cone. [M4](m4/REPORT.md) renders a North Beach shop through the reduced reVC texture/clump adapter, with balanced init/frame/exit checks in NanoEmu. Screenshot proof passes via QMP; localhost:5905 is sandbox-blocked. Device and full-game gates remain open.
 
 
 
@@ -51,7 +51,7 @@
 | M1 cube | ![done](https://img.shields.io/badge/done-brightgreen) | textured 3D, native indexed draws |
 | M2 librw | ![done](https://img.shields.io/badge/done-brightgreen) | reVC's graphics library runs on NanoEmu |
 | M3 VC model | ![done](https://img.shields.io/badge/done-brightgreen) | real Vice City asset renders ([cone](m3/REPORT.md)) |
-| M4 reVC core | ![wip](https://img.shields.io/badge/building-orange) | reduced reVC source boots its renderer |
+| M4 reVC core | ![wip](https://img.shields.io/badge/building-orange) | reduced reVC viewer renders a VC building ([m4](m4/REPORT.md)) |
 | M5 world stream | ![planned](https://img.shields.io/badge/planned-lightgrey) | city blocks stream inside 18MB heap |
 | M6 audio | ![planned](https://img.shields.io/badge/planned-lightgrey) | SFX + radio through our audio path |
 | M7 controls | ![planned](https://img.shields.io/badge/planned-lightgrey) | touch + BT gamepad drive the game |

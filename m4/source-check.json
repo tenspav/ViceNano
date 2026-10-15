@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "reference_sources": [
+    {
+      "source": "src/fakerw/fake.cpp",
+      "sha256": "b27842e741ef207c6d120efdc8648ebd9cebc90f7d990e0eb7c8158f4d5e0581",
+      "functions": 23
+    },
+    {
+      "source": "src/rw/RwHelper.cpp",
+      "sha256": "406e58ba5db9e824612d63d6e971173a4ae1ddaadc3bf1c6312f27f562077509",
+      "functions": 4
+    }
+  ]
+}

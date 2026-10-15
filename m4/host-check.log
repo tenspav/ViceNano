@@ -1,0 +1,8 @@
+-- LIBRW_PLATFORM = GLES1 (choices=NULL;GL3;GLES1)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pavliukov/ipodwork/ViceNano/m2/host-build
+Consolidate compiler generated dependencies of target librw
+[100%] Built target librw
+PASS: 20 complete init/exit cycles; 100 multi-part load/render/unload cycles; live=0 peak=430768 uploads=2600 deletes=2600 draws=2600
+PASS: 20 complete init/exit cycles; 100 multi-part load/render/unload cycles; live=0 peak=18388 uploads=100 deletes=100 draws=100

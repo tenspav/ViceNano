@@ -2,7 +2,10 @@
 #include "../vendor/revc-viewer/fakerw/rpworld.h"
 extern RpAtomic *GetFirstAtomic(RpClump*);
 extern RwTexture *GetFirstTexture(RwTexDictionary*);
-#include "generated/asset.h"
+#ifndef ASSET_HEADER
+#define ASSET_HEADER "generated/asset.h"
+#endif
+#include ASSET_HEADER
 #include <string.h>
 using namespace rw;
 static Texture *textures[sizeof(modelTextures)/sizeof(modelTextures[0])];

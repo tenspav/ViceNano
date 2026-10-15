@@ -1,3 +1,4 @@
+#include <string.h>
 #include "rwcore.h"
 #include "rpworld.h"
 using namespace rw;

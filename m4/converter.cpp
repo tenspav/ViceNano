@@ -12,7 +12,7 @@ using namespace rw;
 struct Tex {std::string name;int w,h,fmt;std::vector<uint16> pixels;};
 struct Part {int tex;std::vector<NanVertex> vertices;std::vector<uint16> indices;};
 static void require(bool b,const char *why){if(!b)throw std::runtime_error(why);}
-static int pot(int n){int p=1;while(p<n&&p<128)p*=2;return p;}
+static int pot(int n){int p=1;while(p<n&&p<64)p*=2;return p;}
 int main(int argc,char **argv){try{
  require(argc==4,"usage: converter MODEL.dff TEXTURES.txd OUTPUT.h");
  require(Engine::init(),"init");registerMeshPlugin();registerNativeDataPlugin();
@@ -54,7 +54,12 @@ int main(int argc,char **argv){try{
     unsigned ix=g->triangles[i].v[j];require(ix<p.vertices.size(),"index out of range");p.indices.push_back(ix);
     NanVertex &v=p.vertices[ix];float xyz[]={v.x,v.y,v.z};for(int k=0;k<3;k++){lo[k]=fminf(lo[k],xyz[k]);hi[k]=fmaxf(hi[k],xyz[k]);}
    }
-   if(!p.indices.empty())parts.push_back(p);
+   if(!p.indices.empty()){
+    // Keep only vertices used by this material; the source geometry is shared.
+    std::vector<NanVertex> compact;std::map<uint16,uint16> remap;
+    for(auto &ix:p.indices){auto found=remap.find(ix);if(found==remap.end()){uint16 next=compact.size();compact.push_back(p.vertices[ix]);remap[ix]=next;ix=next;}else ix=found->second;}
+    p.vertices.swap(compact);parts.push_back(p);
+   }
   }
  }
  require(!parts.empty()&&!textures.empty(),"model must have textured triangles");

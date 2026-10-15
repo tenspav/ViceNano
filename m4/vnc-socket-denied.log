@@ -1,0 +1,45 @@
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/iram.bin' (262144 bytes) at 0x22000000
+[nano7-fmc] nand-disk /home/pavliukov/ipodwork/NanoRework/dumps/ipod-disk.dd: image sector 0 = FTL LBA 49216
+[nano7-fmc] nand-patch /home/pavliukov/ipodwork/ViceNano/m4/run/app.patch: 272 blocks
+[nano7-fmc] nand-rsrc /home/pavliukov/ipodwork/NanoRework/emulator/rsrc/rsrc-1.1.2.img1: FTL LBA 0x3f2..0xaef3
+qemu-system-arm: info: nano7: ctx '/home/pavliukov/ipodwork/NanoRework/emulator/fixups/snap6-ctx.bin': r0=0x00000000 sp=0x0b402d48 lr=0x093d3f33 pc=0x093d31c7 (DRAM fmt, cpsr from ctx)
+qemu-system-arm: info: nano7: preloaded '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/ram-full.bin' (67108864 bytes) at 0x08000000
+qemu-system-arm: info: nano7: overlay '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/overlay.bin' v2: 68 blocks of 64 KB at T0 (window 96670 us, retries 0x8, wanted 69, dropped 1)
+qemu-system-arm: info: nano7: torn-map '/home/pavliukov/ipodwork/NanoRework/dumps/snap6/torn-map.bin': 2/1024 blocks of 64 KB watched (38 torn blocks covered by the overlay)
+qemu-system-arm: info: nano7: os-poke 0x0895c55c = 0x00000000 (was 0x00000001)
+qemu-system-arm: info: nano7: os-poke 0x0890b970 = 0x08a8d368 (was 0x098d1bb0)
+qemu-system-arm: info: nano7: os-poke 0x08a8d368 = 0x098d1bb0 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x08a8d36c = 0x0890b970 (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb0 = 0x08a786b4 (was 0x08a786b4)
+qemu-system-arm: info: nano7: os-poke 0x098d1bb4 = 0x08a8d368 (was 0x0890b970)
+qemu-system-arm: info: nano7: os-poke 0x08a786b4 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a786b8 = 0x098d1bb0 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab4 = 0x0b443bfc (was 0x0b443bfc)
+qemu-system-arm: info: nano7: os-poke 0x0b288ab8 = 0x08a786b4 (was 0x08a8d368)
+qemu-system-arm: info: nano7: os-poke 0x0b443bfc = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x0b443c00 = 0x0b288ab4 (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec4 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08a7aec8 = 0x0b443bfc (was 0x0b288ab4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c84 = 0x08a82ef4 (was 0x08a82ef4)
+qemu-system-arm: info: nano7: os-poke 0x0b338c88 = 0x08a7aec4 (was 0x08a7aec4)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef4 = 0x00000000 (was 0x00000000)
+qemu-system-arm: info: nano7: os-poke 0x08a82ef8 = 0x0b338c84 (was 0x0b338c84)
+qemu-system-arm: info: nano7: os-poke 0x08817218 = 0x0b3bd724 (was 0x0b3c77e8)
+qemu-system-arm: info: nano7: os-poke 0x0899c0fc = 0xffffffff (was 0x00000000)
+[nano7-vic] pc=0x00000000 bank0 enable |= 0xa4630f8c -> 0xa4630f8c
+[nano7-vic] pc=0x00000000 bank1 enable |= 0x00700023 -> 0x00700023
+[nano7-dma] t=0.000 s engine 1 ch 2 start ctrl 0x8b01 cfg 0x84249000 0x22001638 -> 0x3ca00010 count 2048 next 0x8b3539c0
+[nano7-tmr] pc=0x00000000 ch1 CON = 0x00001140
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000002 (data0=6000 pre=0)
+[nano7-tmr] pc=0x00000000 ch1 CMD = 0x00000001 (data0=6000 pre=0)
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00004 value=0x00000001
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00000 value=0x00001703
+[nano7-spc] pc=0x00000000 W32 addr=0x3de00010 value=0x00000000
+qemu-system-arm: info: nano7: resume-hw: VIC enables + 500 Hz tick restored
+qemu-system-arm: info: nano7: reset, PC=0x20000000
+qemu-system-arm: -vnc 127.0.0.1:5: Failed to create a socket: Operation not permitted
+[nano7-i2s] summary: 0 bytes = 0.0 s of 44100 Hz s16 stereo, peak 0 / 32767 (silence), 0 dropped
+[nano7-lcd] summary: 0 TE pulses, 0 window-base changes, 0 console updates, 0 screen dumps, 0 DSI packets (0 px); written regs: +0x020=002107ff +0x028=000000f0 +0x02c=00000000 +0x030=00f001b0 +0x034=00000000
+[nano7-disp] summary: 0 kicks, 0 frames done, 0 blits (0 px)
+[nano7-fmc] summary: 0 FMSS runs, DMA in 0 B / out 0 B
+[nano7-fmc] NAND store: 0 pages / 0 sectors programmed, 0 pages held; read sectors: 0 hit, 0 miss (0 oracle-filled)

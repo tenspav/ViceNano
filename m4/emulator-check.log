@@ -1,0 +1,51 @@
+/Apps/Executables/Mario Kart.hbapp: 1111628 bytes from /home/pavliukov/ipodwork/ViceNano/m4/vcnano.hbapp over 272 blocks (FTL LBA 0x1c85b..)
+wrote /home/pavliukov/ipodwork/ViceNano/m4/run/app.patch (272 blocks)
+Renderer replaces Mario Kart only inside the NAND overlay; source opened read-only
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 85660,
+      "colored_pixels": 2617
+    },
+    {
+      "background_pixels": 86212,
+      "colored_pixels": 3013
+    },
+    {
+      "background_pixels": 88587,
+      "colored_pixels": 2964
+    },
+    {
+      "background_pixels": 91782,
+      "colored_pixels": 2509
+    },
+    {
+      "background_pixels": 93395,
+      "colored_pixels": 2037
+    },
+    {
+      "background_pixels": 94582,
+      "colored_pixels": 1804
+    },
+    {
+      "background_pixels": 95882,
+      "colored_pixels": 1778
+    },
+    {
+      "background_pixels": 96956,
+      "colored_pixels": 1564
+    }
+  ],
+  "changed_pixels": [
+    14125,
+    14474,
+    13914,
+    14220,
+    14553,
+    14577,
+    14198
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "56b7ced10cbc0ce7ad5d23f8be560adf464a73a6e1be5fe9e6af5f94d5ade586"
+}

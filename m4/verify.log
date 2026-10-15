@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "file": "vcnano-0.png",
+      "model_pixels": 13270,
+      "model_colors": 438,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052556
+    },
+    {
+      "file": "vcnano-1.png",
+      "model_pixels": 11519,
+      "model_colors": 451,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052556
+    },
+    {
+      "file": "vcnano-2.png",
+      "model_pixels": 8466,
+      "model_colors": 456,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052556
+    },
+    {
+      "file": "vcnano-3.png",
+      "model_pixels": 6194,
+      "model_colors": 438,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 3,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052556
+    },
+    {
+      "file": "vcnano-4.png",
+      "model_pixels": 4616,
+      "model_colors": 387,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 4,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052432
+    },
+    {
+      "file": "vcnano-5.png",
+      "model_pixels": 3372,
+      "model_colors": 350,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 4,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052432
+    },
+    {
+      "file": "vcnano-6.png",
+      "model_pixels": 2376,
+      "model_colors": 248,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 4,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052432
+    },
+    {
+      "file": "vcnano-7.png",
+      "model_pixels": 1682,
+      "model_colors": 128,
+      "no_errors": true,
+      "balanced_unloads": true,
+      "supported": true,
+      "cycles": 4,
+      "rw_baseline": 2464,
+      "unloaded_heap": 6483656,
+      "rw_live": 411980,
+      "heap": 6052432
+    }
+  ],
+  "changed_pixels": [
+    13278,
+    13511,
+    13520,
+    14405,
+    14695,
+    14574,
+    14388
+  ],
+  "heap_range": 124
+}
