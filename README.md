@@ -43,6 +43,23 @@
 | 🏝️ Engine port | ![50%](https://img.shields.io/badge/50%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
 | 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
 
+### Engine port milestones (M0-M9)
+
+| Milestone | Progress | What it proves |
+|---|---|---|
+| M0 triangle | ![done](https://img.shields.io/badge/done-brightgreen) | first pixel through NanoGL |
+| M1 cube | ![done](https://img.shields.io/badge/done-brightgreen) | textured 3D, native indexed draws |
+| M2 librw | ![done](https://img.shields.io/badge/done-brightgreen) | reVC's graphics library runs on NanoEmu |
+| M3 VC model | ![done](https://img.shields.io/badge/done-brightgreen) | real Vice City asset renders ([cone](m3/REPORT.md)) |
+| M4 reVC core | ![wip](https://img.shields.io/badge/building-orange) | reduced reVC source boots its renderer |
+| M5 world stream | ![planned](https://img.shields.io/badge/planned-lightgrey) | city blocks stream inside 18MB heap |
+| M6 audio | ![planned](https://img.shields.io/badge/planned-lightgrey) | SFX + radio through our audio path |
+| M7 controls | ![planned](https://img.shields.io/badge/planned-lightgrey) | touch + BT gamepad drive the game |
+| M8 performance | ![planned](https://img.shields.io/badge/planned-lightgrey) | 24+ fps sustained with unlocked clocks |
+| M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
+
+**Overall: research 100% + emulator 97% + engine 50% = the game itself is the remaining work.**
+
 ## The stages
 
 0. ✅ **3D on real hardware is proven** — [nano7-untethered](https://github.com/olievans123/nano7-untethered) ships native Mario Kart 64 (30 fps) and Super Mario 64 ports with an OpenGL ES renderer + tilt steering on this exact device

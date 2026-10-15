@@ -1,0 +1,18 @@
+{
+  "nbdecoshop01.dff": {
+    "sector": 64382,
+    "sectors": 49,
+    "bytes": 99309,
+    "sha256": "7229d2957e006769f1025555c46065c2ee7c5fd9638033d2099817a6024b6ebe",
+    "chunk": 16,
+    "version": 268697599
+  },
+  "nbdecoshop01.txd": {
+    "sector": 65389,
+    "sectors": 348,
+    "bytes": 712104,
+    "sha256": "fa03d199202adb4937bc2f0b4a0d32e68cabfd8b77771e3e7f261b0ef9e3a545",
+    "chunk": 22,
+    "version": 268697599
+  }
+}
