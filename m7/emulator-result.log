@@ -1,0 +1,132 @@
+/Apps/Executables/Mario Kart.hbapp: 1111628 bytes from /home/pavliukov/ipodwork/ViceNano/m7/vcinput.hbapp over 272 blocks (FTL LBA 0x1c85b..)
+wrote /home/pavliukov/ipodwork/ViceNano/m7/result/app.patch (272 blocks)
+Renderer replaces Mario Kart only inside the NAND overlay; source opened read-only
+{
+  "pass": false,
+  "screenshots": [
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    },
+    {
+      "background_pixels": 61610,
+      "colored_pixels": 23811
+    }
+  ],
+  "changed_pixels": [
+    90,
+    120,
+    75,
+    135,
+    105,
+    90,
+    90,
+    90,
+    105,
+    150,
+    105,
+    105,
+    120,
+    135,
+    150,
+    120,
+    150,
+    150,
+    120,
+    165,
+    105,
+    105,
+    135
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "10ca9066c4880ce86bbfa6d34a49d8344543532b079dc357c288fd6adb4dc72d"
+}
+Screenshot check failed; inspect run/*.png and emulator.log

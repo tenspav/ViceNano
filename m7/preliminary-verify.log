@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/pavliukov/ipodwork/ViceNano/m7/verify.py", line 17, in <module>
+    rows=[read(n) for n in names]
+  File "/home/pavliukov/ipodwork/ViceNano/m7/verify.py", line 17, in <listcomp>
+    rows=[read(n) for n in names]
+  File "/home/pavliukov/ipodwork/ViceNano/m7/verify.py", line 9, in read
+    im=Image.open(root/(name+'.png')).convert('RGB')
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2953, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pavliukov/ipodwork/ViceNano/m7/run/initial.png'

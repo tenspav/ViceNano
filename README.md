@@ -30,7 +30,7 @@
 
 ## Development progress
 
-> **Renderer progress:** [M1b](m1b/REPORT.md) verifies native indexed draws; [M2](m2/REPORT.md) renders through librw GLES1; [M3](m3/REPORT.md) renders a VC cone; [M4](m4/REPORT.md) renders a building through reduced reVC. [M5](m5/REPORT.md) streams three real IPL/IDE building cells with a two-block LRU: 66 loads, 64 evictions, 120-byte unloaded-heap variation, and distinct QMP views in NanoEmu, below the 18 MiB budget. [M6](m6/REPORT.md) adds DMA audio: six concurrent SFX voices observed, a complete 60-second radio stream verified in capture, and 28 stop/reinitialise cycles with 100-byte heap variation. Packs and compressed radio backing are embedded; NAND streaming, device and full-game gates remain open.
+> **Renderer progress:** [M1b](m1b/REPORT.md) verifies native indexed draws; [M2](m2/REPORT.md) renders through librw GLES1; [M3](m3/REPORT.md) renders a VC cone; [M4](m4/REPORT.md) renders a building through reduced reVC. [M5](m5/REPORT.md) streams three real IPL/IDE building cells with a two-block LRU: 66 loads, 64 evictions, 120-byte unloaded-heap variation, and distinct QMP views in NanoEmu, below the 18 MiB budget. [M6](m6/REPORT.md) adds DMA audio: six concurrent SFX voices observed, a complete 60-second radio stream verified in capture, and 28 stop/reinitialise cycles with 100-byte heap variation. [M7](m7/REPORT.md) integrates player input: on-screen touch controls (virtual stick, camera swipe, 10 buttons) and encrypted Bluetooth HID gamepad drive player marker movement and camera orbit in the streamed world; 542 touch events verified with 0-byte heap growth, 7 secure HID reports and full-screen overlay suppression verified in NanoEmu. Packs and compressed radio backing are embedded; NAND streaming, device and full-game gates remain open.
 
 
 
@@ -41,7 +41,7 @@
 | 🔀 Dualboot | ![40%](https://img.shields.io/badge/40%25-yellow) | chainload path validated |
 | 🎮 GPU access | ![65%](https://img.shields.io/badge/65%25-yellowgreen) | MBX renders real 3D in NanoEmu v1.0.0 |
 | 🏝️ Engine port | ![70%](https://img.shields.io/badge/70%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
-| 🕹️ Controls | ![50%](https://img.shields.io/badge/50%25-yellowgreen) | BT classic confirmed, HID plan ready |
+| 🕹️ Controls | ![100%](https://img.shields.io/badge/100%25-brightgreen) | touch + BT classic HID host verified |
 
 ### Engine port milestones (M0-M9)
 
@@ -54,7 +54,7 @@
 | M4 reVC core | ![done](https://img.shields.io/badge/done-brightgreen) | reduced reVC viewer renders a VC building ([m4](m4/REPORT.md)) |
 |  M5 world stream| ![done](https://img.shields.io/badge/done-brightgreen) | three building cells stream below 18 MiB; LRU and 64 evictions verified ([m5](m5/REPORT.md)) |
 | M6 audio | ![done](https://img.shields.io/badge/done-brightgreen) | SFX + 60-second radio through DMA/I2S; capture, timing and 28 cycles verified ([m6](m6/REPORT.md)) |
-| M7 controls | ![wip](https://img.shields.io/badge/building-orange) | touch + BT gamepad drive the game ([map](docs/m7-controls-map.md)) |
+| M7 controls | ![done](https://img.shields.io/badge/done-brightgreen) | touch + BT gamepad drive the game ([m7](m7/REPORT.md)) |
 | M8 performance | ![planned](https://img.shields.io/badge/planned-lightgrey) | 24+ fps sustained with unlocked clocks |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
 

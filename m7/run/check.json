@@ -1,0 +1,128 @@
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 62661,
+      "colored_pixels": 23893
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    },
+    {
+      "background_pixels": 62659,
+      "colored_pixels": 23900
+    }
+  ],
+  "changed_pixels": [
+    8077,
+    8062,
+    8032,
+    8047,
+    8077,
+    8032,
+    8077,
+    8092,
+    8062,
+    8062,
+    8047,
+    8047,
+    8077,
+    8047,
+    8062,
+    8062,
+    8077,
+    8032,
+    8092,
+    8092,
+    8077,
+    8092,
+    8077
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "10ca9066c4880ce86bbfa6d34a49d8344543532b079dc357c288fd6adb4dc72d"
+}

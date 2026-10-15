@@ -1,11 +1,65 @@
 make: Entering directory '/home/pavliukov/ipodwork/ViceNano/m7'
+arm-none-eabi-g++ -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -fno-pic -fno-builtin -ffreestanding -nostdlib -fno-jump-tables -fno-common -fno-exceptions -Os -Wall -Wextra -fdata-sections -ffunction-sections -fno-strict-aliasing -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk -DHB_GL_SURFACE_APP -DHB_LV_RELOC -I/usr/include/newlib -DRW_GLES1 -DRW_NANO -fno-rtti -fno-threadsafe-statics -mword-relocations -std=c++11 -MMD -MP -I. -I../m5 -I../vendor/librw -I../vendor/revc-viewer/fakerw -c viewer.cpp -o build/viewer.o
+In file included from ../vendor/librw/rw.h:6,
+                 from ../vendor/revc-viewer/fakerw/rwcore.h:6,
+                 from viewer.cpp:6:
+../vendor/librw/src/rwbase.h: In function 'void rw::memNative32(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:461:31: warning: unused parameter 'data' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:461:44: warning: unused parameter 'size' [-Wunused-parameter]
+  461 | inline void memNative32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memNative16(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:462:31: warning: unused parameter 'data' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:462:44: warning: unused parameter 'size' [-Wunused-parameter]
+  462 | inline void memNative16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memLittle32(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:463:31: warning: unused parameter 'data' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:463:44: warning: unused parameter 'size' [-Wunused-parameter]
+  463 | inline void memLittle32(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+../vendor/librw/src/rwbase.h: In function 'void rw::memLittle16(void*, rw::uint32)':
+../vendor/librw/src/rwbase.h:464:31: warning: unused parameter 'data' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                         ~~~~~~^~~~
+../vendor/librw/src/rwbase.h:464:44: warning: unused parameter 'size' [-Wunused-parameter]
+  464 | inline void memLittle16(void *data, uint32 size) { }
+      |                                     ~~~~~~~^~~~
+In file included from ../vendor/librw/rw.h:17,
+                 from ../vendor/revc-viewer/fakerw/rwcore.h:6,
+                 from viewer.cpp:6:
+../vendor/librw/src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setU(rw::float32, float)':
+../vendor/librw/src/ps2/rwps2.h:28:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   28 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+../vendor/librw/src/ps2/rwps2.h: In member function 'void rw::ps2::Im2DVertex::setV(rw::float32, float)':
+../vendor/librw/src/ps2/rwps2.h:29:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   29 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
+In file included from ../vendor/librw/rw.h:29,
+                 from ../vendor/revc-viewer/fakerw/rwcore.h:6,
+                 from viewer.cpp:6:
+../vendor/librw/src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setU(rw::float32, float)':
+../vendor/librw/src/gles1/rwgles1.h:70:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   70 |  void setU(float32 u, float recipz) { this->u = u; }
+      |                       ~~~~~~^~~~~~
+../vendor/librw/src/gles1/rwgles1.h: In member function 'void rw::gles1::Im2DVertex::setV(rw::float32, float)':
+../vendor/librw/src/gles1/rwgles1.h:71:29: warning: unused parameter 'recipz' [-Wunused-parameter]
+   71 |  void setV(float32 v, float recipz) { this->v = v; }
+      |                       ~~~~~~^~~~~~
 arm-none-eabi-gcc -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -fno-pic -fno-builtin -ffreestanding -nostdlib -fno-jump-tables -fno-common -fno-exceptions -Os -Wall -Wextra -fdata-sections -ffunction-sections -fno-strict-aliasing -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk -I/home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/freestanding -DHB_GL_SURFACE_APP -DHB_LV_RELOC -mcpu=cortex-a5 -mthumb -mfloat-abi=soft -mfpu=neon -nostdlib -Wl,--gc-sections -Wl,--build-id=none -Wl,-q -Wl,-e,payload_entry -Wl,-Ttext,0 -Wl,-T,../sdk/hbapp.ld -Wl,--target1-rel -o build/vcinput.reloc.elf hh_bt.c hid_parse.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_gl_surface.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_surface_input.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_mipi.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_gpu.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_text.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_font.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_touch.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_touch_mb.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_button.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_fs.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_ui.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_kb.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_audio.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_paged_list.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_brightness.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_rtc.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_battery.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_prefs.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_accel.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_media.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_orientation.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_image.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_screenshot.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_heap.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_record.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_sysfx.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_trace.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_shared.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_time.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_fpu.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_app.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_res.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_uitask.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_icon.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_silver_gfx.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_compositor.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_reloc.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_reloc_file.c /home/pavliukov/ipodwork/nano7-untethered/nanoapps/sdk/hb_app_bundle.c ../sdk/gl.c  build/viewer.o build/model.o build/stream.o build/fakerw.o build/helpers.o build/nano.o build/runtime.o build/input.o ../m5/arm-build/src/librw.a /usr/lib/arm-none-eabi/newlib/thumb/nofp/libm.a /usr/lib/arm-none-eabi/newlib/thumb/nofp/libc.a /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a/nofp/libgcc.a
 Thumb-FP gate: PASS (build/vcinput.reloc.elf)
    text	   data	    bss	    dec	    hex	filename
- 719008	   2688	  48768	 770464	  bc1a0	build/vcinput.reloc.elf
+ 720736	   2688	  49120	 772544	  bc9c0	build/vcinput.reloc.elf
 python3 /home/pavliukov/ipodwork/nano7-untethered/nanoapps/tools/mkrelocapp.py build/vcinput.reloc.elf build/vcinput.hbapp payload_entry
-wrote build/vcinput.hbapp: entry@0x0 image=721704 span=770472 bss=48768 relocs=1387
+wrote build/vcinput.hbapp: entry@0x0 image=723432 span=772552 bss=49120 relocs=1414
 === build/vcinput.hbapp ===
-727276 build/vcinput.hbapp
+729112 build/vcinput.hbapp
 cp build/vcinput.hbapp vcinput.hbapp
 make: Leaving directory '/home/pavliukov/ipodwork/ViceNano/m7'

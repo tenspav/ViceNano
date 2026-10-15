@@ -1,0 +1,3 @@
+/Apps/Executables/Mario Kart.hbapp: 1111628 bytes from /home/pavliukov/ipodwork/ViceNano/m7/vcinput.hbapp over 272 blocks (FTL LBA 0x1c85b..)
+wrote /home/pavliukov/ipodwork/ViceNano/m7/pass/app.patch (272 blocks)
+Renderer replaces Mario Kart only inside the NAND overlay; source opened read-only

@@ -1,0 +1,10 @@
+{
+  "source": "/home/pavliukov/ipodwork/NanoRework/probe/hidhost",
+  "unchanged": true,
+  "sha256": {
+    "hh_bt.c": "60e877452ed38c9d1eea8a1079c556565acefe86da2ba47ef720137eafcd4162",
+    "hh_bt.h": "5f966fff188eca188daef4e1b7421b734892e433110f6172cad65bbb0bb26273",
+    "hid_parse.c": "a48619c508295f3a8ad5aa6edc9db55caa815c0cedc7312c3583ba565c8d99f5",
+    "hid_parse.h": "11b265d76d3d8c8f2f7b5a9c3cd8a2cb2285226b8b26560a92afe13237c701ff"
+  }
+}

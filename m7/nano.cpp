@@ -46,7 +46,7 @@ bool NanoFrame(unsigned tick){
  cameraYaw+=p.RightStickX/32767.f*2.f;cameraPitch+=p.RightStickY/32767.f;
  if(cameraPitch>40)cameraPitch=40;if(cameraPitch<-30)cameraPitch=-30;
  float yaw=cameraYaw*0.0174532925f,s=sinf(yaw),c=cosf(yaw);
- float speed=p.Cross?3.f:1.f;
+ float speed=p.Cross?.24f:.08f;
  playerX+=(p.LeftStickX*c+p.LeftStickY*s)/32767.f*speed;
  playerZ+=(p.LeftStickY*c-p.LeftStickX*s)/32767.f*speed;
  V3d pos={playerX-s*140,worldPacks[0].y+25,playerZ-c*140};
@@ -57,6 +57,13 @@ bool NanoFrame(unsigned tick){
  RGBA bg={13,20,64,255};RwCameraClear(camera,&bg,Camera::CLEARIMAGE|Camera::CLEARZ);RwCameraBeginUpdate(camera);
  RwRenderStateSet(rwRENDERSTATEZTESTENABLE,(void*)1);RwRenderStateSet(rwRENDERSTATEZWRITEENABLE,(void*)1);RwRenderStateSet(rwRENDERSTATECULLMODE,(void*)CULLBACK);
  SetRenderState(ALPHATESTFUNC,ALPHAALWAYS);StreamRender();
+ // A world-space yellow diamond is the reduced player marker (no ped/physics).
+ static gles1::Im3DVertex marker[6];
+ const float dx[6]={-4,0,4,-4,4,0},dy[6]={0,12,0,0,0,-4};
+ for(int i=0;i<6;i++){marker[i].position={playerX+dx[i],worldPacks[0].y+dy[i],playerZ};marker[i].setColor(255,220,0,255);}
+ SetRenderStatePtr(TEXTURERASTER,nil);SetRenderState(CULLMODE,CULLNONE);
+ im3d::Transform(marker,6,nil,im3d::VERTEXXYZ|im3d::VERTEXRGBA|im3d::ALLOPAQUE);
+ im3d::RenderPrimitive(PRIMTYPETRILIST);im3d::End();
  RwCameraEndUpdate(camera);return true;
 }
 

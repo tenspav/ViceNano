@@ -1,6 +1,7 @@
 #include "input.h"
 #include <string.h>
 #include <stddef.h>
+#include <math.h>
 CPad pad;unsigned inputEvents;
 static CControllerState touch;
 static struct Finger {bool active;int x,y,lastx,lasty,role;} fingers[8];
@@ -20,7 +21,7 @@ void TouchUpdate(const Contact *c,int n){
   }else if(f.lastx!=c[i].x||f.lasty!=c[i].y)inputEvents++;
   f.active=true;
   if(f.role>=0&&f.role<10)reinterpret_cast<int16_t*>(&touch)[buttons[f.role].field]=255;
-  if(f.role==10){touch.LeftStickX=clamp((c[i].x-f.x)*780);touch.LeftStickY=clamp(-(c[i].y-f.y)*780);}
+  if(f.role==10){float dx=c[i].x-f.x,dy=c[i].y-f.y;float length=sqrtf(dx*dx+dy*dy);float scale=length>42?32767/length:780;touch.LeftStickX=clamp(int(dx*scale));touch.LeftStickY=clamp(int(-dy*scale));}
   if(f.role==11){touch.RightStickX=clamp((c[i].x-f.lastx)*1800);touch.RightStickY=clamp(-(c[i].y-f.lasty)*1800);}
   f.lastx=c[i].x;f.lasty=c[i].y;
  }

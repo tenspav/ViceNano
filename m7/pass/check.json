@@ -1,0 +1,128 @@
+{
+  "pass": true,
+  "screenshots": [
+    {
+      "background_pixels": 61338,
+      "colored_pixels": 23817
+    },
+    {
+      "background_pixels": 84056,
+      "colored_pixels": 1495
+    },
+    {
+      "background_pixels": 84209,
+      "colored_pixels": 1496
+    },
+    {
+      "background_pixels": 84621,
+      "colored_pixels": 1543
+    },
+    {
+      "background_pixels": 82512,
+      "colored_pixels": 1685
+    },
+    {
+      "background_pixels": 77839,
+      "colored_pixels": 2208
+    },
+    {
+      "background_pixels": 76920,
+      "colored_pixels": 2271
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    },
+    {
+      "background_pixels": 75098,
+      "colored_pixels": 2406
+    }
+  ],
+  "changed_pixels": [
+    23535,
+    33273,
+    33432,
+    36983,
+    40731,
+    41201,
+    41746,
+    41701,
+    41761,
+    41776,
+    41776,
+    41761,
+    41731,
+    41716,
+    41716,
+    41761,
+    41746,
+    41746,
+    41731,
+    41761,
+    41746,
+    41746,
+    41731
+  ],
+  "source_size_mtime_and_replaced_block_hashes_unchanged": true,
+  "app_sha256": "13a54d8a75238c567ccc0e8fefab97fe80d3ebc08d443d84b96f0f67d59d70b9"
+}

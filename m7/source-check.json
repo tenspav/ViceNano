@@ -1,0 +1,32 @@
+{
+  "reference": "/home/pavliukov/ipodwork/NanoRework/games/reVC/src/core/Pad.h",
+  "reference_sha256": "66119303abca1199b3f350bcc06ef0fcb694200502a02190d39dfb2a6dce27ec",
+  "retained_int16_fields": [
+    "LeftStickX",
+    "LeftStickY",
+    "RightStickX",
+    "RightStickY",
+    "Cross",
+    "Circle",
+    "Square",
+    "Triangle",
+    "LeftShoulder1",
+    "RightShoulder1",
+    "LeftShoulder2",
+    "RightShoulder2",
+    "LeftShock",
+    "RightShock",
+    "Start",
+    "Select",
+    "DPadUp",
+    "DPadDown",
+    "DPadLeft",
+    "DPadRight"
+  ],
+  "all_match": true,
+  "abi_compatible_layout": false,
+  "omitted": [
+    "NetworkTalk",
+    "full gameplay CPad methods"
+  ]
+}

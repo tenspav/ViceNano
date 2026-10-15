@@ -138,25 +138,47 @@ with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlo
         pointer(False, a.tap_x, 215)
         time.sleep(.05)
         pointer(True, a.tap_x, 215)
-        time.sleep(.15)
+        time.sleep(.6)
         pointer(False, a.tap_x, 215)
         idle(a.warmup)
+        shot('initial')
+        # Warm the OS touch queue before comparing heap states.
+        pointer(True,120,60)
+        for k in range(200):
+            pointer(True,120,60+k%20)
+            time.sleep(.1)
+        pointer(False,120,62)
+        time.sleep(1.3)
         shot('before')
-        # Landscape (x,y) -> portrait (239-y,x).
-        pointer(True,119,60)
+        # Landscape (x,y) -> portrait (y,x).
+        pointer(True,120,60)
         time.sleep(.2)
-        for k in range(540):
-            pointer(True,119,85+(k%2)*2)
-            time.sleep(.035)
-        pointer(False,119,85)
-        time.sleep(.3)
+        def observed(name):
+            with Image.open(run/(name+'.png')) as im:
+                return sum((im.getpixel((10+i*7,149))[0]>128)<<i for i in range(32))
+        baseline_events=observed('before')
+        for k in range(4000):
+            pointer(True,120,75+(k%20))
+            time.sleep(.1)
+            if k>=539 and k%50==49:
+                shot('input-progress')
+                if observed('input-progress')-baseline_events>=520: break
+        else: raise RuntimeError('500 guest-observed input events were not reached')
+        pointer(False,120,85)
+        time.sleep(1.3)
         shot('touch-moved')
-        pointer(True,139,180)
+        pointer(True,100,180)
         for k in range(30):
-            pointer(True,139,180+k*3)
+            pointer(True,100,180+k*3)
             time.sleep(.06)
-        pointer(False,139,267)
+        pointer(False,100,267)
+        time.sleep(1.3)
         shot('touch-camera')
+        pointer(True,20,20)
+        for k in range(20):
+            pointer(True,20+k%5,20)
+            time.sleep(.15)
+        pointer(False,20,20)
         for i in range(a.samples):
             shot(f'{a.prefix}-{i}')
             idle(2)
