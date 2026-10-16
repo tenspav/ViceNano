@@ -1,3 +1,49 @@
+#ifdef M8_NANOOS
+#include "nano.h"
+#include "nanoos_shim.h"
+extern "C" {
+#include "lcd.h"
+}
+int m8_world_draw(int pan);
+bool m8_world_init();
+void m8_world_shutdown();
+static bool initialized, gpu, worldReady;
+static unsigned mode;
+static int pan, testTexture;
+static uint16_t quadPixels[64];
+void m8_render_mode(unsigned value){mode=value%4;}
+
+float playerX,playerZ,cameraYaw,cameraPitch;
+uint32_t nanoStreamUs,nanoDrawUs,nanoEndUs,nanoClearUs,nanoBeginUs,nanoWorldUs;
+uint32_t nanoBenchElementsX10,nanoBenchArraysX10;
+bool NanoInit(int w,int h){if(initialized||w!=432||h!=240)return false;initialized=true;mode=0;pan=0;gpu=m8_gpu_init()==0;
+if(gpu){for(unsigned y=0;y<8;y++)for(unsigned x=0;x<8;x++)quadPixels[y*8+x]=y<4?(x<4?0xf800:0x07e0):(x<4?0x001f:0xffe0);testTexture=m8_gpu_texture_create(8,8,1,quadPixels);worldReady=m8_world_init();}
+return true;}
+bool NanoFrame(unsigned tick){
+ if(!initialized)return false;
+ if(!mode){m8_title(tick);return true;}
+ if(!gpu || m8_gpu_begin(0xff0d1440)<0){
+  lcd_clear(0xff0d1440);lcd_center(100,"MBX unavailable",WHITE);lcd_present();return true;
+ }
+ if(mode==1){
+  const M8GpuVertex v[3]={{120,170,.5f,0xffff0000},{216,50,.5f,0xff00ff00},{312,170,.5f,0xff0000ff}};
+  if(m8_gpu_triangle(v)<0)return false;
+ }else if(mode==2){
+  const M8GpuTexVertex v[4]={{{120,64,0,0xffffffff},0,0},{{312,64,0,0xffffffff},1,0},{{312,192,0,0xffffffff},1,1},{{120,192,0,0xffffffff},0,1}};
+  const M8GpuTexVertex a[3]={v[0],v[1],v[2]},b[3]={v[0],v[2],v[3]};
+  if(m8_gpu_textured_triangle(testTexture,a)<0||m8_gpu_textured_triangle(testTexture,b)<0)return false;
+ }else if(!worldReady||m8_world_draw(pan)<0)return false;
+ if(m8_gpu_end()<0){gpu=false;return false;}
+ lcd_center(16,mode==1?"MBX triangle":mode==2?"MBX texture test":"MBX world preview",WHITE);
+ lcd_center(224,"Volume: scene / Home: back",WHITE);
+ lcd_present();return true;
+}
+bool NanoUnload(){m8_world_shutdown();worldReady=false;return true;}
+bool NanoExit(){NanoUnload();m8_gpu_texture_destroy(testTexture);testTexture=0;m8_gpu_shutdown();initialized=gpu=false;return true;}
+size_t NanoLive(){return 0;} size_t NanoPeak(){return 0;} size_t NanoBaseline(){return 0;}
+unsigned NanoCycles(){return 0;} unsigned NanoFailures(){return 0;}
+void NanoSetHardwareUnlock(bool){}
+#else
 #include "nano.h"
 #include "memory.h"
 #include "../vendor/revc-viewer/fakerw/rwcore.h"
@@ -151,3 +197,5 @@ bool NanoFrame(unsigned tick){
 }
 
 unsigned NanoFailures(){return allocationFailures;}
+
+#endif // M8_NANOOS

@@ -21,3 +21,7 @@ bool loadBlock(unsigned slot,const NanPack &pack);
 bool m8PrepareBatches();
 void renderWorld();
 void m8ResetRenderState();
+
+#ifdef M8_NANOOS
+bool m8NanoModelRender(int pan);
+#endif

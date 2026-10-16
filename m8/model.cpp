@@ -1,3 +1,6 @@
+#ifdef M8_NANOOS
+#include "nanoos_model.inc"
+#else
 #include "../vendor/revc-viewer/fakerw/rwcore.h"
 #include "../vendor/revc-viewer/fakerw/rpworld.h"
 #include "../vendor/librw/src/gles1/rwgles1.h"
@@ -314,3 +317,5 @@ void renderWorld(){
   m8Stats.drawCalls++;m8Stats.indices+=batch.indices[visible];
  }
 }
+
+#endif // M8_NANOOS

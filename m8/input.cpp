@@ -2,7 +2,8 @@
 #include <string.h>
 #include <stddef.h>
 #include <math.h>
-CPad pad;unsigned inputEvents;
+// NanoOS retains alignment checking: structure copies use word loads.
+alignas(4) CPad pad;unsigned inputEvents;
 static CControllerState touch;
 static struct Finger {bool active;int x,y,lastx,lasty,role;} fingers[8];
 #define B(x,y,w,h,f) {x,y,w,h,int(offsetof(CControllerState,f)/sizeof(int16_t))}
@@ -35,7 +36,8 @@ void CPad::Update(bool connected,const hid_pad *p){
  NewState.RightStickX=p->axis[3];NewState.RightStickY=clamp(-int(p->axis[4]));
  int16_t *fields=&NewState.Cross;
  for(int i=0;i<12;i++)fields[i]=(p->buttons&(1u<<i))?255:0;
- if(p->axis[2]>8000)NewState.LeftShoulder2=255;if(p->axis[5]>8000)NewState.RightShoulder2=255;
+ if(p->axis[2]>8000)NewState.LeftShoulder2=255;
+ if(p->axis[5]>8000)NewState.RightShoulder2=255;
  int h=p->hat;NewState.DPadUp=(h==7||h==0||h==1)?255:0;NewState.DPadRight=(h>=1&&h<=3)?255:0;
  NewState.DPadDown=(h>=3&&h<=5)?255:0;NewState.DPadLeft=(h>=5&&h<=7)?255:0;
 }
