@@ -19,6 +19,16 @@ s = s.replace("ROOT / 'nanoos/build/chainloader.patch'", f'Path({str(build / "ch
 s = s.replace("ROOT / 'nanoos/build/emu'", f'Path({str(build / "emu")!r})')
 s = s.replace("ROOT / f'nanoos/build/nanoemu-{tag}.log'", f'Path({str(build)!r}) / f"nanoemu-{{tag}}.log"')
 s += '''
+# The shared boot helper uses a fixed delay after tapping Blocks. Under host
+# load RetailOS can still be visible then; confirm takeover before sending
+# keys (Enter on StockOS would otherwise reset straight back to RetailOS).
+for attempt in range(30):
+    if read_text(selector, 48, 100, 5) == 'STOCK':
+        break
+    pause(1)
+    selector = shot('04_clock_STOCK', landscape=True)
+else:
+    raise AssertionError('NanoOS clock selector did not appear; see ' + str(log_path))
 key('ret')
 pause(.5)
 key('right')
@@ -55,8 +65,14 @@ for cycle in range(2):
         assert len(set(pixels))>32, 'textured world has too few texel colors'
         symbols = subprocess.check_output(['arm-none-eabi-nm', str(build/'m8-nanoos.elf')], text=True)
         model_address=next(line.split()[0] for line in symbols.splitlines() if line.endswith(' m8Stats'))
-        model_status=q('human-monitor-command',{'command-line':'xp /7wx 0x'+model_address})['return']
-        model_values=[int(v,16) for row in model_status.splitlines() if ':' in row for v in re.findall(r'0x[0-9a-fA-F]+',row.split(':',1)[1])]
+        # Per-frame draw counters are reset before projection/sorting. A QMP
+        # read can land in that interval even when the displayed frame is valid.
+        for attempt in range(50):
+            model_status=q('human-monitor-command',{'command-line':'xp /7wx 0x'+model_address})['return']
+            model_values=[int(v,16) for row in model_status.splitlines() if ':' in row for v in re.findall(r'0x[0-9a-fA-F]+',row.split(':',1)[1])]
+            if len(model_values)==7 and model_values[4]>0:
+                break
+            pause(.1)
         assert model_values[1]==26*128 and model_values[3]==26 and model_values[4]>0, model_values
         print('Model counters: '+model_status,flush=True)
         address = next(line.split()[0] for line in symbols.splitlines() if line.endswith(' m8_gpu_status'))
