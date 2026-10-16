@@ -42,6 +42,3 @@
 # snapshot has count 0 instead of -1. The GPIO ISR's post (0x080019d0 via 0x08005e5c) signals the
 # kernel event only when the old count is -1, so a Home press bumped it to 1 and never woke T25.
 0x0899c0fc 0xffffffff
-
-# M8 GPU timing table uncap to 266 MHz
-0x08783d68 0x0000010a

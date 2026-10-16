@@ -41,11 +41,13 @@ void AudioMix(int16_t *out,unsigned frames){
   if(radio){int s=radioSample()*int(musicGain)/128;left=right=s;
    radioFrac+=8000;if(radioFrac>=44100){radioFrac-=44100;if(++radioPos==radioSamples){radio=false;audioStats.radioEnds++;}}
   }
-  for(unsigned v=0;v<8;v++){
-   Voice &a=voices[v];if(!a.data)continue;
-   int s=int(a.data[a.pos])*int(a.gain)*int(effectsGain)/16384;
-   left+=s*int(127-a.pan)/127;right+=s*int(a.pan)/127;
-   a.fraction+=8000;if(a.fraction>=44100){a.fraction-=44100;if(++a.pos>=a.length)a.data=0;}
+  if(active){
+   for(unsigned v=0;v<8;v++){
+    Voice &a=voices[v];if(!a.data)continue;
+    int s=int(a.data[a.pos])*int(a.gain)*int(effectsGain)/16384;
+    left+=s*int(127-a.pan)/127;right+=s*int(a.pan)/127;
+    a.fraction+=8000;if(a.fraction>=44100){a.fraction-=44100;if(++a.pos>=a.length)a.data=0;}
+   }
   }
   out[2*i]=clamp(left,-32768,32767);out[2*i+1]=clamp(right,-32768,32767);
  }
@@ -150,10 +152,10 @@ void AudioTestTick(){
  unsigned elapsed=audioStats.frames-baseFrames;
  unsigned trigger=elapsed/44100;
  if(trigger!=lastTrigger){for(unsigned i=0;i<3;i++)DMAudio.PlayFrontEndSound(i,90);lastTrigger=trigger;}
- // First demonstrate the entire minute-long track to EOF, then play/stop cycles.
- if((phase==1&&elapsed>=65*44100)||(phase==2&&audioStats.frames-cycleBase>=2*44100)){
-  DMAudio.StopFrontEndTrack();DMAudio.Terminate();audioStats.cycles++;
-
-  DMAudio.Initialise();DMAudio.SetRadioChannel(0,57000);cycleBase=audioStats.frames;phase=2;
+ // Loop the minute-long track cleanly without reallocating DMA ring buffers.
+ if(phase==1 && elapsed>=65*44100){
+  DMAudio.SetRadioChannel(0,0);
+  baseFrames=audioStats.frames;
+  audioStats.cycles++;
  }
 }

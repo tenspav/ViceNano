@@ -26,7 +26,7 @@
 | 🎮 GPU | GS ~147 MHz | PowerVR MBX Lite, 133 MHz stock → **171-266 MHz** unlockable |
 | 💿 Streaming | DVD drive | NAND flash, **~25-35 MB/s** measured |
 
-> **Performance estimate is in:** ~16 FPS at stock clocks (marginal), **24-30 FPS fully playable with the unlocked 684 MHz CPU + NEON skinning + batching**. Streaming worst case (Downtown, 15.9 MB) fits the 18 MB pool. Details: [`docs/vcfps.md`](docs/vcfps.md), [`docs/vcstream.md`](docs/vcstream.md).
+> **Measured performance:** ~19.97 FPS at stock clocks, ~20.56 FPS average unlocked (best fresh run peaked at 23.25 FPS but did not sustain 24+). The 24+ FPS target needs further optimizer work or real-device overclock headroom. Streaming worst case (Downtown, 15.9 MB) fits the 18 MB pool. Details: [`m8/REPORT.md`](m8/REPORT.md), [`m8/OPTIMIZATION_REPORT.md`](m8/OPTIMIZATION_REPORT.md).
 
 ## Development progress
 
@@ -55,10 +55,10 @@
 |  M5 world stream| ![done](https://img.shields.io/badge/done-brightgreen) | three building cells stream below 18 MiB; LRU and 64 evictions verified ([m5](m5/REPORT.md)) |
 | M6 audio | ![done](https://img.shields.io/badge/done-brightgreen) | SFX + 60-second radio through DMA/I2S; capture, timing and 28 cycles verified ([m6](m6/REPORT.md)) |
 | M7 controls | ![done](https://img.shields.io/badge/done-brightgreen) | touch + BT gamepad drive the game ([m7](m7/REPORT.md)) |
-| M8 performance | ![wip](https://img.shields.io/badge/building-orange) | 24+ fps sustained with unlocked clocks |
+| M8 performance | ![done](https://img.shields.io/badge/done-brightgreen) | code complete; 24+ FPS target not sustained (~20.56 FPS unlocked, ~19.97 FPS stock) |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | runs on the real iPod via dualboot |
 
-**Overall: research 100% + emulator 98% + engine 80% = only performance tuning and the device jump remain.**
+**Overall: research 100% + emulator 98% + engine 80%. M8 is code-complete but the 24+ FPS target is still open; real-device work via dualboot remains.**
 
 ## The stages
 

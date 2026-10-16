@@ -2,127 +2,127 @@
   "pass": true,
   "screenshots": [
     {
-      "background_pixels": 59699,
-      "colored_pixels": 23714
+      "background_pixels": 48056,
+      "colored_pixels": 23377
     },
     {
-      "background_pixels": 81652,
-      "colored_pixels": 1392
+      "background_pixels": 70733,
+      "colored_pixels": 1055
     },
     {
-      "background_pixels": 81682,
-      "colored_pixels": 1395
+      "background_pixels": 70603,
+      "colored_pixels": 1076
     },
     {
-      "background_pixels": 81948,
-      "colored_pixels": 1436
+      "background_pixels": 70509,
+      "colored_pixels": 1076
     },
     {
-      "background_pixels": 79274,
-      "colored_pixels": 1657
+      "background_pixels": 65469,
+      "colored_pixels": 2423
     },
     {
-      "background_pixels": 76446,
-      "colored_pixels": 2173
+      "background_pixels": 65469,
+      "colored_pixels": 2423
     },
     {
-      "background_pixels": 75413,
-      "colored_pixels": 2236
+      "background_pixels": 62762,
+      "colored_pixels": 3119
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     },
     {
-      "background_pixels": 74196,
-      "colored_pixels": 2299
+      "background_pixels": 62130,
+      "colored_pixels": 3278
     }
   ],
   "changed_pixels": [
-    23871,
-    32873,
-    33000,
-    37026,
-    39381,
-    40033,
-    40526,
-    40537,
-    40477,
-    40511,
-    40507,
-    40492,
-    40428,
-    40556,
-    40507,
-    40537,
-    40522,
-    40507,
-    40567,
-    40522,
-    40597,
-    40571,
-    40507
+    23756,
+    30124,
+    30097,
+    35211,
+    35235,
+    36747,
+    36798,
+    36774,
+    36714,
+    36873,
+    36774,
+    36703,
+    36654,
+    36654,
+    36693,
+    36804,
+    36729,
+    36678,
+    36648,
+    36624,
+    36669,
+    36603,
+    36723
   ],
   "source_size_mtime_and_replaced_block_hashes_unchanged": true,
-  "app_sha256": "8f1e87555504001a9f2991cd4a68718585c07a01b171b8bca44ca7f20c1c4247"
+  "app_sha256": "5bb72b868a9feeee78f86764570cce76e7828ee75dca3001361b0a051123e3cd"
 }

@@ -3,205 +3,314 @@
 #include "../vendor/librw/src/gles1/rwgles1.h"
 #include <stddef.h>
 #include <string.h>
+#include <math.h>
 
 extern "C" {
 #include "gl.h"
 }
 
-extern RpAtomic *GetFirstAtomic(RpClump*);
-extern RwTexture *GetFirstTexture(RwTexDictionary*);
 #include "model.h"
 
 using namespace rw;
 
-namespace rw { namespace gles1 {
-struct MeshInstance { Im3DVertex *vertices; bool alpha; };
-struct Header : rw::InstanceDataHeader { uint16 serial; uint16 count; MeshInstance meshes[1]; };
-}}
-
-static void m8Instance(ObjPipeline*, Atomic *a) {
- Geometry *g = a->geometry;
- if ((g->flags & Geometry::NATIVE) || g->numVertices < 1 || g->numVertices > 65535 || !g->morphTargets[0].vertices) {
-  gles1::unsupportedStates++;
-  return;
- }
- if (!g->meshHeader) g->buildMeshes();
- if (g->instData) {
-  gles1::Header *h = (gles1::Header*)g->instData;
-  if (h->platform == PLATFORM_GLES1 && h->serial == g->meshHeader->serialNum && !g->lockedSinceInst)
-   return;
-  gles1::freeInstanceData(g);
- }
- unsigned count = g->meshHeader->numMeshes;
- if (count < 1 || count > 64) {
-  gles1::unsupportedStates++;
-  return;
- }
- gles1::Header *h = (gles1::Header*)rwMalloc(sizeof(gles1::Header) + (count - 1) * sizeof(gles1::MeshInstance), MEMDUR_EVENT);
- if (!h) return;
- memset(h, 0, sizeof(gles1::Header) + (count - 1) * sizeof(gles1::MeshInstance));
- h->platform = PLATFORM_GLES1;
- h->serial = g->meshHeader->serialNum;
- h->count = count;
- g->instData = h;
-
- gles1::Im3DVertex *v = (gles1::Im3DVertex*)rwMalloc(g->numVertices * sizeof(gles1::Im3DVertex), MEMDUR_FUNCTION);
- if (!v) { gles1::freeInstanceData(g); return; }
-
- Mesh *mesh = g->meshHeader->getMeshes();
- for (unsigned j = 0; j < count; j++) {
-  RGBA mat = mesh[j].material->color;
-  for (int i = 0; i < g->numVertices; i++) {
-   memset(&v[i], 0, sizeof(v[i]));
-   v[i].position = g->morphTargets[0].vertices[i];
-   if (g->morphTargets[0].normals) v[i].normal = g->morphTargets[0].normals[i];
-   RGBA c = g->colors ? g->colors[i] : makeRGBA(255, 255, 255, 255);
-   v[i].setColor(c.red * mat.red / 255, c.green * mat.green / 255, c.blue * mat.blue / 255, c.alpha * mat.alpha / 255);
-   if (v[i].a < 255) h->meshes[j].alpha = true;
-   if (g->texCoords[0]) { v[i].u = g->texCoords[0][i].u; v[i].v = g->texCoords[0][i].v; }
+M8RenderStats m8Stats;
+extern "C" void glCompressedTexImage2D(GLenum,GLint,GLenum,GLsizei,GLsizei,GLint,GLsizei,const GLvoid*);
+static Raster *uploadTexture(const NanTexture &t){
+ if(t.width<1 || t.height<1 || t.bytes!=512u+unsigned(t.width*t.height) ||
+    t.compressedFormat!=(t.format==1?0x8b97u:0x8b98u))return nil;
+ Raster *r=Raster::create(t.width,t.height,16,Raster::TEXTURE|Raster::DONTALLOCATE|
+                        (t.format==1?Raster::C565:Raster::C4444));
+ if(!r)return nil;
+ gles1::NativeRaster *n=gles1::nativeRaster(r);
+ glGenTextures(1,&n->texture);glBindTexture(GL_TEXTURE_2D,n->texture);
+ glCompressedTexImage2D(GL_TEXTURE_2D,0,t.compressedFormat,t.width,t.height,0,t.bytes,t.pixels);
+ GLenum error=glGetError();
+#ifdef M8_FORCE_TEXTURE_FALLBACK
+ error=0x0502; // Exercise the same retry as a driver rejecting compressed upload.
+#endif
+ if(error!=GL_NO_ERROR){
+  glDeleteTextures(1,&n->texture);n->texture=0;
+  uint16_t *raw=(uint16_t*)rwMalloc(t.width*t.height*2,MEMDUR_FUNCTION);
+  if(!raw){r->destroy();return nil;}
+  const uint8_t *indices=t.pixels+512;
+  for(int i=0;i<t.width*t.height;i++){
+   unsigned p=indices[i]*2;raw[i]=t.pixels[p]|(t.pixels[p+1]<<8);
   }
-  uint32_t numIndices = mesh[j].numIndices;
-  h->meshes[j].vertices = (gles1::Im3DVertex*)rwMalloc(numIndices * sizeof(gles1::Im3DVertex), MEMDUR_EVENT);
-  if (!h->meshes[j].vertices) { rwFree(v); gles1::freeInstanceData(g); return; }
-  for (uint32_t k = 0; k < numIndices; k++) {
-   h->meshes[j].vertices[k] = v[mesh[j].indices[k]];
-  }
+  glGenTextures(1,&n->texture);glBindTexture(GL_TEXTURE_2D,n->texture);
+  GLenum fmt=t.format==1?GL_RGB:GL_RGBA;glPixelStorei(GL_UNPACK_ALIGNMENT,2);
+  glTexImage2D(GL_TEXTURE_2D,0,fmt,t.width,t.height,0,fmt,
+               t.format==1?GL_UNSIGNED_SHORT_5_6_5:GL_UNSIGNED_SHORT_4_4_4_4,raw);
+  rwFree(raw);m8Stats.textureFallbacks++;
+  if(glGetError()!=GL_NO_ERROR){r->destroy();return nil;}
  }
- glBindBuffer(GL_ARRAY_BUFFER, 0);
- rwFree(v);
- g->lockedSinceInst = 0;
+ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
+ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
+ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_REPEAT);
+ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_REPEAT);
+ n->bytes=t.width*t.height*2; // This driver expands PAL8 to 16-bit texels.
+ m8Stats.textureUploads++;return r;
 }
 
-static void m8Uninstance(ObjPipeline*, Atomic *a) {
- gles1::freeInstanceData(a->geometry);
-}
+// The world pack already contains transformed, static positions. Build shared
+// material batches once when residency changes, with an index stream for each
+// visibility mask. Keep ushort indices local to a batch, not the entire city.
 
-static GLuint sCurrentTex = 0xFFFFFFFF;
-static int sCurrentBlend = -1;
-
-void m8ResetRenderState() {
- sCurrentTex = 0xFFFFFFFF;
- sCurrentBlend = -1;
- glDisable(GL_BLEND);
- glDepthMask(GL_TRUE);
-}
-
-static void m8Render(ObjPipeline *p, Atomic *a) {
- if (engine->currentCamera) {
-  Sphere *s = a->getWorldBoundingSphere();
-  Sphere testSphere = *s;
-  testSphere.radius *= 1.05f;
-  if (engine->currentCamera->frustumTestSphere(&testSphere) == Camera::SPHEREOUTSIDE)
-   return;
- }
- m8Instance(p, a);
- Geometry *g = a->geometry;
- if (!g->instData) return;
- gles1::Header *h = (gles1::Header*)g->instData;
- Mesh *meshes = g->meshHeader->getMeshes();
-
- for (unsigned j = 0; j < h->count; j++) {
-  Mesh *mesh = &meshes[j];
-  if (mesh->numIndices == 0) continue;
-  Texture *t = mesh->material->texture;
-  Raster *r = t ? t->raster : nil;
-  GLuint tex = r ? gles1::nativeRaster(r)->texture : 0;
-  if (tex != sCurrentTex) {
-   if (tex) {
-    if (sCurrentTex == 0 || sCurrentTex == 0xFFFFFFFF) glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, tex);
-   } else {
-    glDisable(GL_TEXTURE_2D);
-   }
-   sCurrentTex = tex;
-  }
-  int blend = (h->meshes[j].alpha || (r && r->format == Raster::C4444)) ? 1 : 0;
-  if (blend != sCurrentBlend) {
-   if (blend) {
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glDepthMask(GL_FALSE);
-   } else {
-    glDisable(GL_BLEND);
-    glDepthMask(GL_TRUE);
-   }
-   sCurrentBlend = blend;
-  }
-  gles1::Im3DVertex *v = h->meshes[j].vertices;
-  glVertexPointer(3, GL_FLOAT, sizeof(gles1::Im3DVertex), v);
-  glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(gles1::Im3DVertex), (uint8*)v + offsetof(gles1::Im3DVertex, r));
-  if (tex) {
-   glTexCoordPointer(2, GL_FLOAT, sizeof(gles1::Im3DVertex), (uint8*)v + offsetof(gles1::Im3DVertex, u));
-  }
-  glDrawArrays(GL_TRIANGLES, 0, mesh->numIndices);
- }
-}
-
-static ObjPipeline *m8Pipe = nil;
-static ObjPipeline *getM8Pipeline() {
- if (!m8Pipe) {
-  m8Pipe = ObjPipeline::create();
-  m8Pipe->platform = PLATFORM_GLES1;
-  m8Pipe->impl.instance = m8Instance;
-  m8Pipe->impl.uninstance = m8Uninstance;
-  m8Pipe->impl.render = m8Render;
- }
- return m8Pipe;
-}
-
-struct ModelSlot {
- Texture *textures[64];
- Frame *frame;
- RpClump *clump;
- RwTexDictionary *dictionary;
- Sphere sphere;
-};
+struct TextureEntry { const NanTexture *source; Raster *raster; unsigned refs; };
+static TextureEntry textures[128];
+struct ModelSlot { const NanPack *pack; Sphere sphere; unsigned textures[64]; };
 static ModelSlot slots[2];
-static ModelSlot *current;
+struct Batch {
+ GLuint texture;
+ bool alpha;
+ Sphere spheres[2];
+ uint32_t firstVertex, vertices, firstIndex[4], indices[4], baseVertex[4], visibleVertices[4];
+ // De-indexed triangle list: slot 0 triangles then slot 1, so every mask is one range.
+ uint32_t flatFirst[4], flatCount[4];
+};
+struct PartRef { const NanPart *part; unsigned slot,batch; uint32_t baseVertex; };
+static Batch batches[128];
+static unsigned numBatches;
+static M8Vertex *vertices;
+static uint16_t *indices;
+static M8Vertex *flat;
+static bool dirty=true;
+// Indexed by default: glDrawElements costs the same per call as glDrawArrays
+// (P0 bench) and de-indexing ~doubles the vertices sent. -DM8_ARRAY_DRAWS
+// selects the de-indexed glDrawArrays path (flat buffer) for device A/B runs.
+#ifdef M8_ARRAY_DRAWS
+bool m8IndexedDraws=false;
+#else
+bool m8IndexedDraws=true;
+#endif
+
+static void freeBatches(){
+ if(vertices)rwFree(vertices);
+ if(indices)rwFree(indices);
+ if(flat)rwFree(flat);
+ vertices=nil;indices=nil;flat=nil;numBatches=0;dirty=true;
+}
+
+static int acquireTexture(const NanTexture &t){
+ int vacant=-1;
+ for(unsigned i=0;i<128;i++){
+  TextureEntry &entry=textures[i];
+  if(!entry.refs){if(vacant<0)vacant=i;continue;}
+  const NanTexture &s=*entry.source;
+  if(s.width==t.width && s.height==t.height && s.format==t.format &&
+     s.compressedFormat==t.compressedFormat && s.bytes==t.bytes &&
+     !memcmp(s.pixels,t.pixels,t.bytes)){entry.refs++;return i;}
+ }
+ if(vacant<0)return -1;
+ Raster *r=uploadTexture(t);if(!r)return -1;
+ textures[vacant]={&t,r,1};
+ m8Stats.texturePackedBytes+=t.bytes;
+ m8Stats.textureResidentBytes+=t.width*t.height*2;
+ return vacant;
+}
 
 void unloadBlock(unsigned slot){
- current=&slots[slot];
- if(current->clump){RpClumpDestroy(current->clump);current->clump=nil;current->frame=nil;}
- if(current->frame){current->frame->destroy();current->frame=nil;}
- if(current->dictionary){RwTexDictionaryDestroy(current->dictionary);current->dictionary=nil;}
- memset(current->textures,0,sizeof(current->textures));
+ if(slot>=2 || !slots[slot].pack)return;
+ freeBatches();
+ ModelSlot &s=slots[slot];
+ for(unsigned i=0;i<s.pack->numTextures;i++){
+  TextureEntry &entry=textures[s.textures[i]];
+  if(--entry.refs==0){
+   m8Stats.texturePackedBytes-=entry.source->bytes;
+   m8Stats.textureResidentBytes-=entry.source->width*entry.source->height*2;
+   entry.raster->destroy();entry={};
+  }
+ }
+ s={};
 }
 
 bool loadBlock(unsigned slot,const NanPack &pack){
- current=&slots[slot];
- current->sphere.center = { pack.x, pack.y, pack.z };
- current->sphere.radius = 95.0f;
- const NanTexture *modelTextures=pack.textures;
- const NanPart *modelParts=pack.parts;
- if(current->frame || pack.numTextures>64)return false;
- RwTexDictionary *previousDictionary=RwTexDictionaryGetCurrent();
- current->dictionary=RwTexDictionaryCreate();if(!current->dictionary)return false;
- RwTexDictionarySetCurrent(current->dictionary);
- current->clump=RpClumpCreate();if(!current->clump){RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
- current->frame=Frame::create();if(!current->frame){RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}RpClumpSetFrame(current->clump,current->frame);
- for(unsigned i=0;i<pack.numTextures;i++){
-  const NanTexture &t=modelTextures[i];Raster *r=Raster::create(t.width,t.height,16,Raster::TEXTURE|(t.format==1?Raster::C565:Raster::C4444));
-  if(!r){RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
-  uint8 *p=r->lock(0,Raster::LOCKWRITE);if(!p){r->destroy();RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
-  memcpy(p,t.pixels,t.width*t.height*2);r->unlock(0);current->textures[i]=RwTextureCreate(r);if(!current->textures[i]){r->destroy();RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}RwTextureSetName(current->textures[i],t.name);RwTexDictionaryAddTexture(current->dictionary,current->textures[i]);current->textures[i]->setFilter(Texture::NEAREST);
+ if(slot>=2 || slots[slot].pack || pack.numTextures>64 || pack.numParts>64)return false;
+ ModelSlot &s=slots[slot];
+ unsigned loaded=0;
+ for(;loaded<pack.numTextures;loaded++){
+  int texture=acquireTexture(pack.textures[loaded]);
+  if(texture<0)break;
+  s.textures[loaded]=texture;
  }
+ if(loaded!=pack.numTextures){
+  // Use the normal release path for the successfully acquired prefix.
+  NanPack partial=pack;partial.numTextures=loaded;s.pack=&partial;unloadBlock(slot);return false;
+ }
+ s.pack=&pack;
+ float minX=1e30f,maxX=-1e30f,minY=1e30f,maxY=-1e30f,minZ=1e30f,maxZ=-1e30f;
  for(unsigned i=0;i<pack.numParts;i++){
-  const NanPart &p=modelParts[i];Geometry *g=Geometry::create(p.vertices,p.triangles,Geometry::POSITIONS|Geometry::TEXTURED|Geometry::PRELIT);
-  if(!g){RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
+  const NanPart &p=pack.parts[i];
+  if(p.vertices<1 || p.triangles<0 || p.texture<-1 || p.texture>=(int)pack.numTextures){unloadBlock(slot);return false;}
   for(int j=0;j<p.vertices;j++){
-   const NanVertex &v=p.data[j];g->morphTargets[0].vertices[j]={v.x,v.y,v.z};g->texCoords[0][j]={v.u,v.v};g->colors[j]=makeRGBA(255,255,255,v.a);
+   const NanVertex &v=p.data[j];
+   if(v.x<minX)minX=v.x;if(v.x>maxX)maxX=v.x;
+   if(v.y<minY)minY=v.y;if(v.y>maxY)maxY=v.y;
+   if(v.z<minZ)minZ=v.z;if(v.z>maxZ)maxZ=v.z;
   }
-  for(int j=0;j<p.triangles;j++){g->triangles[j].v[0]=p.indices[j*3];g->triangles[j].v[1]=p.indices[j*3+1];g->triangles[j].v[2]=p.indices[j*3+2];g->triangles[j].matId=0;}
-  Material *m=Material::create();if(!m){g->destroy();RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}if(p.texture>=0)m->setTexture(RwTexDictionaryFindNamedTexture(current->dictionary,modelTextures[p.texture].name));g->matList.appendMaterial(m);m->destroy();g->calculateBoundingSphere();g->buildMeshes();
-  Atomic *atomic=Atomic::create();if(!atomic){g->destroy();RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
-  atomic->pipeline = getM8Pipeline();
-  RpClumpAddAtomic(current->clump,atomic);atomic->setFrame(current->frame);atomic->setGeometry(g,0);g->destroy();
+  for(int j=0;j<p.triangles*3;j++)if(p.indices[j]>=p.vertices){unloadBlock(slot);return false;}
  }
- if(!GetFirstAtomic(current->clump)||!GetFirstTexture(current->dictionary)){RwTexDictionarySetCurrent(previousDictionary);unloadBlock(slot);return false;}
- RwTexDictionarySetCurrent(previousDictionary);return true;
+ s.sphere.center={(minX+maxX)*0.5f,(minY+maxY)*0.5f,(minZ+maxZ)*0.5f};
+ float radius2=0;
+ for(unsigned i=0;i<pack.numParts;i++){
+  const NanPart &p=pack.parts[i];
+  for(int j=0;j<p.vertices;j++){
+   const NanVertex &v=p.data[j];
+   float dx=v.x-s.sphere.center.x,dy=v.y-s.sphere.center.y,dz=v.z-s.sphere.center.z;
+   float d=dx*dx+dy*dy+dz*dz;if(d>radius2)radius2=d;
+  }
+ }
+ s.sphere.radius=sqrtf(radius2)*1.02f;
+ dirty=true;return true;
 }
 
-void renderBlock(unsigned slot){
- current=&slots[slot];
- RpClumpRender(current->clump);
+bool m8PrepareBatches(){
+ if(!dirty)return true;
+ freeBatches();
+ PartRef refs[128];unsigned numRefs=0,barrier=0;
+ uint32_t totalVertices=0,totalIndices=0;
+ for(unsigned slot=0;slot<2;slot++){
+  const NanPack *pack=slots[slot].pack;if(!pack)continue;
+  for(unsigned i=0;i<pack->numParts;i++){
+   const NanPart &p=pack->parts[i];if(!p.triangles)continue;
+   GLuint texture=0;bool alpha=false;
+   if(p.texture>=0){
+    TextureEntry &entry=textures[slots[slot].textures[p.texture]];
+    texture=gles1::nativeRaster(entry.raster)->texture;
+    alpha=pack->textures[p.texture].format==2;
+   }
+   for(int v=0;v<p.vertices;v++)if(p.data[v].a<255)alpha=true;
+   unsigned b=numBatches;
+   // Do not move any opaque triangles across a translucent draw, nor reorder
+   // translucent parts. Vertex/material alpha is part of the batching key.
+   if(!alpha)for(unsigned j=barrier;j<numBatches;j++){
+    if(!batches[j].alpha && batches[j].texture==texture &&
+       batches[j].vertices+p.vertices<=65535){b=j;break;}
+   }
+   if(b==numBatches){batches[b]={};batches[b].texture=texture;batches[b].alpha=alpha;numBatches++;}
+   if(p.vertices>65535 || numRefs>=128){freeBatches();return false;}
+   refs[numRefs++]={&p,slot,b,batches[b].vertices};
+   batches[b].vertices+=p.vertices;
+   if(alpha)barrier=numBatches;
+   totalVertices+=p.vertices;totalIndices+=p.triangles*3;
+  }
+ }
+ if(!numRefs){dirty=false;return true;}
+ vertices=(M8Vertex*)rwMalloc(totalVertices*sizeof(M8Vertex),MEMDUR_EVENT);
+ // Each slot's triangles occur in its individual mask and the combined mask.
+ indices=(uint16_t*)rwMalloc(totalIndices*2*sizeof(uint16_t),MEMDUR_EVENT);
+ if(!m8IndexedDraws)flat=(M8Vertex*)rwMalloc(totalIndices*sizeof(M8Vertex),MEMDUR_EVENT);
+ if(!vertices || !indices || (!m8IndexedDraws && !flat)){freeBatches();return false;}
+ uint32_t vertexCursor=0,indexCursor=0,flatCursor=0;
+ for(unsigned b=0;b<numBatches;b++){
+  Batch &batch=batches[b];batch.firstVertex=vertexCursor;
+  for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b){
+   const PartRef &ref=refs[i];const NanPart &p=*ref.part;
+   for(int j=0;j<p.vertices;j++){
+    const NanVertex &v=p.data[j];
+    // Match M8's existing unlit white RGB material; retain vertex alpha.
+    vertices[vertexCursor++]={v.x,v.y,v.z,255,255,255,v.a,v.u,v.v};
+   }
+  }
+  for(unsigned mask=1;mask<4;mask++){
+   batch.firstIndex[mask]=indexCursor;
+   uint32_t base=65535;
+   for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b && (mask&(1u<<refs[i].slot))){
+    if(refs[i].baseVertex<base)base=refs[i].baseVertex;
+   }
+   batch.baseVertex[mask]=base==65535?0:base;
+   for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b && (mask&(1u<<refs[i].slot))){
+    const PartRef &ref=refs[i];const NanPart &p=*ref.part;
+    for(int j=0;j<p.triangles*3;j++)indices[indexCursor++]=ref.baseVertex+p.indices[j]-base;
+    batch.visibleVertices[mask]+=p.vertices;
+   }
+   batch.indices[mask]=indexCursor-batch.firstIndex[mask];
+  }
+  // Refs are slot-ordered, so this matches the combined mask's indexed order.
+  uint32_t flatStart=flatCursor;
+  if(flat)for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b){
+   const PartRef &ref=refs[i];const NanPart &p=*ref.part;
+   const M8Vertex *src=vertices+batch.firstVertex+ref.baseVertex;
+   for(int j=0;j<p.triangles*3;j++)flat[flatCursor++]=src[p.indices[j]];
+  }
+  batch.flatCount[1]=batch.indices[1];batch.flatCount[2]=batch.indices[2];
+  batch.flatCount[3]=batch.indices[1]+batch.indices[2];
+  batch.flatFirst[1]=batch.flatFirst[3]=flatStart;batch.flatFirst[2]=flatStart+batch.indices[1];
+  for(unsigned slot=0;slot<2;slot++){
+   if(!batch.indices[1u<<slot])continue;
+   V3d lo={1e30f,1e30f,1e30f},hi={-1e30f,-1e30f,-1e30f};
+   for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b && refs[i].slot==slot){
+    const M8Vertex *v=vertices+batch.firstVertex+refs[i].baseVertex;
+    for(int j=0;j<refs[i].part->vertices;j++){
+     if(v[j].x<lo.x)lo.x=v[j].x;if(v[j].x>hi.x)hi.x=v[j].x;
+     if(v[j].y<lo.y)lo.y=v[j].y;if(v[j].y>hi.y)hi.y=v[j].y;
+     if(v[j].z<lo.z)lo.z=v[j].z;if(v[j].z>hi.z)hi.z=v[j].z;
+    }
+   }
+   Sphere &sphere=batch.spheres[slot];
+   sphere.center={(lo.x+hi.x)*.5f,(lo.y+hi.y)*.5f,(lo.z+hi.z)*.5f};
+   float radius2=0;
+   for(unsigned i=0;i<numRefs;i++)if(refs[i].batch==b && refs[i].slot==slot){
+    const M8Vertex *v=vertices+batch.firstVertex+refs[i].baseVertex;
+    for(int j=0;j<refs[i].part->vertices;j++){
+     float x=v[j].x-sphere.center.x,y=v[j].y-sphere.center.y,z=v[j].z-sphere.center.z;
+     float d=x*x+y*y+z*z;if(d>radius2)radius2=d;
+    }
+   }
+   sphere.radius=sqrtf(radius2)*1.05f;
+  }
+ }
+ dirty=false;return true;
+}
+
+void m8ResetRenderState(){
+ m8Stats.drawCalls=m8Stats.vertices=m8Stats.indices=0;
+ glEnable(GL_DEPTH_TEST);glDepthMask(GL_TRUE);glDepthFunc(GL_LEQUAL);
+ glEnable(GL_CULL_FACE);glCullFace(GL_BACK);glDisable(GL_LIGHTING);glDisable(0x0BC0 /* GL_ALPHA_TEST */);
+ glBindBuffer(GL_ARRAY_BUFFER,0);glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+ glEnableClientState(GL_VERTEX_ARRAY);glEnableClientState(GL_COLOR_ARRAY);
+ glEnableClientState(GL_TEXTURE_COORD_ARRAY);glDisableClientState(GL_NORMAL_ARRAY);
+}
+
+void renderWorld(){
+ unsigned mask=0;
+ for(unsigned i=0;i<2;i++)if(slots[i].pack &&
+   (!engine->currentCamera || engine->currentCamera->frustumTestSphere(&slots[i].sphere)!=Camera::SPHEREOUTSIDE))mask|=1u<<i;
+ if(!mask || !vertices || dirty)return;
+ GLuint texture=~0u;int alpha=-1;
+ const M8Vertex *lastV=nil;
+ for(unsigned b=0;b<numBatches;b++){
+  const Batch &batch=batches[b];
+  unsigned visible=mask;
+  if(engine->currentCamera)for(unsigned slot=0;slot<2;slot++){
+   if((visible&(1u<<slot)) && batch.indices[1u<<slot] &&
+      engine->currentCamera->frustumTestSphere(&batch.spheres[slot])==Camera::SPHEREOUTSIDE)visible&=~(1u<<slot);
+  }
+  if(!batch.indices[visible])continue;
+  if(texture!=batch.texture){
+   texture=batch.texture;
+   if(texture){glEnable(GL_TEXTURE_2D);glBindTexture(GL_TEXTURE_2D,texture);}
+   else glDisable(GL_TEXTURE_2D);
+  }
+  if(alpha!=batch.alpha){
+   alpha=batch.alpha;
+   if(alpha){glEnable(GL_BLEND);glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);glDepthMask(GL_FALSE);}
+   else{glDisable(GL_BLEND);glDepthMask(GL_TRUE);}
+  }
+  const bool indexed=m8IndexedDraws || !flat;
+  const M8Vertex *v=indexed?vertices+batch.firstVertex+batch.baseVertex[visible]:flat;
+  if(v!=lastV){
+   glVertexPointer(3,GL_FLOAT,sizeof(M8Vertex),&v->x);
+   glColorPointer(4,GL_UNSIGNED_BYTE,sizeof(M8Vertex),&v->r);
+   glTexCoordPointer(2,GL_FLOAT,sizeof(M8Vertex),&v->u);
+   lastV=v;
+  }
+  if(indexed){
+   glDrawElements(GL_TRIANGLES,batch.indices[visible],GL_UNSIGNED_SHORT,indices+batch.firstIndex[visible]);
+   m8Stats.vertices+=batch.visibleVertices[visible];
+  }else{
+   glDrawArrays(GL_TRIANGLES,batch.flatFirst[visible],batch.flatCount[visible]);
+   m8Stats.vertices+=batch.flatCount[visible];
+  }
+  m8Stats.drawCalls++;m8Stats.indices+=batch.indices[visible];
+ }
 }

@@ -52,6 +52,7 @@ NANTEX_FMT_RGBA5551      = 3
 NANTEX_FMT_PAL8_RGBA8888 = 4
 NANTEX_FMT_PAL8_RGBA4444 = 5
 NANTEX_FMT_PVRTC4        = 6
+NANTEX_FMT_PAL8_RGB565    = 7
 
 FMT_NAMES = {
     NANTEX_FMT_RGB565:        "RGB565 (16bpp)",
@@ -59,7 +60,8 @@ FMT_NAMES = {
     NANTEX_FMT_RGBA5551:      "RGBA5551 (16bpp)",
     NANTEX_FMT_PAL8_RGBA8888: "PAL8-RGBA8 (8bpp+pal)",
     NANTEX_FMT_PAL8_RGBA4444: "PAL8-RGBA4 (8bpp+pal)",
-    NANTEX_FMT_PVRTC4:        "PVRTC4 (4bpp)"
+    NANTEX_FMT_PVRTC4:        "PVRTC4 (4bpp)",
+    NANTEX_FMT_PAL8_RGB565:   "PAL8-RGB565 (8bpp+pal)"
 }
 
 # ---------------------------------------------------------------------------
@@ -566,6 +568,30 @@ def match_to_palette(rgba_pixels, palette):
 # Mipmap Generator
 # ---------------------------------------------------------------------------
 
+def encode_pal8_16(pixels, alpha=False):
+    """GLES PAL8: 512-byte RGB565/RGBA4 palette then row-major indices.
+
+    Images with <=256 colours stay lossless relative to the packed LE input.
+    """
+    words = np.frombuffer(pixels, dtype='<u2')
+    unique, inverse = np.unique(words, return_inverse=True)
+    if len(unique) <= 256:
+        palette = np.zeros(256, dtype='<u2')
+        palette[:len(unique)] = unique
+        return palette.tobytes() + inverse.astype(np.uint8).tobytes()
+    rgba = np.empty((len(words), 1, 4), dtype=np.uint8)
+    if alpha:
+        for i, shift in enumerate((12, 8, 4, 0)):
+            rgba[:, 0, i] = ((words >> shift) & 15) * 17
+    else:
+        for i, shift, mask in ((0, 11, 31), (1, 5, 63), (2, 0, 31)):
+            rgba[:, 0, i] = ((words >> shift) & mask) * 255 // mask
+        rgba[:, 0, 3] = 255
+    palette, indices = quantize_rgba_median_cut(rgba)
+    packed = encode_rgba4444(palette) if alpha else encode_rgb565(palette)
+    return packed + indices.tobytes()
+
+
 def generate_mip_chain(base_rgba, max_mips=NANTEX_MAX_MIPS):
     """Generates a full mip chain down to 1x1 from an RGBA8888 base image."""
     h, w = base_rgba.shape[:2]
@@ -725,7 +751,7 @@ def validate_nantex(path):
                 # Check expected byte length
                 if fmt in (NANTEX_FMT_RGB565, NANTEX_FMT_RGBA4444, NANTEX_FMT_RGBA5551):
                     expected = cur_w * cur_h * 2
-                elif fmt in (NANTEX_FMT_PAL8_RGBA8888, NANTEX_FMT_PAL8_RGBA4444):
+                elif fmt in (NANTEX_FMT_PAL8_RGBA8888, NANTEX_FMT_PAL8_RGBA4444, NANTEX_FMT_PAL8_RGB565):
                     expected = cur_w * cur_h * 1
                 else:
                     expected = msz
@@ -768,7 +794,7 @@ def run_info(txd_path):
     print(f"Archive File Size: {os.path.getsize(txd_path):,} bytes | Total Payload: {total_raw:,} bytes\n")
 
 
-def convert_txd(txd_path, out_path, alpha_mode="auto", mips_mode="full", max_dim=None, verbose=True):
+def convert_txd(txd_path, out_path, alpha_mode="auto", mips_mode="full", max_dim=None, verbose=True, texture_mode="native"):
     """Converts a TXD file to a .nantex container."""
     orig_size = os.path.getsize(txd_path)
     textures = parse_txd(txd_path)
@@ -815,6 +841,9 @@ def convert_txd(txd_path, out_path, alpha_mode="auto", mips_mode="full", max_dim
                 else:
                     target_fmt = NANTEX_FMT_RGBA4444
                     
+        if texture_mode == "pal8":
+            target_fmt = NANTEX_FMT_PAL8_RGBA4444 if has_transparency else NANTEX_FMT_PAL8_RGB565
+
         # Generate or collect mip levels
         if mips_mode == "full":
             mip_chain = generate_mip_chain(base_rgba)
@@ -828,7 +857,21 @@ def convert_txd(txd_path, out_path, alpha_mode="auto", mips_mode="full", max_dim
         mip_buffers = []
         palette_bytes = None
         
-        if target_fmt == NANTEX_FMT_PAL8_RGBA8888:
+        if target_fmt in (NANTEX_FMT_PAL8_RGBA4444, NANTEX_FMT_PAL8_RGB565):
+            alpha = target_fmt == NANTEX_FMT_PAL8_RGBA4444
+            packed = encode_rgba4444(base_rgba) if alpha else encode_rgb565(base_rgba)
+            payload = encode_pal8_16(packed, alpha)
+            palette_bytes = payload[:512]
+            mip_buffers.append(payload[512:])
+            words = np.frombuffer(palette_bytes, dtype='<u2')
+            pal_rgba = np.full((256, 4), 255, dtype=np.uint8)
+            channels = ((0,12,15),(1,8,15),(2,4,15),(3,0,15)) if alpha else ((0,11,31),(1,5,63),(2,0,31))
+            for channel, shift, mask in channels:
+                pal_rgba[:, channel] = ((words >> shift) & mask) * 255 // mask
+            for mip in mip_chain[1:]:
+                mip_buffers.append(match_to_palette(mip, pal_rgba).tobytes())
+
+        elif target_fmt == NANTEX_FMT_PAL8_RGBA8888:
             # Generate 256-color palette from base level
             pal_rgba, base_indices = quantize_rgba_median_cut(base_rgba, 256)
             palette_bytes = pal_rgba.tobytes()
@@ -886,6 +929,8 @@ def main():
     parser.add_argument("--validate", action="store_true", help="Validate an existing .nantex file")
     parser.add_argument("--alpha-format", choices=["auto", "4444", "pal8", "5551"], default="auto",
                         help="Format for textures with alpha (default: auto -> PAL8 if <=256 colors, else 4444)")
+    parser.add_argument("--texture-format", choices=["native", "pal8"], default="native",
+                        help="PAL8 uses RGB565/RGBA4 palettes for opaque/alpha textures")
     parser.add_argument("--mips", choices=["full", "keep", "none"], default="full",
                         help="Mipmap strategy (default: full -> mip chain to 1x1 for MBX min-filters)")
     parser.add_argument("--max-dim", type=int, default=None,
@@ -930,7 +975,8 @@ def main():
             out_file,
             alpha_mode=args.alpha_format,
             mips_mode=args.mips,
-            max_dim=args.max_dim
+            max_dim=args.max_dim,
+            texture_mode=args.texture_format
         )
     except Exception as e:
         print(f"ERROR during conversion: {e}", file=sys.stderr)

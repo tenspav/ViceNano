@@ -4,6 +4,7 @@ Requires Python Pillow, the existing NanoEmu build and local snap6 dumps.
 All generated paths are below this file's directory; original inputs open read-only.
 """
 import argparse
+import shlex
 import hashlib
 import json
 import os
@@ -23,6 +24,7 @@ ap.add_argument('--vnc', help='QEMU VNC display, e.g. 127.0.0.1:5')
 ap.add_argument('--keep-awake', action='store_true', help='Send periodic harmless canvas touches to prevent RetailOS idle sleep')
 ap.add_argument('--warmup', type=float, default=8)
 ap.add_argument('--samples', type=int, default=24)
+ap.add_argument('--smoke', action='store_true', help='Capture static frames without the long input exercise')
 ap.add_argument('--page', type=int, default=3)
 ap.add_argument('--tap-x', type=int, default=176)
 ap.add_argument('--debug', action='store_true')
@@ -57,7 +59,8 @@ with patch.open('rb') as f, source.open('rb') as original:
         original_blocks.append((offset, hashlib.sha256(original.read(4096)).hexdigest()))
 poke_file = run / 'm8.poke'
 poke_lines = (emu / 'fixups/snap6-resume.poke').read_text()
-poke_lines += '\n# M8 GPU timing table uncap to 266 MHz\n0x08783d68 0x0000010a\n'
+if a.clock_profile.upper() == 'MAX':
+    poke_lines += '\n# M8 GPU timing table uncap to 266 MHz\n0x08783d68 0x0000010a\n'
 poke_file.write_text(poke_lines)
 
 machine = ','.join([
@@ -77,7 +80,15 @@ cmd = [str(emu / 'build/qemu-system-arm'), '-M', machine, '-display', 'none',
        '-serial', 'none', '-monitor', 'none', '-qmp', 'stdio']
 if a.vnc: cmd += ['-vnc', a.vnc]
 if a.debug: cmd += ['-d', 'int', '-D', str(run / 'cpu-debug.log')]
+# Extra QEMU arguments for tracing (e.g. a -plugin), shell-quoted.
+if os.environ.get('M8_QEMU_EXTRA'): cmd += shlex.split(os.environ['M8_QEMU_EXTRA'])
 (run / 'command.json').write_text(json.dumps(cmd, indent=2) + '\n')
+(run / 'run-metadata.json').write_text(json.dumps({
+    'clock_profile': a.clock_profile.upper(),
+    'app_sha256': hashlib.sha256(app.read_bytes()).hexdigest(),
+    'emulator_sha256': hashlib.sha256((emu / 'build/qemu-system-arm').read_bytes()).hexdigest(),
+    'smoke': a.smoke,
+}, indent=2) + '\n')
 
 with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlog:
     proc = subprocess.Popen(cmd, cwd=run, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -148,46 +159,51 @@ with (run / 'emulator.log').open('w') as log, (run / 'qmp.log').open('w') as qlo
         pointer(False, a.tap_x, 215)
         idle(a.warmup)
         shot('initial')
-        # Warm the OS touch queue before comparing heap states.
-        pointer(True,120,60)
-        for k in range(200):
-            pointer(True,120,60+k%20)
-            time.sleep(.1)
-        pointer(False,120,62)
-        time.sleep(1.3)
-        shot('before')
-        # Landscape (x,y) -> portrait (y,x).
-        pointer(True,120,60)
-        time.sleep(.2)
-        def observed(name):
-            with Image.open(run/(name+'.png')) as im:
-                return sum((im.getpixel((10+i*7,149))[0]>128)<<i for i in range(32))
-        baseline_events=observed('before')
-        for k in range(4000):
-            pointer(True,120,75+(k%20))
-            time.sleep(.1)
-            if k>=539 and k%50==49:
-                shot('input-progress')
-                if observed('input-progress')-baseline_events>=520: break
-        else: raise RuntimeError('500 guest-observed input events were not reached')
-        pointer(False,120,85)
-        time.sleep(1.3)
-        shot('touch-moved')
-        pointer(True,100,180)
-        for k in range(30):
-            pointer(True,100,180+k*3)
-            time.sleep(.06)
-        pointer(False,100,267)
-        time.sleep(1.3)
-        shot('touch-camera')
-        pointer(True,20,20)
-        for k in range(20):
-            pointer(True,20+k%5,20)
-            time.sleep(.15)
-        pointer(False,20,20)
-        for i in range(a.samples):
-            shot(f'{a.prefix}-{i}')
-            idle(2)
+        if a.smoke:
+            for i in range(a.samples):
+                shot(f'{a.prefix}-{i}')
+                idle(2)
+        else:
+            # Warm the OS touch queue before comparing heap states.
+            pointer(True,120,60)
+            for k in range(200):
+                pointer(True,120,60+k%20)
+                time.sleep(.1)
+            pointer(False,120,62)
+            time.sleep(1.3)
+            shot('before')
+            # Landscape (x,y) -> portrait (y,x).
+            pointer(True,120,60)
+            time.sleep(.2)
+            def observed(name):
+                with Image.open(run/(name+'.png')) as im:
+                    return sum((im.getpixel((10+i*7,149))[0]>128)<<i for i in range(32))
+            baseline_events=observed('before')
+            for k in range(4000):
+                pointer(True,120,75+(k%20))
+                time.sleep(.1)
+                if k>=539 and k%50==49:
+                    shot('input-progress')
+                    if observed('input-progress')-baseline_events>=520: break
+            else: raise RuntimeError('500 guest-observed input events were not reached')
+            pointer(False,120,85)
+            time.sleep(1.3)
+            shot('touch-moved')
+            pointer(True,100,180)
+            for k in range(30):
+                pointer(True,100,180+k*3)
+                time.sleep(.06)
+            pointer(False,100,267)
+            time.sleep(1.3)
+            shot('touch-camera')
+            pointer(True,20,20)
+            for k in range(20):
+                pointer(True,20+k%5,20)
+                time.sleep(.15)
+            pointer(False,20,20)
+            for i in range(a.samples):
+                shot(f'{a.prefix}-{i}')
+                idle(2)
         if a.dump_memory: command('pmemsave', {'val': 0x08000000, 'size': 0x04000000, 'filename': str(run / 'memory.bin')})
     finally:
         proc.terminate()
@@ -210,7 +226,7 @@ with source.open('rb') as f:
     for offset, digest in original_blocks:
         f.seek(offset)
         unchanged &= hashlib.sha256(f.read(4096)).hexdigest() == digest
-passed = unchanged and all(c['background_pixels'] > 30000 and c['colored_pixels'] > 1000 for c in checks) and max(changes) > 1000
+passed = unchanged and all(c['background_pixels'] > 30000 and c['colored_pixels'] > 1000 for c in checks) and (a.smoke or max(changes, default=0) > 1000)
 result = {'pass': passed, 'screenshots': checks, 'changed_pixels': changes,
           'source_size_mtime_and_replaced_block_hashes_unchanged': unchanged,
           'app_sha256': hashlib.sha256(app.read_bytes()).hexdigest()}

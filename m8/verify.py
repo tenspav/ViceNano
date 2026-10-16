@@ -1,17 +1,36 @@
 #!/usr/bin/env python3
 """Decode screenshot telemetry and assert the M8 performance gate (sustained 24+ FPS, audio playing, moving city)."""
 from pathlib import Path
-import json, re
+import argparse, json, re
 from PIL import Image, ImageChops
 
-root = Path(__file__).resolve().parent / 'pass'
+ap = argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--output', type=Path, default=Path(__file__).resolve().parent / 'pass')
+ap.add_argument('--legacy-telemetry', action='store_true', help='Baseline build has the original 21 rows')
+ap.add_argument('--m8-telemetry', action='store_true', help='Pre-pacing M8 build has 28 rows')
+ap.add_argument('--pacing-v1', action='store_true', help='First pacing build has 34 rows (no draw split)')
+args = ap.parse_args()
+root = args.output
 fields = [
     'touch_events', 'hid_reports', 'player_x16', 'player_z16',
     'yaw100', 'pitch100', 'rw_live', 'os_free',
     'rw_peak', 'errors', 'allocation_failures', 'bt_state',
     'cross', 'left_x', 'left_y', 'frame',
-    'fps_x10', 'draw_us', 'stream_us', 'audio_us', 'input_us'
+    'fps_x10', 'draw_us', 'stream_us', 'audio_us', 'input_us',
+    'texture_packed_bytes', 'texture_resident_bytes', 'texture_uploads',
+    'texture_fallbacks', 'draw_calls', 'vertices', 'indices',
+    'frame_work_us', 'frame_interval_us', 'overlay_end_us', 'vsync_1_2', 'vsync_3_4plus', 'bench_x10',
+    'clear_begin_us', 'world_us'
 ]
+if args.legacy_telemetry:
+    fields = fields[:21]
+elif args.m8_telemetry:
+    fields = fields[:28]
+elif args.pacing_v1:
+    fields = fields[:34]
+packed = {'overlay_end_us': ('overlay_us', 'end_update_us'), 'vsync_1_2': ('vsync_1', 'vsync_2'),
+          'vsync_3_4plus': ('vsync_3', 'vsync_4plus'), 'bench_x10': ('bench_elements_us_x10', 'bench_arrays_us_x10'),
+          'clear_begin_us': ('clear_us', 'begin_update_us')}
 
 def read(name):
     im = Image.open(root / (name + '.png')).convert('RGB')
@@ -20,7 +39,11 @@ def read(name):
         v = sum((im.getpixel((10 + i * 7, 149 + r * 4))[0] > 128) << i for i in range(32))
         if k in ['player_x16', 'player_z16', 'yaw100', 'pitch100'] and v >= 2**31:
             v -= 2**32
-        d[k] = v
+        if k in packed:
+            lo, hi = packed[k]
+            d[lo], d[hi] = v & 0xffff, v >> 16
+        else:
+            d[k] = v
     return d
 
 names = ['initial', 'before', 'touch-moved', 'touch-camera'] + [
@@ -52,6 +75,7 @@ checks = {
     'audio_playing': audio_peak > 0 or 'outputStart' in log or (i2s_match and int(i2s_match.group(1)) > 1000000),
     'no_guest_errors': all(r['errors'] == 0 and r['allocation_failures'] == 0 for r in rows),
     'within_budget': all(r['rw_peak'] < 18 * 1024 * 1024 for r in rows),
+    'frames_advance': rows[-1]['frame'] > rows[4]['frame'],
 }
 
 source = json.loads((root / 'check.json').read_text())
@@ -71,6 +95,30 @@ avg_stream = sum(r['stream_us'] for r in rows[4:]) / max(1, len(rows[4:]))
 avg_audio = sum(r['audio_us'] for r in rows[4:]) / max(1, len(rows[4:]))
 avg_input = sum(r['input_us'] for r in rows[4:]) / max(1, len(rows[4:]))
 
+pacing = None
+if 'frame_work_us' in fields:
+    samples = rows[4:]
+    first, last = samples[0], samples[-1]
+    buckets = [last[k] - first[k] for k in ('vsync_1', 'vsync_2', 'vsync_3', 'vsync_4plus')]
+    total = sum(buckets)
+    bench = rows[-1]
+    pacing = {
+        'sample_window_frames': total,
+        'vsync_interval_histogram': dict(zip(('1', '2', '3', '4+'), buckets)),
+        'frames_within_2_vsyncs_pct': round(100.0 * (buckets[0] + buckets[1]) / total, 2) if total else 0,
+        'frame_work_us_avg': round(sum(r['frame_work_us'] for r in samples) / len(samples)),
+        'frame_work_us_max': max(r['frame_work_us'] for r in samples),
+        'frame_interval_us_avg': round(sum(r['frame_interval_us'] for r in samples) / len(samples)),
+        'overlay_us_avg': round(sum(r['overlay_us'] for r in samples) / len(samples)),
+        'end_update_us_avg': round(sum(r['end_update_us'] for r in samples) / len(samples)),
+        **({k + '_avg': round(sum(r[k] for r in samples) / len(samples)) for k in ('clear_us', 'begin_update_us', 'world_us')}
+           if 'world_us' in fields else {}),
+        'bench_us_per_draw': {'glDrawElements': bench['bench_elements_us_x10'] / 10.0,
+                              'glDrawArrays': bench['bench_arrays_us_x10'] / 10.0},
+        # Informational target from docs/OPTIMIZE_TO_30FPS.md; not part of the M8 pass gate.
+        'locked_30fps_target_met': bool(total) and (buckets[0] + buckets[1]) >= 0.99 * total,
+    }
+
 result = {
     'pass': all(checks.values()),
     'checks': checks,
@@ -84,6 +132,9 @@ result = {
         'audio_mixing_us': round(avg_audio),
         'input_processing_us': round(avg_input)
     },
+    'texture_memory': {k: rows[-1].get(k) for k in ('texture_packed_bytes', 'texture_resident_bytes', 'texture_uploads', 'texture_fallbacks')},
+    'draw_submission': {k: rows[-1].get(k) for k in ('draw_calls', 'vertices', 'indices')},
+    'pacing': pacing,
     'observed_touch_events': moved['touch_events'] - before['touch_events'],
     'touch_heap_difference': moved['os_free'] - before['os_free'],
     'scene_changed_pixels': changes,

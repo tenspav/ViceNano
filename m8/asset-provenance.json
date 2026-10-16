@@ -32,6 +32,9 @@
         }
       },
       "packed_bytes": 126760,
+      "texture_raw_bytes": 53248,
+      "texture_pal8_bytes": 39936,
+      "texture_count": 26,
       "reservation": 880704
     },
     {
@@ -64,6 +67,9 @@
         }
       },
       "packed_bytes": 113618,
+      "texture_raw_bytes": 26624,
+      "texture_pal8_bytes": 19968,
+      "texture_count": 13,
       "reservation": 847592
     },
     {
@@ -96,6 +102,9 @@
         }
       },
       "packed_bytes": 95666,
+      "texture_raw_bytes": 20480,
+      "texture_pal8_bytes": 15360,
+      "texture_count": 10,
       "reservation": 730472
     }
   ]

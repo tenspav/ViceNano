@@ -21,7 +21,8 @@ typedef enum {
     NANTEX_FMT_RGBA5551      = 3, /* 16bpp: R5 G5 B5 A1 (GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1) */
     NANTEX_FMT_PAL8_RGBA8888 = 4, /* 8bpp: 1 B/px index + 256*4B RGBA palette (GL_PALETTE8_RGBA8_OES) */
     NANTEX_FMT_PAL8_RGBA4444 = 5, /* 8bpp: 1 B/px index + 256*2B RGBA4444 palette (GL_PALETTE8_RGBA4_OES) */
-    NANTEX_FMT_PVRTC4        = 6  /* 4bpp: PowerVR compressed texture (if supported) */
+    NANTEX_FMT_PVRTC4        = 6, /* 4bpp: PowerVR compressed texture (if supported) */
+    NANTEX_FMT_PAL8_RGB565   = 7  /* 8bpp index + 256*2B RGB565 palette */
 } NanTexFormat;
 
 #pragma pack(push, 1)

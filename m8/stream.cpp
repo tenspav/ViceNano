@@ -26,4 +26,4 @@ bool StreamRequest(const NanPack *packs,unsigned count,float cameraX,float camer
  if(!loadBlock(victim,packs[wanted])){stream.failed=true;return false;}
  stream.resident[victim]=wanted;stream.age[victim]=stream.clock;stream.loads++;return true;
 }
-void StreamRender(){for(unsigned i=0;i<StreamSlots;i++)if(stream.resident[i]>=0)renderBlock(i);}
+void StreamRender(){renderWorld();}
