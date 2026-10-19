@@ -62,10 +62,10 @@
 | M8 performance | ![done](https://img.shields.io/badge/done-brightgreen) | code complete; 24+ FPS target not sustained (~20.56 FPS unlocked, ~19.97 FPS stock) |
 | M8 on hardware | ![done](https://img.shields.io/badge/done-brightgreen) | triangle, textured quad and the continuous world preview render on the real MBX GPU (~70 fps, 0 errors); DualSense + touch control |
 | reVC stage 2 | ![done](https://img.shields.io/badge/done-brightgreen) | real reVC code runs on NanoOS via the game loader (NPAK assets, MBX rendering, input), ~45 fps in emulator |
-| reVC stage 3 | ![in progress](https://img.shields.io/badge/in%20progress-yellow) | GTA Vice City PC asset conversion (IMG/TXD/DFF) into NPAK packs |
+| reVC stage 3 | ![done](https://img.shields.io/badge/done-brightgreen) | GTA Vice City PC assets converted into NPAK packs: 6,212 files, 12,269 DXT->NTX textures, 4,617 models (2.2M triangles), vc_data.npak (23 MB) + vc_gta3.npak (394 MB), 0 errors |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | full game on the real iPod via dualboot |
 
-**Overall: research 100% + emulator 98% + engine 82%. M8 runs continuously on the real iPod GPU at ~70 fps, and the real reVC engine code boots inside NanoOS (stage 2). Ahead: stage 3 asset conversion, then the full game on the device.**
+**Overall: research 100% + emulator 98% + engine 85%. M8 runs continuously on the real iPod GPU at ~70 fps, the real reVC engine code boots inside NanoOS (stage 2), and all 6,212 Vice City PC assets are converted into NPAK packs (stage 3). Ahead: stage 4, the runtime reads the packs, then the full game on the device.**
 
 ## The stages
 

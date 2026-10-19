@@ -19,6 +19,7 @@ for i in range(len(src)):
         n=0
         while n<273 and i+n<len(src) and src[start+n]==src[i+n]:n+=1
         if n>best:best=n;distance=i-start
+        if best==273:break # longest possible; later starts cannot beat it
     matches.append((best,distance))
     q.append(i)
 cost=[0]*(len(src)+1);choice=[1]*len(src)

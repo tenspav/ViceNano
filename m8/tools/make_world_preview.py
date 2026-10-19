@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 """Bounded local model sample with UVs and real downsampled RGB565 textures.
 All source asset restrictions remain; generated data stays in the build dir.
+
+make_world_preview.py nbdecoshop01.h world_preview.h [preview.bin]
+preview.bin ("NVP1", little endian; the same data as the header) rides in
+the vcworld.pak runtime pack, where NanoOS's mode 3 reads it (the kernel is
+at its 64 KiB cap): char magic[4]; u16 textures, triangles;
+u16 texels[textures][64] (8x8 RGB565); triangles x { s16 xyz[9] (1/16),
+s16 uv[6] (1/256), u16 texture }.
 """
-import re, sys
+import re, struct, sys
 from pathlib import Path
 s=Path(sys.argv[1]).read_text()
 verts={key:[[float(v.rstrip('f')) for v in row.split(',')]
@@ -26,6 +33,7 @@ while len(tri)<112 and any(groups):
         if g and len(tri)<112:tri.append(g.pop(0))
 assert len(tri)==112
 origin=[(min(v[j] for _,t,_ in tri for v in t)+max(v[j] for _,t,_ in tri for v in t))/2 for j in range(3)]
+blob=bytearray()
 lines=['// Local user-owned asset sample; do not redistribute.',
        'struct PreviewTriangle { int16_t xyz[9],uv[6]; uint16_t texture; };',
        'static const PreviewTriangle preview[]={']
@@ -36,11 +44,13 @@ for _,vs,tex in tri:
     rgb=[64+round(sum(v[j] for v in vs)/3*191/255) for j in range(5,8)]
     color=(rgb[0]>>3)<<11|(rgb[1]>>2)<<5|(rgb[2]>>3)
     lines.append('{{'+','.join(map(str,xyz))+'},{'+','.join(map(str,uv))+'},'+str(tex)+'},')
+    blob+=struct.pack('<9h6hH',*xyz,*uv,tex)
 lines.append('};')
 packed={key:bytes(int(v) for v in body.split(',') if v.strip()) for key,body in re.findall(r'uint8_t tex(\d+)\[\]=\{([^}]+)\}',s)}
 desc=re.findall(r'\{(\d+),(\d+),(\d+),tex(\d+),"[^"]+",(\d+),0x[\da-f]+\}',s)
 assert len(desc)<=31 and desc
 lines.append('static const uint16_t previewTexels[][64]={')
+texels=bytearray()
 for ws,hs,fmt,key,size in desc:
     w,h=int(ws),int(hs);data=packed[key]
     assert len(data)==int(size)==512+w*h
@@ -54,6 +64,9 @@ for ws,hs,fmt,key,size in desc:
                 p=((r*31//15)<<11)|((g*63//15)<<5)|(b*31//15)
             pixels.append(p)
     lines.append('{'+','.join(map(str,pixels))+'},')
+    texels+=struct.pack('<64H',*pixels)
 lines.append('};')
 Path(sys.argv[2]).write_text('\n'.join(lines)+'\n')
+if len(sys.argv)>3:
+    Path(sys.argv[3]).write_bytes(b'NVP1'+struct.pack('<HH',len(desc),len(tri))+texels+blob)
 print(f'world model sample: {len(tri)} triangles, {len(desc)} textures at 8x8, UVs preserved')

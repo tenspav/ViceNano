@@ -5,6 +5,7 @@ int m8_gpu_begin(uint32_t) { return -1; }
 int m8_gpu_triangle(const M8GpuVertex *) { return -1; }
 int m8_gpu_end(void) { return -1; }
 void m8_gpu_shutdown(void) {}
+int m8_gpu_recover(void) { return -1; }
 
 int m8_gpu_texture_create(unsigned,unsigned,unsigned,const uint16_t *){return -1;}
 void m8_gpu_texture_destroy(int){}
