@@ -26,9 +26,9 @@
 | 🎮 GPU | GS ~147 MHz | PowerVR MBX Lite, 133 MHz stock → **171-266 MHz** unlockable |
 | 💿 Streaming | DVD drive | NAND flash, **~25-35 MB/s** measured |
 
-> **Hardware milestone (2026-10-17):** the real iPod nano 7G PowerVR MBX GPU now renders the ViceNano M8 test scenes on the device itself: a colored triangle and a textured quad, confirmed on the physical screen (not only in the emulator).
+> **Hardware milestone (2026-10-19):** the M8 world preview now runs continuously on the real iPod nano 7G GPU at about **70 fps** with MMU + D-cache enabled: 3,121 frames, 421,779 triangles, 0 GPU errors in the on-device report (R80). The earlier parameter-pool stall (scene 11) is fixed. The scene is playable with a **paired DualSense gamepad** (Bluetooth HID on the device) or touch camera control.
 >
-> **Current blocker:** the continuous world preview renders about 10 scenes, then stalls. Hardware diagnostics confirmed the cause: the GPU parameter pool (63 pages) leaks about 6 pages per scene and is exhausted at scene 11. A fix is in progress.
+> **Engine milestone (2026-10-19, reVC stage 2):** real, unmodified reVC source files (skeleton, CTimer, math, CSprite2d, RenderBuffer) now run inside NanoOS through the NanoOSLoader game ABI: an NPAK v2 asset pack is mounted and CRC-verified, the MBX GPU renders through the kernel driver (with CPU fallback), and input maps to reVC's real controller layer. ~45 fps in the emulator, clean Home exit, stage-1 loader compatibility preserved. Next: stage 3, conversion of the real GTA Vice City PC assets.
 
 > **Measured performance (emulator timing model):** ~19.97 FPS at stock clocks, ~20.56 FPS average unlocked (best fresh run peaked at 23.25 FPS but did not sustain 24+). The 24+ FPS target needs further optimizer work or real-device overclock headroom. Streaming worst case (Downtown, 15.9 MB) fits the 18 MB pool. Details: [`m8/REPORT.md`](m8/REPORT.md), [`m8/OPTIMIZATION_REPORT.md`](m8/OPTIMIZATION_REPORT.md).
 
@@ -43,9 +43,9 @@
 | 🔬 Research | ![100%](https://img.shields.io/badge/100%25-brightgreen) | every chip documented |
 | 🖥️ Emulator | ![98%](https://img.shields.io/badge/98%25-brightgreen) | boots real OS, window, audio, 3D games, save states, HUD, clock profiles |
 | 🔀 Dualboot | ![75%](https://img.shields.io/badge/75%25-yellowgreen) | chainloader round trip works in NanoEmu (OS -> bare metal -> OS) |
-| 🎮 GPU access | ![90%](https://img.shields.io/badge/90%25-brightgreen) | full NanoGL renderer with VGP interpreter in the emulator; **real MBX GPU renders triangle + textured quad on hardware**; world preview in progress (parameter pool leak); PVRTC pending |
-| 🏝️ Engine port | ![80%](https://img.shields.io/badge/80%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md) done; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
-| 🕹️ Controls | ![100%](https://img.shields.io/badge/100%25-brightgreen) | touch + BT classic HID host verified |
+| 🎮 GPU access | ![95%](https://img.shields.io/badge/95%25-brightgreen) | full NanoGL renderer with VGP interpreter in the emulator; **real MBX GPU runs the M8 world preview continuously on hardware (~70 fps, pool leak fixed)**; PVRTC pending |
+| 🏝️ Engine port | ![82%](https://img.shields.io/badge/82%25-green) | reVC → GLES1; [execution plan M0-M9](docs/exec-plan.md); **reVC stage 2: real reVC code runs on NanoOS via the game loader (~45 fps in emulator)**; [nano7-untethered](https://github.com/olievans123/nano7-untethered) proves 30 fps 3D on this device |
+| 🕹️ Controls | ![100%](https://img.shields.io/badge/100%25-brightgreen) | touch + BT classic HID host verified; **DualSense pairs and plays on real hardware** |
 
 ### Engine port milestones (M0-M9)
 
@@ -60,10 +60,12 @@
 | M6 audio | ![done](https://img.shields.io/badge/done-brightgreen) | SFX + 60-second radio through DMA/I2S; capture, timing and 28 cycles verified ([m6](m6/REPORT.md)) |
 | M7 controls | ![done](https://img.shields.io/badge/done-brightgreen) | touch + BT gamepad drive the game ([m7](m7/REPORT.md)) |
 | M8 performance | ![done](https://img.shields.io/badge/done-brightgreen) | code complete; 24+ FPS target not sustained (~20.56 FPS unlocked, ~19.97 FPS stock) |
-| M8 on hardware | ![in progress](https://img.shields.io/badge/in%20progress-yellow) | triangle + textured quad render on the real MBX GPU; world preview stalls at scene 11 (GPU parameter pool leak, fix in progress) |
+| M8 on hardware | ![done](https://img.shields.io/badge/done-brightgreen) | triangle, textured quad and the continuous world preview render on the real MBX GPU (~70 fps, 0 errors); DualSense + touch control |
+| reVC stage 2 | ![done](https://img.shields.io/badge/done-brightgreen) | real reVC code runs on NanoOS via the game loader (NPAK assets, MBX rendering, input), ~45 fps in emulator |
+| reVC stage 3 | ![in progress](https://img.shields.io/badge/in%20progress-yellow) | GTA Vice City PC asset conversion (IMG/TXD/DFF) into NPAK packs |
 | M9 device | ![planned](https://img.shields.io/badge/planned-lightgrey) | full game on the real iPod via dualboot |
 
-**Overall: research 100% + emulator 98% + engine 80%. M8 is code-complete in the emulator, and its test scenes now render on the real iPod GPU (triangle + textured quad). The continuous world preview on hardware is in progress, the 24+ FPS target is still open, and the game port itself is still ahead.**
+**Overall: research 100% + emulator 98% + engine 82%. M8 runs continuously on the real iPod GPU at ~70 fps, and the real reVC engine code boots inside NanoOS (stage 2). Ahead: stage 3 asset conversion, then the full game on the device.**
 
 ## The stages
 
@@ -75,7 +77,7 @@
 5. ✅ **GLES1 backend for librw**: verified through M2-M5
 6. 🔜 **Chainloader**: plan validated, payload + hardware shutdown pieces built
 7. ⬜ **ViceNano boots in the emulator**: full RAM, unlocked clocks, world streams from NAND
-8. 🔜 **ViceNano on real hardware**: M8 test scenes already render on the real MBX GPU; dualboot (hold buttons at boot, original OS untouched) and the world preview remain
+8. ✅ **ViceNano on real hardware**: M8 scenes run on the real MBX GPU (~70 fps, DualSense playable); dualboot via NanoOS menu works on device (StockOS returns to the original OS)
 9. ⬜ **Mini handheld**: 3D-printed cradle + 8BitDo Lite 2 gamepad (BT HID pairing already works in NanoEmu) + battery
 
 Asset math is closed: the whole game fits via PVRTC 4bpp textures (39 MB) or 8bpp palettes (147 MB), with 1,000-3,000 concurrent textures in the streaming window ([`docs/texture-budget.md`](docs/texture-budget.md)).
